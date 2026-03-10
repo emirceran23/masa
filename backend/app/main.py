@@ -1,11 +1,14 @@
 """Multi-Agent Legal Ops — FastAPI Application."""
 
-from contextlib import asynccontextmanager
 from collections.abc import AsyncGenerator
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.v1.approvals import router as approvals_router
+from app.api.v1.contracts import router as contracts_router
+from app.api.v1.reviews import router as reviews_router
 from app.config import settings
 
 
@@ -34,6 +37,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# API v1 route'larını bağla
+app.include_router(contracts_router, prefix="/api/v1")
+app.include_router(reviews_router, prefix="/api/v1")
+app.include_router(approvals_router, prefix="/api/v1")
 
 
 @app.get("/")

@@ -1,9 +1,10 @@
 """Sözleşme (Contract) veritabanı modeli."""
 
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
-from sqlalchemy import Column, String, Text, DateTime, Enum as SAEnum
+from sqlalchemy import Column, DateTime, String, Text
+from sqlalchemy import Enum as SAEnum
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
@@ -24,11 +25,11 @@ class Contract(Base):
         default="uploaded",
         nullable=False,
     )
-    uploaded_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)
+    uploaded_at = Column(DateTime(timezone=True), default=lambda: datetime.now(UTC), nullable=False)
     updated_at = Column(
         DateTime(timezone=True),
-        default=lambda: datetime.now(timezone.utc),
-        onupdate=lambda: datetime.now(timezone.utc),
+        default=lambda: datetime.now(UTC),
+        onupdate=lambda: datetime.now(UTC),
         nullable=False,
     )
 

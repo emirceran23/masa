@@ -1,9 +1,10 @@
 """Sözleşme Maddesi (Clause) veritabanı modeli."""
 
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
-from sqlalchemy import Column, String, Text, Integer, Float, DateTime, ForeignKey, Enum as SAEnum
+from sqlalchemy import Column, DateTime, Float, ForeignKey, Integer, String, Text
+from sqlalchemy import Enum as SAEnum
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
@@ -32,7 +33,7 @@ class Clause(Base):
         default="pending",
         nullable=False,
     )
-    created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)
+    created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(UTC), nullable=False)
 
     # İlişkiler
     contract = relationship("Contract", back_populates="clauses")
