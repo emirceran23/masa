@@ -104,12 +104,12 @@ masa/
 
 | # | Görev | Sorumlu | Durum |
 |---|-------|---------|-------|
-| 0.1 | Repo yapısını oluştur (dizinler, .gitignore, README) | Emir | ⬜ |
-| 0.2 | Backend iskelet: FastAPI app + pyproject.toml + Dockerfile | Mert | ⬜ |
+| 0.1 | Repo yapısını oluştur (dizinler, .gitignore, README) | Emir | ✅ |
+| 0.2 | Backend iskelet: FastAPI app + pyproject.toml + Dockerfile | Mert | ✅ |
 | 0.3 | Frontend iskelet: Next.js proje oluşturma | Osman | ⬜ |
-| 0.4 | Docker Compose: PostgreSQL + Redis + MinIO | Mert | ⬜ |
-| 0.5 | GitHub Actions CI pipeline (lint + test) | Emir | ⬜ |
-| 0.6 | .env.example ve config yapısı | Mert | ⬜ |
+| 0.4 | Docker Compose: PostgreSQL + Redis + MinIO | Mert | ✅ |
+| 0.5 | GitHub Actions CI pipeline (lint + test) | Emir | ✅ |
+| 0.6 | .env.example ve config yapısı | Mert | ✅ |
 | 0.7 | Kanban board kurulumu (GitHub Projects) | Emir | ⬜ |
 
 ---
@@ -222,8 +222,20 @@ masa/
 ## ⚡ Hemen Yapılacaklar (Bugün - 10 Mart 2026)
 
 1. ✅ Proje planı oluşturuldu (bu dosya)
-2. ⬜ Repo yapısını oluştur (.gitignore, README, dizinler)
-3. ⬜ Backend iskelet kurulumu (FastAPI + pyproject.toml)
-4. ⬜ Docker Compose hazırlığı (PostgreSQL + Redis)
+2. ✅ Repo yapısını oluştur (.gitignore, README, dizinler)
+3. ✅ Backend iskelet kurulumu (FastAPI + pyproject.toml)
+4. ✅ Docker Compose hazırlığı (PostgreSQL + Redis + MinIO)
 5. ⬜ GitHub Projects'te Kanban board oluştur
-6. ⬜ .env.example hazırla
+6. ✅ .env.example hazırla
+7. ✅ Bağımlılıklar yüklendi ve test edildi
+8. ✅ API route'ları bağlandı (contracts, reviews, approvals)
+9. ✅ Lint kontrolleri geçti (ruff)
+10. ✅ Swagger UI çalışır durumda (/docs)
+
+## 🔜 Sonraki Adımlar
+
+1. ⬜ Docker kurulumu (PostgreSQL, Redis, MinIO ayağa kaldırma)
+2. ⬜ Alembic migration altyapısı (DB tablolarını oluşturma)
+3. ⬜ Faz 1'e geçiş: DocumentParser servisini detaylandırma
+4. ⬜ Faz 1'e geçiş: Upload endpoint'inin MinIO entegrasyonu
+5. ⬜ Faz 1'e geçiş: Clause Agent prompt tasarımı
