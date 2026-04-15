@@ -4,7 +4,7 @@
 
 > **Ekip:** Mustafa Emir Ceran · Mert Ayrancı · Osman Gazi Atalay  
 > **Tarih:** 8 Nisan 2026  
-> **Durum:** 🟢 **AŞAMA 1 TAMAMLANMAK ÜZERE** — Doküman İşleme & Clause Agent ✅
+> **Durum:** 🟡 **AŞAMA 2 DEVAM EDİYOR** — RAG & Playbook Altyapısı ✅ (Mert) · Risk Agent & Frontend ⏳ (Emir + Osman)
 
 ---
 
@@ -991,44 +991,62 @@ Tüm promptlar `backend/app/agents/prompts/` altında ayrı dosyalarda tutulacak
 
 #### Sprint 2.1 — RAG & Playbook Altyapısı (28 Mart - 3 Nisan)
 
-| # | Görev | Sorumlu | Dosya/Modül |
-|---|-------|---------|-------------|
-| 1 | pgvector kurulumu + migration | Mert | `alembic/versions/`, DB setup |
-| 2 | OpenAI Embedding entegrasyonu | Mert | `rag/embeddings.py` |
-| 3 | Vektör CRUD (indeksleme, arama) | Mert | `rag/vector_store.py` |
-| 4 | Anlamsal benzerlik retriever | Mert | `rag/retriever.py` |
-| 5 | Playbook CRUD servisi | Mert | `services/playbook_service.py` |
-| 6 | Playbook API uç noktaları | Mert | `api/v1/playbooks.py` |
-| 7 | Playbook güncelleme → vektör indeks yenileme | Mert | `services/playbook_service.py` |
-| 8 | Varsayılan Playbook şablonu | Emir | `data/seed/default_playbook.json` |
-| 9 | Risk değerlendirme rubriği tasarımı | Emir | `data/seed/risk_rubric.json` |
-| 10 | Risk Agent prompt tasarımı | Emir | `agents/prompts/risk_prompts.py` |
-| 11 | Frontend: Playbook yönetim ekranları | Osman | `app/(dashboard)/playbooks/` |
-| 12 | Frontend: Playbook kural editörü | Osman | `components/playbook/rule-editor.tsx` |
+| # | Görev | Sorumlu | Dosya/Modül | Durum |
+|---|-------|---------|-------------|-------|
+| 1 | pgvector kurulumu + migration | Mert | `alembic/versions/0002_pgvector_embeddings.py` | ✅ |
+| 2 | OpenAI Embedding entegrasyonu | Mert | `rag/embeddings.py` | ✅ |
+| 3 | Vektör CRUD (indeksleme, arama) | Mert | `rag/vector_store.py` | ✅ |
+| 4 | Anlamsal benzerlik retriever | Mert | `rag/retriever.py` | ✅ |
+| 5 | Playbook CRUD servisi | Mert | `services/playbook_service.py` | ✅ |
+| 6 | Playbook API uç noktaları | Mert | `api/v1/playbooks.py` | ✅ |
+| 7 | Playbook güncelleme → vektör indeks yenileme | Mert | `services/playbook_service.py` | ✅ |
+| 8 | Varsayılan Playbook şablonu | Emir | `data/seed/default_playbook.json` | ✅ |
+| 9 | Risk değerlendirme rubriği tasarımı | Emir | `data/seed/risk_rubric.json` | ⏳ |
+| 10 | Risk Agent prompt tasarımı | Emir | `agents/prompts/risk_prompts.py` | ⏳ |
+| 11 | Frontend: Playbook yönetim ekranları | Osman | `app/(dashboard)/playbooks/` | ⏳ |
+| 12 | Frontend: Playbook kural editörü | Osman | `components/playbook/rule-editor.tsx` | ⏳ |
 
 #### Sprint 2.2 — Risk Agent & Entegrasyon (4-10 Nisan)
 
-| # | Görev | Sorumlu | Dosya/Modül |
-|---|-------|---------|-------------|
-| 1 | Risk Agent implementasyonu | Emir | `agents/risk_agent.py` |
-| 2 | Kural motoru (çapraz doğrulama) | Emir | `rules/engine.py`, `rules/validators.py` |
-| 3 | Eksik hüküm tespit mekanizması | Emir | `agents/risk_agent.py` |
-| 4 | Risk API uç noktaları | Mert | `api/v1/risks.py` |
-| 5 | Orkestratöre Risk Agent eklenmesi | Emir | `agents/orchestrator.py` |
-| 6 | Redis oturum ve durum yönetimi | Mert | `core/redis.py` |
-| 7 | Frontend: Risk sonuçları görünümü | Osman | `components/analysis/risk-summary.tsx` |
-| 8 | Frontend: Risk renk kodlaması (badge) | Osman | `components/contract/risk-badge.tsx` |
-| 9 | Frontend: Dashboard istatistikleri | Osman | `components/analysis/risk-chart.tsx` |
-| 10 | Entegrasyon testleri: analiz pipeline | Osman | `tests/integration/test_analysis_pipeline.py` |
-| 11 | SDD dokümanı ilk sürüm | Emir | `docs/SDD.md` |
+| # | Görev | Sorumlu | Dosya/Modül | Durum |
+|---|-------|---------|-------------|-------|
+| 1 | Risk Agent implementasyonu | Emir | `agents/risk_agent.py` | ⏳ |
+| 2 | Kural motoru (çapraz doğrulama) | Emir | `rules/engine.py`, `rules/validators.py` | ⏳ |
+| 3 | Eksik hüküm tespit mekanizması | Emir | `agents/risk_agent.py` | ⏳ |
+| 4 | Risk API uç noktaları | Mert | `api/v1/risks.py` | ✅ |
+| 5 | Orkestratöre Risk Agent eklenmesi | Emir | `agents/orchestrator.py` | ⏳ |
+| 6 | Redis oturum ve durum yönetimi | Mert | `core/redis.py` | ✅ |
+| 7 | Frontend: Risk sonuçları görünümü | Osman | `components/analysis/risk-summary.tsx` | ⏳ |
+| 8 | Frontend: Risk renk kodlaması (badge) | Osman | `components/contract/risk-badge.tsx` | ⏳ |
+| 9 | Frontend: Dashboard istatistikleri | Osman | `components/analysis/risk-chart.tsx` | ⏳ |
+| 10 | Entegrasyon testleri: analiz pipeline | Osman | `tests/integration/test_analysis_pipeline.py` | ⏳ |
+| 11 | SDD dokümanı ilk sürüm | Emir | `docs/SDD.md` | ⏳ |
+
+**Aşama 2 — Gelinen Nokta (15 Nisan 2026):**
+
+✅ **Tamamlanan (Mert):**
+- pgvector migration (`0002_pgvector_embeddings.py`) — `clause_embeddings`, `playbook_rule_embeddings`, `missing_provisions` tabloları oluşturuldu
+- RAG altyapısı: `rag/embeddings.py`, `rag/vector_store.py`, `rag/retriever.py` — **Çalışıyor**
+- Playbook CRUD + otomatik vektör indeksleme — **Çalışıyor**
+- Playbook API (5 endpoint) + Risk API (2 endpoint) — **Çalışıyor**
+- `router.py` güncellendi, tüm yeni router'lar bağlandı
+
+> ⚠️ **Veritabanı migration'ını uygulamak için:**
+> ```bash
+> docker-compose exec backend alembic upgrade head
+> ```
+
+⏳ **Bekleyen (Emir):** Risk Agent, kural motoru, orkestratör, SDD dokümanı
+
+⏳ **Bekleyen (Osman):** Frontend playbook ekranları, risk bileşenleri, entegrasyon testleri
 
 **Aşama 2 Çıktıları:**
 - ✅ Playbook CRUD + vektörel indeksleme
 - ✅ RAG ile anlamsal benzerlik araması
-- ✅ Risk Agent ile risk değerlendirme (düşük/orta/yüksek)
-- ✅ Kural motoru çapraz doğrulaması
-- ✅ Eksik hüküm tespiti
-- ✅ Dashboard'da risk dağılımı görselleştirme
+- ⏳ Risk Agent ile risk değerlendirme (düşük/orta/yüksek)
+- ⏳ Kural motoru çapraz doğrulaması
+- ⏳ Eksik hüküm tespiti
+- ⏳ Dashboard'da risk dağılımı görselleştirme
 
 ---
 
