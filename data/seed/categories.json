@@ -1,0 +1,49 @@
+{
+  "categories": [
+    {
+      "key": "sorumluluk",
+      "label": "Sorumluluk",
+      "description": "Tarafların hukuki ve mali sorumluluklarını düzenleyen maddeler."
+    },
+    {
+      "key": "fesih",
+      "label": "Fesih",
+      "description": "Sözleşmenin sona erdirilme koşullarını belirleyen maddeler."
+    },
+    {
+      "key": "gizlilik",
+      "label": "Gizlilik",
+      "description": "Taraflar arasında paylaşılan bilgilerin korunmasına ilişkin maddeler."
+    },
+    {
+      "key": "odeme",
+      "label": "Ödeme",
+      "description": "Ödeme koşulları, vade ve gecikme faizi gibi mali düzenlemeler."
+    },
+    {
+      "key": "fikri_mulkiyet",
+      "label": "Fikri Mülkiyet",
+      "description": "Telif hakkı, patent ve diğer fikri mülkiyet haklarına ilişkin maddeler."
+    },
+    {
+      "key": "tazminat",
+      "label": "Tazminat",
+      "description": "Zararların tazminine ilişkin yükümlülükler ve koşullar."
+    },
+    {
+      "key": "uyusmazlik",
+      "label": "Uyuşmazlık Çözümü",
+      "description": "Tahkim, arabuluculuk veya yetkili mahkeme belirleme maddeleri."
+    },
+    {
+      "key": "rekabet_yasagi",
+      "label": "Rekabet Yasağı",
+      "description": "Rekabet etmeme ve çalışma kısıtlamalarına ilişkin maddeler."
+    },
+    {
+      "key": "belirsiz",
+      "label": "Belirsiz",
+      "description": "Sınıflandırılamamış veya düşük güven skorlu maddeler."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Lagent",
+  "short_name": "Lagent",
+  "description": "Çok Ajanlı Sözleşme İnceleme & Müzakere Orkestratörü",
+  "icons": [],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#4263eb",
+  "background_color": "#ffffff"
+}

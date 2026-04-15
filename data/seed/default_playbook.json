@@ -1,0 +1,49 @@
+{
+  "name": "Varsayılan Playbook",
+  "description": "Türk hukuku ve ticaret uygulamalarına uygun varsayılan sözleşme inceleme kuralları.",
+  "is_default": true,
+  "rules": [
+    {
+      "rule_type": "rejected",
+      "content": "Tek taraflı fesih hakkı yalnızca karşı tarafa tanınmış maddeler kabul edilemez."
+    },
+    {
+      "rule_type": "rejected",
+      "content": "Sınırsız sorumluluk (unlimited liability) kabul edilemez."
+    },
+    {
+      "rule_type": "rejected",
+      "content": "Rakip firmalarla çalışmayı sınırsız süreyle yasaklayan rekabet yasağı maddeleri reddedilmelidir."
+    },
+    {
+      "rule_type": "required",
+      "content": "Sözleşmede gizlilik (NDA) maddesi bulunmalıdır."
+    },
+    {
+      "rule_type": "required",
+      "content": "Uyuşmazlık çözümü maddesi (tahkim veya yetkili mahkeme) bulunmalıdır."
+    },
+    {
+      "rule_type": "required",
+      "content": "Sözleşme süresi ve yenileme koşulları açıkça belirtilmelidir."
+    },
+    {
+      "rule_type": "acceptable",
+      "content": "Karşılıklı gizlilik yükümlülükleri kabul edilebilir."
+    },
+    {
+      "rule_type": "acceptable",
+      "content": "30 günlük yazılı bildirim ile fesih maddesi kabul edilebilir."
+    },
+    {
+      "rule_type": "threshold",
+      "content": "Cezai şart (penalty clause) tutarı sözleşme değerinin %15'ini geçmemelidir.",
+      "threshold_value": 15.0
+    },
+    {
+      "rule_type": "threshold",
+      "content": "Sorumluluk sınırı (liability cap) sözleşme değerinin %100'ünü aşmamalıdır.",
+      "threshold_value": 100.0
+    }
+  ]
+}
