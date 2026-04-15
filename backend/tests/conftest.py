@@ -7,6 +7,7 @@ from unittest.mock import AsyncMock, patch
 import pytest
 import pytest_asyncio
 from httpx import ASGITransport, AsyncClient
+from sqlalchemy import text
 from sqlalchemy.ext.asyncio import (
     AsyncSession,
     async_sessionmaker,
@@ -17,6 +18,8 @@ from app.config import settings
 from app.core.database import Base, get_db
 from app.core.security import hash_password
 from app.main import app
+from app.models.contract import Contract
+from app.models.playbook import Playbook, PlaybookRule
 from app.models.user import User
 
 # Use a separate test database
@@ -29,9 +32,21 @@ TEST_DATABASE_URL = settings.database_url.replace(
 async def _engine():
     engine = create_async_engine(TEST_DATABASE_URL, echo=False)
     async with engine.begin() as conn:
+        # ORM-managed tables
         await conn.run_sync(Base.metadata.create_all)
+        # Raw SQL tables (not ORM models — no pgvector type needed in tests)
+        await conn.execute(text("""
+            CREATE TABLE IF NOT EXISTS missing_provisions (
+                id               UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+                contract_id      UUID NOT NULL REFERENCES contracts(id) ON DELETE CASCADE,
+                playbook_rule_id UUID REFERENCES playbook_rules(id) ON DELETE SET NULL,
+                description      TEXT NOT NULL,
+                detected_at      TIMESTAMPTZ DEFAULT NOW()
+            )
+        """))
     yield engine
     async with engine.begin() as conn:
+        await conn.execute(text("DROP TABLE IF EXISTS missing_provisions"))
         await conn.run_sync(Base.metadata.drop_all)
     await engine.dispose()
 
@@ -87,3 +102,59 @@ async def test_user(_session_factory) -> User:
         await session.commit()
         await session.refresh(user)
         return user
+
+
+@pytest_asyncio.fixture
+async def auth_headers(client: AsyncClient, test_user: User) -> dict:
+    """Return Authorization headers for the test user."""
+    resp = await client.post(
+        "/api/v1/auth/login",
+        json={"email": "test@lagent.dev", "password": "TestPass123!@#"},
+    )
+    token = resp.json()["access_token"]
+    return {"Authorization": f"Bearer {token}"}
+
+
+@pytest_asyncio.fixture
+async def test_playbook(_session_factory, test_user: User) -> Playbook:
+    """A persisted playbook (no embedding — index_rule is mocked in tests)."""
+    async with _session_factory() as session:
+        pb = Playbook(
+            id=uuid.uuid4(),
+            user_id=test_user.id,
+            name="Test Playbook",
+            description="Playbook for tests",
+        )
+        session.add(pb)
+        await session.flush()
+        rule = PlaybookRule(
+            id=uuid.uuid4(),
+            playbook_id=pb.id,
+            rule_type="required",
+            content="Sözleşme fesih maddesini içermelidir.",
+        )
+        session.add(rule)
+        await session.commit()
+        await session.refresh(pb)
+        return pb
+
+
+@pytest_asyncio.fixture
+async def test_contract(_session_factory, test_user: User) -> Contract:
+    """A minimal persisted contract in 'analyzed' status."""
+    async with _session_factory() as session:
+        contract = Contract(
+            id=uuid.uuid4(),
+            user_id=test_user.id,
+            file_name="test.pdf",
+            storage_path="test/test.pdf",
+            file_format="pdf",
+            file_size=1024,
+            raw_text="Madde 1: Taraflar bu sözleşmeye uymayı kabul eder.",
+            status="analyzed",
+            total_clauses=1,
+        )
+        session.add(contract)
+        await session.commit()
+        await session.refresh(contract)
+        return contract
