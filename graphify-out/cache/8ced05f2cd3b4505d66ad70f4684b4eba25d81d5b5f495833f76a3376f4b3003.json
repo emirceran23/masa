@@ -1,0 +1,1 @@
+{"nodes": [{"id": "uml_architecture_diagram", "label": "UML Architecture Diagram", "file_type": "image", "source_file": "SRS/UML.pdf"}], "edges": [{"source": "uml_architecture_diagram", "target": "lagent_use_case_diagram", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "SRS/UML.pdf"}], "hyperedges": []}

@@ -1,0 +1,59 @@
+@startuml sequence-upload
+!theme plain
+scale 0.85
+skinparam sequenceArrowThickness 1.5
+skinparam responseMessageBelowArrow true
+skinparam maxMessageSize 130
+skinparam ParticipantBackgroundColor #DDEEFF
+skinparam ParticipantBorderColor #336699
+skinparam NoteBackgroundColor #FFFFCC
+skinparam NoteBorderColor #CCCC66
+skinparam SequenceGroupBodyBackgroundColor #F5F5F5
+skinparam SequenceGroupBackgroundColor #E0E0E0
+skinparam SequenceGroupBorderColor #888888
+skinparam sequenceParticipantFontSize 12
+skinparam sequenceArrowFontSize 11
+skinparam ParticipantPadding 8
+
+title Diyagram 1 — Kullanıcı Girişi ve Sözleşme Yükleme
+
+actor  "Kullanıcı" as USER
+participant "Web İstemci" as FE
+participant "API Katmanı\n(GW + Auth)" as GW
+participant "Ingestion" as ING
+participant "Veri Katmanı\n(MinIO + DB)" as VERI
+
+== Kimlik Doğrulama ==
+USER -> FE  : Giriş (e-posta, şifre)
+FE   -> GW  : POST /auth/login
+GW   --> FE : 200 OK {JWT}
+FE   --> USER: Dashboard
+
+== Sözleşme Yükleme ==
+USER -> FE  : Dosya seç (PDF/DOCX ≤ 10 MB)
+FE   -> GW  : POST /contracts [Bearer JWT]
+GW   -> ING : ingest(file_stream, user_id)
+
+group Parse / OCR
+    ING -> VERI : PUT orijinal dosya → storage_uri
+    ING -> ING  : PyMuPDF parse
+    alt Görüntü tabanlı sayfa
+        ING -> ING : Tesseract OCR
+        note right
+            Fallback:\nGPT-4o Vision\nveya AWS Textract
+        end note
+    end
+    ING -> ING  : Metin normalize
+    ING -> VERI : INSERT contracts\n{storage_uri, status="processing"}
+    VERI --> ING: contract_id
+end
+
+ING --> GW  : {contract_id, normalized_text}
+GW  --> FE  : 202 Accepted {contract_id}
+FE  --> USER: "Analiz başlatıldı..."
+FE  ->  GW  : WSS /ws/progress/{contract_id}
+note right of FE
+    WebSocket bağlantısı\nanaliz boyunca açık\n→ Diyagram 2'ye devam
+end note
+
+@enduml

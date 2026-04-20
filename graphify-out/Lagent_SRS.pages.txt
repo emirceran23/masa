@@ -1,0 +1,1556 @@
+
+===== PAGE 1 =====
+Yazılım Gereksinimleri Belirtimi
+(SRS)
+Çok Ajanlı Sözleşme İnceleme ve
+Müzakere Orkestratörü
+(Multi-Agent Legal Ops)
+Kurum:Gazi Üniversitesi
+Grup İsmi:Lagent
+Hazırlayanlar:Mustafa Emir Ceran – 24118080702
+Mert Ayrancı – 24118080752
+Osman Gazi Atalay – 23118080703
+Tarih:6 Nisan 2026
+Sürüm:1.1
+
+===== PAGE 2 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+Revizyon Geçmişi
+Sürüm Tarih Açıklama Yazar
+1.0 15.03.2026 İlk sürüm oluşturuldu. Lagent
+1.1 06.04.2026 SRS şablonuna uygun olarak bö-
+lüm yapısı güncellendi. Gerekli
+Durum ve Modlar, Uyarlama,
+Emniyet, Güvenlik ve Gizlilik,
+Ortam, Bilgisayar Kaynak, Ya-
+zılım Kalite Faktörleri, Tasarım
+Kısıtlamaları, Personel, Eğitim,
+Lojistik, Ambalajlama ve Önce-
+lik/Kritiklik bölümleri eklendi.
+Lagent
+Sayfa 1 / 38
+
+===== PAGE 3 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+İçindekiler
+Revizyon Geçmişi 1
+1 GİRİŞ 4
+1.1 Ürün Genel Bakışı . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+1.1.1 Ürün Perspektifi . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+1.1.2 Ürün İşlevleri . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+1.1.3 Kullanıcı Sınıfları ve Özellikleri . . . . . . . . . . . . . . . . . . . . 6
+1.1.4 Çalışma Ortamı . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+1.1.5 Tasarım ve Uygulama Kısıtları . . . . . . . . . . . . . . . . . . . . . 6
+1.1.6 Varsayımlar ve Bağımlılıklar . . . . . . . . . . . . . . . . . . . . . . 7
+2 GEREKSİNİMLER 8
+2.1 Gerekli Durum ve Modlar . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+2.2 YKE Fonksiyonel Gereksinimleri . . . . . . . . . . . . . . . . . . . . . . . . 8
+2.2.1 Kullanıcı Kayıt ve Kimlik Doğrulama . . . . . . . . . . . . . . . . . 8
+2.2.2 Sözleşme Yükleme ve Doküman İşleme . . . . . . . . . . . . . . . . 9
+2.2.3 Madde Ayrıştırma ve Sınıflandırma . . . . . . . . . . . . . . . . . . 9
+2.2.4 Politika Kontrolü ve Risk Değerlendirmesi . . . . . . . . . . . . . . 9
+2.2.5 Revizyon Önerisi ve Karşılaştırmalı Görünüm . . . . . . . . . . . . 10
+2.2.6 Onay Akışı . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.2.7 Raporlama . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.2.8 Playbook Yönetimi . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.3 YKE Dış Arayüz Gereksinimleri . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.3.1 Arayüz Tanımlaması ve Diyagramları . . . . . . . . . . . . . . . . . 11
+2.3.2 Kullanıcı Arayüzü (UI-01) . . . . . . . . . . . . . . . . . . . . . . . 12
+2.3.3 LLM Servisi Arayüzü . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+2.3.4 Veritabanı Arayüzü . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+2.3.5 Vektör Arama Arayüzü . . . . . . . . . . . . . . . . . . . . . . . . . 14
+2.3.6 Önbellek Arayüzü . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+2.3.7 Nesne Depolama Arayüzü . . . . . . . . . . . . . . . . . . . . . . . 14
+2.3.8 İletişim Yöntemleri . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+Sayfa 2 / 38
+
+===== PAGE 4 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+2.4 YKE Dahili Arayüz Gereksinimleri . . . . . . . . . . . . . . . . . . . . . . 14
+2.5 YKE Dahili Veri Gereksinimleri . . . . . . . . . . . . . . . . . . . . . . . . 15
+2.5.1 İlişkisel Veritabanı . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+2.5.2 Vektör Veritabanı . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+2.5.3 Önbellek ve Durum Yönetimi . . . . . . . . . . . . . . . . . . . . . 16
+2.5.4 Dosya Depolama . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+2.6 Uyarlama Gereksinimleri . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+2.7 Emniyet Gereksinimleri . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+2.8 Güvenlik ve Gizlilik Gereksinimleri . . . . . . . . . . . . . . . . . . . . . . 17
+2.9 YKE Ortam Gereksinimleri . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+2.10 Bilgisayar Kaynak Gereksinimleri . . . . . . . . . . . . . . . . . . . . . . . 18
+2.10.1 Bilgisayar Donanım Gereksinimleri . . . . . . . . . . . . . . . . . . 18
+2.10.2 Bilgisayar Donanımı Kaynak Kullanımı Gereksinimleri . . . . . . . 18
+2.10.3 Bilgisayar Yazılım Gereksinimleri . . . . . . . . . . . . . . . . . . . 18
+2.10.4 Bilgisayar İletişim Gereksinimleri . . . . . . . . . . . . . . . . . . . 19
+2.11 Yazılım Kalite Faktörleri . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+2.12 Tasarım ve Uygulama Kısıtlamaları . . . . . . . . . . . . . . . . . . . . . . 20
+2.13 Personelle İlgili Gereksinimler . . . . . . . . . . . . . . . . . . . . . . . . . 20
+2.14 Eğitimle İlgili Gereksinimler . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+2.15 Lojistikle İlgili Gereksinimler . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+2.16 Diğer Gereksinimler . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+2.17 Ambalajlama Gereksinimleri . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+2.18 Gereksinimlerin Önceliği ve Kritikliği . . . . . . . . . . . . . . . . . . . . . 22
+3 EK MATERYALLER 23
+3.1 Kullanım Senaryoları Özeti . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+3.1.1 Genel Kullanım Senaryosu Diyagramı . . . . . . . . . . . . . . . . . 23
+3.1.2 Kullanım Senaryoları Tablosu . . . . . . . . . . . . . . . . . . . . . 23
+3.1.3 Kullanım Senaryosu Diyagramları . . . . . . . . . . . . . . . . . . . 24
+3.2 Veri Akışı Genel Görünümü . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+3.2.1 UML Sınıf Diyagramı . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+3.2.2 Veri Akışı . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+3.3 Sözlük . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+Sayfa 3 / 38
+
+===== PAGE 5 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+1 GİRİŞ
+Bu Yazılım Gereksinimleri Belirtimi (SRS) dokümanı, Çok Ajanlı Sözleşme İnceleme ve
+Müzakere Orkestratörü (Multi-Agent Legal Ops) sisteminin işlevsel ve işlevsel olmayan
+gereksinimlerini kapsamlı biçimde tanımlamaktadır.
+Dokümanın hedef kitlesi; yazılım geliştiriciler, test mühendisleri, proje yöneticileri, hukuki
+danışmanlar ve diğer paydaşlardır. Bu belge, sistemin ne yapması gerektiğini ortaya koyar;
+nasıl yapılacağına ilişkin tasarım kararları SDD (Software Design Document) kapsamında
+ele alınacaktır.
+Günümüzde bireyler ve küçük-orta ölçekli işletmeler, kira sözleşmelerinden ticari anlaş-
+malara kadar geniş bir yelpazede hukuki metinlerle karşılaşmaktadır. Bu metinlerin doğru
+anlaşılması, risklerin zamanında tespit edilmesi ve gerektiğinde müzakere süreçlerinin yü-
+rütülmesi genellikle uzmanlık gerektiren, zaman alıcı ve maliyetli bir süreçtir. Mevcut
+durumda kullanıcılar çoğunlukla her sözleşme için ayrı avukat desteği almak zorunda
+kalmakta, bu da özellikle sıradan bireyler ve küçük işletmeler için erişilebilirlik sorunu
+yaratmaktadır.
+Bu proje, söz konusu boşluğu doldurmak amacıyla çok ajanlı (multi-agent) bir yapay
+zeka asistanı geliştirmeyi hedeflemektedir. Sistem; sözleşme metinlerini otomatik olarak
+ayrıştıracak, madde bazında sınıflandıracak, kullanıcının belirlediği politikalara göre risk
+analizi yapacak, riskli maddeler için alternatif ifade önerileri sunacak ve tüm bu süreçleri
+bütünleşik bir onay akışı içinde yönetecektir.
+Projenin temel motivasyonu, hukuki inceleme süreçlerinin demokratikleştirilmesi ve yapay
+zeka destekli otomasyon sayesinde hem zaman hem de maliyet tasarrufu sağlanmasıdır.
+Sistem, avukat desteğinin tamamen yerine geçmeyi değil; ön inceleme, risk tespiti ve mü-
+zakere hazırlığı aşamalarında kullanıcıya güvenilir bir asistanlık sunmayı amaçlamaktadır.
+1.1 Ürün Genel Bakışı
+1.1.1 Ürün Perspektifi
+Çok Ajanlı Sözleşme İnceleme ve Müzakere Orkestratörü, bağımsız (stand-alone) bir web
+uygulaması olarak geliştirilecektir. Sistem herhangi bir mevcut kurumsal yazılımın parçası
+veya uzantısı değildir.
+Sistem, birbiriyle koordineli çalışan birden fazla yapay zeka ajanından oluşan çok katmanlı
+bir mimari üzerine inşa edilecektir. Bu katmanlar genel hatlarıyla şöyledir:
+1.Doküman İşleme Katmanı:Kullanıcının yüklediği sözleşme dosyalarının (PDF,
+DOCX vb.) düz metne dönüştürülmesi; taranmış belgeler için optik karakter tanıma
+(OCR) desteği sunulması.
+2.Çok Ajanlı Yapay Zeka Katmanı:Madde ayrıştırma, sınıflandırma, risk değer-
+lendirme ve revizyon önerisi gibi görevlerin, her biri belirli bir sorumluluk alanına
+sahip bağımsız ajanlar tarafından yürütülmesi; bu ajanların bir orkestrasyon meka-
+nizması aracılığıyla koordineli çalışması.
+Sayfa 4 / 38
+
+===== PAGE 6 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+3.Bilgi Erişim Katmanı (RAG):Kullanıcının tanımladığı politikalar (Playbook)
+ve referans madde havuzunun vektörel olarak indekslenmesi; analiz sırasında anlam-
+sal benzerlik aramasıyla bağlam zenginleştirme yapılması.
+4.Sunucu Tarafı API Katmanı:İstemci uygulaması ile arka plan servisleri arasın-
+daki iletişimi sağlayan, RESTful prensiplere uygun uygulama programlama arayüzü.
+5.İstemci Katmanı:Kullanıcıların sisteme eriştiği, sözleşme yükleyip analiz sonuç-
+larını incelediği, kararlarını verdiği modern web tabanlı arayüz.
+6.Veri Yönetimi Katmanı:İlişkisel veritabanı , vektör veritabanı , önbellek meka-
+nizması ve nesne depolama bileşenlerinin bütünleşik yönetimi.
+1.1.2 Ürün İşlevleri
+Sistemin sunacağı başlıca işlevler aşağıda özetlenmiştir:
+•Sözleşme Yükleme ve Metin Dönüştürme:Kullanıcıların farklı formatlardaki
+sözleşme dosyalarını sisteme yüklemesi; bu dosyaların otomatik olarak işlenebilir
+düz metne dönüştürülmesi.
+•Madde Bazlı Ayrıştırma:Sözleşme metninin yapısal olarak ayrı maddelere bö-
+lünmesi ve her maddenin bağımsız bir birim olarak ele alınması.
+•Otomatik Sınıflandırma:Ayrıştırılan her maddenin, önceden tanımlanmış hu-
+kuki kategorilere (gizlilik, tazminat, fesih, fikri mülkiyet, sorumluluk sınırlandırma,
+uyuşmazlık çözümü, ödeme koşulları vb.) yapay zeka destekli olarak atanması.
+•Politika Uyumluluk Kontrolü:Her maddenin, kullanıcının tanımladığı Play-
+book kurallarına göre uyumluluk açısından değerlendirilmesi; eksik veya çelişkili
+hükümlerin otomatik tespit edilmesi.
+•Risk Değerlendirmesi:Maddelerin ticari ve hukuki boyutlarıyla birlikte çok se-
+viyeli bir risk skalasında (düşük, orta, yüksek) derecelendirilmesi.
+•Revizyon Önerisi Üretimi:Riskli bulunan maddeler için, kullanıcı politikaları
+ve referans madde havuzu temelinde alternatif ifade önerilerinin otomatik olarak
+üretilmesi.
+•Karşılaştırmalı Görünüm (Redline):Orijinal madde metni ile önerilen revizyon
+metninin, ekleme ve silme farklarının görsel olarak vurgulandığı karşılaştırmalı bir
+biçimde sunulması.
+•Onay Akışı Yönetimi:Her madde için ayrı ayrı onay, red veya yeniden revize
+kararı verilebilmesi; bu kararların durum geçişleriyle (taslak, incelemede, onaylandı,
+reddedildi) izlenebilmesi.
+•Denetim İzi (Audit Trail):Kullanıcıların verdiği tüm kararların, yorumların ve
+işlem zaman damgalarının kayıt altına alınması.
+Sayfa 5 / 38
+
+===== PAGE 7 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+•Raporlama ve Dışa Aktarım:İnceleme sonuçlarının özet ve detaylı rapor ola-
+rak görüntülenmesi; raporların ve revize edilmiş sözleşme taslağının dosya olarak
+indirilebilmesi.
+•Playbook Yönetimi:Kullanıcıların kendi sözleşme politikalarını (kabul edilebilir
+ifadeler, reddedilecek ifadeler, eşik değerler) tanımlayabilmesi, düzenleyebilmesi ve
+bu kuralların analiz sürecine yansıtılması.
+1.1.3 Kullanıcı Sınıfları ve Özellikleri
+Sistemin hedef kullanıcı kitleleri aşağıdaki gibi sınıflandırılmaktadır:
+Kullanıcı TipiProfil Teknik Yeterlilik
+Bireysel Kulla-
+nıcı
+Kira, iş veya hizmet sözleşme-
+lerini inceleyen bireyler. Hu-
+kuki terminolojiye aşinalıkları
+sınırlıdır.
+Temel bilgisayar ve internet
+kullanımı. Hukuki ön bilgi
+gerektirmez.
+KOBİ YöneticisiTicari sözleşmeleri, tedarikçi
+anlaşmalarını ve ortaklık pro-
+tokollerini inceleyen küçük-
+orta ölçekli işletme sahipleri
+veya yöneticileri.
+Orta düzey bilgisayar kulla-
+nımı. Temel ticari sözleşme
+bilgisi.
+Hukuk Danış-
+manı
+Sözleşme inceleme sürecini hız-
+landırmak, ön tarama ve risk
+analizini otomatikleştirmek is-
+teyen avukatlar ve hukuk mü-
+şavirleri.
+İleridüzeyhukukibilgi,orta
+düzey teknik yeterlilik.
+Sistem Yöneti-
+cisi
+Platformun kurulumu, yapı-
+landırması, kullanıcı yönetimi
+ve bakım süreçlerini yürüten
+teknik personel.
+İleri düzey teknik yeterlilik.
+Sunucu yönetimi ve verita-
+banı bilgisi.
+1.1.4 Çalışma Ortamı
+Sistem bir web uygulaması olarak çalışacaktır. Kullanıcılar, modern bir web tarayıcısı ara-
+cılığıyla herhangi bir ek yazılım kurulumu gerektirmeden sisteme erişebilecektir. Sunucu
+tarafı bileşenleri konteynerize edilerek farklı altyapı ortamlarında çalıştırılabilecektir.
+1.1.5 Tasarım ve Uygulama Kısıtları
+•Sistem, doğal dil işleme ve metin üretimi görevlerinde harici bir büyük dil modeli
+(LLM) servisine bağımlıdır. Bu servisin erişilebilirliği ve yanıt kalitesi, sistem per-
+formansını doğrudan etkiler.
+•Optik karakter tanıma (OCR) doğruluğu, yüklenen taranmış dokümanların görüntü
+kalitesine bağlıdır; düşük çözünürlüklü veya bozuk taramalar hatalı metin çıktısına
+yol açabilir.
+Sayfa 6 / 38
+
+===== PAGE 8 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+•Sistem, hukuki tavsiye niteliği taşımaz ve bir avukatın yerini almayı hedeflemez.
+Nihai karar ve sorumluluk her zaman kullanıcıya aittir.
+•İlk sürümde yalnızca Türkçe sözleşme metinleri desteklenecektir.
+•Yüksek risk seviyesindeki maddelerde otomatik onay mekanizması uygulanmayacak;
+bu maddelerde insan onayı zorunlu olacaktır.
+•Yapay zeka modelinin ürettiği tüm çıktılar (sınıflandırma, risk skoru, revizyon öne-
+risi), deterministik olmayan doğası gereği yanlış pozitif veya yanlış negatif sonuçlar
+içerebilir; bu nedenle çapraz doğrulama mekanizmaları uygulanacaktır.
+1.1.6 Varsayımlar ve Bağımlılıklar
+•Kullanıcıların güncel bir web tarayıcısına ve stabil bir internet bağlantısına sahip
+olduğu varsayılmaktadır.
+•Haricidilmodeliservisininkesintisizvekabuledilebilirgecikmesüreleriyleerişilebilir
+olduğu varsayılmaktadır.
+•Kullanıcıların sisteme yükleyeceği sözleşme dosyalarının makine tarafından okuna-
+bilir kalitede olduğu varsayılmaktadır.
+•Sunucu tarafı altyapı bileşenlerinin (veritabanı, önbellek, dosya depolama) kontey-
+ner ortamında çalıştırılacağı varsayılmaktadır.
+•Kullanıcıların Playbook oluştururken temel sözleşme terminolojisine aşina olduğu
+varsayılmaktadır, sistem yorumlayıcı katman içerdiği için Playbook girdisi kapsayıcı
+ve konuyla alakalı olmalıdır.
+Sayfa 7 / 38
+
+===== PAGE 9 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+2 GEREKSİNİMLER
+2.1 Gerekli Durum ve Modlar
+Sistem aşağıdaki çalışma durumlarına sahip olacaktır:
+Boşta (Idle)Kullanıcı oturum açmış ancak herhangi bir analiz işlemi başlatmamıştır.
+Sistem, yeni görev bekleme durumundadır; kullanıcı dashboard’u görüntüleyebilir,
+sözleşme listesine göz atabilir veya Playbook yönetimi yapabilir.
+Aktif – Analiz İşlemiKullanıcı bir sözleşme yüklemiş ve otomatik analiz süreci başla-
+mıştır. Bu durumda ayrıştırma, sınıflandırma, risk değerlendirme ve revizyon önerisi
+ajanları sıralı/paralel olarak çalışmaktadır. Kullanıcıya gerçek zamanlı ilerleme bil-
+dirimi gönderilir.
+Aktif – İnceleme ve KararAnaliz tamamlanmış, kullanıcı madde bazlı sonuçları ince-
+lemekte ve onay/red kararlarını vermektedir. Bu modda yapay zeka ajanları pasiftir;
+kullanıcı etkileşimi ön plandadır.
+Bozulmuş (Degraded)Harici dil modeli (LLM) servisi veya bir altyapı bileşeni (veri-
+tabanı, önbellek vb.) erişilemez durumdadır. Sistem, daha önce tamamlanmış analiz
+sonuçlarına erişimi sürdürür ancak yeni analiz başlatılamaz. Kullanıcıya uygun hata
+mesajı gösterilir.
+Bakım (Maintenance)Planlı bakım süresinde sistem geçici olarak kullanıma kapatılır.
+Kullanıcılara bakım bildirimi gösterilir.
+Her gereksinim, ilgili durum ve modlarla ilişkilidir. Fonksiyonel gereksinimler ağırlıklı
+olarakAktif – Analiz İşlemiveAktif – İnceleme ve Karardurumlarıyla; güvenilirlik ve
+hata yönetimi gereksinimleriBozulmuşdurumuyla ilişkilidir.
+2.2 YKE Fonksiyonel Gereksinimleri
+Bu bölüm, sistemin her bir fonksiyonel alanı ile ilişkili gereksinimleri ayrıntılandırmak
+üzere alt paragraflara bölünmüştür.
+2.2.1 Kullanıcı Kayıt ve Kimlik Doğrulama
+1. Sistem, kullanıcıların e-posta adresi ve şifre ile yeni hesap oluşturmasına izin vere-
+cektir.
+2. Sistem, token tabanlı bir kimlik doğrulama mekanizması kullanacaktır.
+3. Başarısız giriş denemelerinde kullanıcıya en fazla 2 saniye içinde hata mesajları
+gösterilecektir.
+Sayfa 8 / 38
+
+===== PAGE 10 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+2.2.2 Sözleşme Yükleme ve Doküman İşleme
+1. Sistem, (PDF, DOCX) formatlarını kabul edecektir.
+2. Yüklenen dosya boyutu, yapılandırılabilir bir üst limite (varsayılan 10 MB) tabi
+olacaktır.
+3. Sistem, yüklenen dokümanları otomatik olarak düz metne dönüştürecektir.
+4. Taranmış (görüntü tabanlı) belgelerde metin çıkarımı için optik karakter tanıma
+(OCR) uygulanacaktır. 10 MB büyüklüğündeki bir PDF maksimum 30 saniye içinde
+düz metne dönüştürülecektir.
+5. Dönüştürme işlemi başarısız olduğunda kullanıcıya nedenini açıklayan anlamlı bir
+hata mesajı gösterilecektir.
+6. Yüklenen orijinal dosyalar, nesne depolama servisi üzerinde güvenli biçimde sakla-
+nacaktır.
+2.2.3 Madde Ayrıştırma ve Sınıflandırma
+1. Ayrıştırma ajanı (Clause Agent), dönüştürülmüş metni sözleşme maddelerine böle-
+cektir.
+2. Her madde; gizlilik, tazminat, fesih, fikri mülkiyet, sorumluluk sınırlandırma, uyuş-
+mazlık çözümü, ödeme koşulları ve genel hükümler gibi önceden tanımlanmış kate-
+gorilere sınıflandırılacaktır.
+3. Sınıflandırma sonuçları, yapılandırılmış veri formatında döndürülecektir.
+4. Sistem, her madde için sınıflandırma güven skorunu (confidence score) hesaplaya-
+caktır.
+5. Güven skoru belirlenen eşiğin altında kalan maddeler “Belirsiz” olarak işaretlenecek
+ve kullanıcının manuel doğrulamasına sunulacaktır.
+6. 10 sayfalık standart bir sözleşmenin maddelere ayrıştırılması ve sınıflandırılması
+120 saniye içinde tamamlanacaktır. (Yanıt süresi LLM servisine göre değişkenlik
+gösterebilir.) Sınıflandırma doğruluğu en az %70 olacaktır.
+2.2.4 Politika Kontrolü ve Risk Değerlendirmesi
+1. Risk değerlendirme ajanı (Risk Agent), sınıflandırılmış maddeleri kullanıcının Play-
+book’undaki kurallarla karşılaştıracaktır.
+2. Karşılaştırma işlemi, anlamsal benzerlik araması (RAG altyapısı) kullanılarak ger-
+çekleştirilecektir.
+3. Her maddeye düşük, orta ve yüksek olmak üzere üç seviyeli bir risk derecesi atana-
+caktır.
+Sayfa 9 / 38
+
+===== PAGE 11 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+4. Risk değerlendirmesi, hem ticari hem de hukuki boyutları kapsayan çok boyutlu bir
+rubriğe dayandırılacaktır.
+5. Playbook’ta tanımlanan ancak sözleşmede yer almayan hükümler otomatik olarak
+tespit edilecek ve raporlanacaktır.
+6. Yapay zeka modelinin ürettiği risk değerlendirmeleri, deterministik kural mekaniz-
+malarıyla çapraz doğrulanacaktır.
+7. Risk değerlendirme sonuçlarında her madde için riskin gerekçesi açıklama olarak
+sunulacaktır.
+8. Bir sözleşmenin tüm maddeleri için risk değerlendirmesi 120 saniye içinde tamam-
+lanacaktır. (Yanıt süresi LLM servisine göre değişkenlik gösterebilir.)
+2.2.5 Revizyon Önerisi ve Karşılaştırmalı Görünüm
+1. Sistem, yüksek ve kritik risk seviyesindeki maddeler için otomatik olarak en az 1
+alternatif ifade öneri üretecektir. Öneri üretimi maksimum 5 saniye içinde tamam-
+lanacaktır.
+2. Öneri üretiminde kullanıcı Playbook’u bağlam olarak kullanılacaktır.
+3. Orijinal ve önerilen metinler arasındaki farklar, karşılaştırmalı (redline/diff) for-
+matta görüntülenecektir.
+4. Kullanıcı, sistem tarafından önerilen revizyon metnini doğrudan arayüz üzerinden
+düzenleyebilecektir.
+5. Gerektiğinde revize edilmiş sözleşmenin doküman formatında dışa aktarılması sağ-
+lanacaktır.
+2.2.6 Onay Akışı
+1. Onay akışı, durum makinesi mantığıyla yönetilecektir. Temel durum geçişleri:Taslak
+Oluşturuldu→İncelemede→Onay Bekliyor→Onaylandı / Reddedildi.
+2. Her madde için bağımsız olarak onay, red veya yeniden revize kararı verilebilecektir.
+Kullanıcı bir madde için karar verdikten sonra sistem bu kararı maksimum 1 saniye
+içinde kaydedecektir. Audit log kayıtları %100 doğrulukla saklanacaktır.
+3. Yüksek risk seviyesindeki maddelerde otomatik onay yapılmayacak; insan onayı zo-
+runlu olacaktır.
+4. Tüm onay ve red kararları; karar veren kullanıcı bilgisi, zaman damgası ve varsa
+yorum ile birlikte denetim izi (audit trail) olarak kaydedilecektir.
+5. Reddedilen veya revize edilen maddeler, güncellenmiş öneriyle birlikte yeniden de-
+ğerlendirme döngüsüne alınabilecektir.
+Sayfa 10 / 38
+
+===== PAGE 12 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+2.2.7 Raporlama
+1. Sistem, sözleşme inceleme sonuçlarını özet rapor olarak gösterecektir. Özet raporda
+toplam madde sayısı, risk seviyesi dağılımı ve karar durumları yer alacaktır.
+2. Detaylı rapor, her madde için kategori, risk seviyesi, risk gerekçesi, verilen karar ve
+kullanıcı yorumu bilgilerini içerecektir.
+3. Raporlar, PDF ve DOCX formatlarında indirilebilecektir.
+2.2.8 Playbook Yönetimi
+1. Kullanıcı, kendi sözleşme politikalarını (Playbook) oluşturabilecek, düzenleyebilecek
+ve silebilecektir.
+2. Playbook kuralları; kabul edilebilir ifadeler, reddedilecek ifadeler, zorunlu olması
+gereken hükümler ve sayısal eşik değerler olarak yapılandırılabilecektir.
+3. Playbook güncellendiğinde, ilgili vektörel indeksler otomatik olarak yenilenecektir.
+4. Kullanıcı,birdenfazlaPlaybooktanımlayabilecekvesözleşmeanalizindehangiPlay-
+book’un kullanılacağını seçebilecektir.
+5. Sistem, varsayılan bir Playbook şablonu sunacaktır; kullanıcılar bu şablonu temel
+alarak kendi kurallarını oluşturabilecektir.
+2.3 YKE Dış Arayüz Gereksinimleri
+Bu bölüm, sistemin harici arayüzleri (kullanıcılar, harici servisler ve diğer sistemlerle veri
+bölüşme, sağlama veya değiştirme gerektiren ilişkiler) için gereksinimleri belirtir.
+2.3.1 Arayüz Tanımlaması ve Diyagramları
+Sistemin harici arayüzleri aşağıda tanımlanmaktadır:
+Arayüz Elemanı Tip Açıklama
+Web Kullanıcı Ara-
+yüzü
+Kullanıcı–
+Sistem
+Kullanıcıların tüm sistem işlevlerine
+eriştiği web tabanlı ön yüz arayüzü.
+LLM API Arayüzü Sistem–Sistem Yapay zeka görevleri (sınıflandırma,
+risk analizi, revizyon) için harici büyük
+dil modeli servisine yapılan API çağrı-
+ları.
+RESTful API İstemci–Sunucu İstemci uygulaması ile sunucu ta-
+rafı servisleri arasındaki yapılandırılmış
+veri iletişimi.
+WebSocket Ara-
+yüzü
+Sunucu–İstemci Uzun süren işlemlerde gerçek zamanlı
+ilerleme bildirimi.
+Sayfa 11 / 38
+
+===== PAGE 13 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+2.3.2 Kullanıcı Arayüzü (UI-01)
+Sistemin kullanıcı arayüzü, web tabanlı bir dashboard üzerinden sunulacaktır. Arayüz
+tasarımında sadelik, tutarlılık ve kullanıcı dostu deneyim ön planda tutulacaktır. Aşağıda
+sistemin temel ekranları ve beklenen davranışları açıklanmaktadır.
+Giriş ve Kimlik Doğrulama EkranıKullanıcıların e-posta adresi ve şifre ile sisteme
+giriş yapabileceği ekrandır. Yeni kayıt oluşturma işlevini de içerecektir. Başarısız
+giriş denemelerinde kullanıcıya anlaşılır hata mesajları gösterilecektir.
+Ana Kontrol Paneli (Dashboard)Kullanıcının sisteme giriş yaptıktan sonra karşı-
+laştığı ana ekrandır. Bu ekranda; daha önce yüklenen sözleşmelerin listesi, her söz-
+leşmenin mevcut durumu (inceleniyor, tamamlandı, onay bekliyor gibi), genel risk
+dağılımı istatistikleri ve hızlı erişim kısayolları yer alacaktır.
+Sözleşme Yükleme EkranıKullanıcının yeni bir sözleşme dosyası yükleyebildiği ek-
+randır. Sürükle-bırak ve dosya seçici yöntemlerini destekleyecektir. Kabul edilen
+dosya formatları ve maksimum dosya boyutu konusunda kullanıcıya önceden bilgi
+verilecektir. Dosya format ve boyut doğrulaması istemci tarafında anlık olarak ya-
+pılacaktır.
+Sözleşme İnceleme ve Analiz Ekranıİncelenensözleşmenindetaylıgörünümüdür.Sol
+panelde ayrıştırılmış sözleşme maddelerinin listesi; sağ panelde seçili maddenin tam
+metni, atandığı kategori, risk seviyesi, politika uyumluluk durumu ve varsa reviz-
+yon önerisi gösterilecektir. Maddeler risk seviyelerine göre renk kodlaması ile görsel
+olarak ayrıştırılacaktır (örn. düşük risk için yeşil, kritik risk için kırmızı tonları).
+Karşılaştırmalı Görünüm (Redline) EkranıOrijinal madde metni ile önerilen reviz-
+yon metninin yan yana veya satır içi karşılaştırmalı biçimde gösterildiği ekrandır.
+Metne eklenen kısımlar ve silinen kısımlar farklı renklerle vurgulanarak kullanıcının
+değişiklikleri hızlıca kavraması sağlanacaktır.
+Onay Akışı PaneliHer sözleşme maddesi için karar verme ekranıdır. Kullanıcı, her
+madde için onayla, reddet veya yeniden revize et seçeneklerinden birini işaretle-
+yebilecektir. Her karara açıklayıcı yorum eklenebilir. Daha önce verilmiş kararların
+geçmişi kronolojik olarak listelenecektir. İsteğe bağlı olarak toplu karar verme (bir-
+den fazla maddeyi aynı anda onaylama/reddetme) desteği sunulacaktır.
+Rapor ve Dışa Aktarım Ekranıİnceleme sürecinin sonuçlarının özet ve detaylı rapor
+olarak görüntülendiği ekrandır. Raporlar; toplam madde sayısı, risk seviyesi dağı-
+lımı, verilen kararların özeti ve madde bazlı detayları içerecektir. Kullanıcı, raporları
+ve revize edilmiş sözleşme taslağını dosya olarak indirebilecektir.
+Playbook Yönetim EkranıKullanıcının kendi sözleşme politikalarını oluşturduğu ve
+yönettiği ekrandır. Kabul edilebilir madde ifadeleri, reddedilmesi gereken hükümler
+ve eşik değerler bu ekran üzerinden tanımlanacaktır. Mevcut Playbook kuralları
+listelenebilecektir, düzenlenebilecektir ve silinebilecektir.
+Genel Kullanıcı Arayüzü Gereksinimleri:
+Sayfa 12 / 38
+
+===== PAGE 14 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+•Arayüzresponsivetasarımasahipolacakvemasaüstütarayıcılarda(minimum1280×720
+piksel çözünürlük) görüntüleme sağlayacaktır.
+•Tüm kullanıcı işlemleri için anlık görsel geri bildirim sağlanacaktır (yükleniyor gös-
+tergesi, başarı bildirimi, hata mesajı vb.).
+•Sözleşme analizi, risk skorlama sırasında kullanıcıya ilerleme durumu gerçek zamanlı
+olarak bildirilecektir.
+•Arayüz dili Türkçe olacaktır.
+Veri Elemanları:
+Kullanıcı arayüzü üzerinden sağlanacak ve görüntülenecek temel veri elemanları aşağıda
+belirtilmiştir:
+•Sözleşme dosyası (girdi):PDF veya DOCX formatında, maksimum 10 MB bo-
+yutunda dosya.
+•Madde listesi (çıktı):Madde sıra numarası (tam sayı), madde metni (metin),
+kategori (metin), risk seviyesi (düşük/orta/yüksek), güven skoru (0–1 arası ondalık).
+•Revizyon önerisi (çıktı):Orijinal metin (metin), önerilen metin (metin), fark
+görünümü (HTML formatında).
+•Karar bilgisi (girdi):Karar türü (onaylandı/reddedildi/revize), kullanıcı yorumu
+(metin, isteğe bağlı).
+•Rapor (çıktı):Özet rapor verileri (sayısal istatistikler), detaylı rapor (madde bazlı
+tablo formatında).
+2.3.3 LLM Servisi Arayüzü
+Sistem, madde sınıflandırma, risk değerlendirme, revizyon önerisi üretimi ve doğal dil an-
+lama görevlerini yerine getirmek için harici bir büyük dil modeli servisine bağlanacaktır.
+İletişim, standart API çağrılarıyla sağlanacak ve veri alışverişinde JSON formatı kullanı-
+lacaktır.
+•Arayüz tipi:Gerçek zamanlı veri transferi (istek/yanıt).
+•Öncelik:Yüksek – analiz işlemlerinin temel bağımlılığıdır.
+•Veri formatı:JSON (UTF-8 kodlamalı metin).
+•Güvenlik:API anahtarı ile kimlik doğrulama; HTTPS üzerinden şifrelenmiş ileti-
+şim.
+2.3.4 Veritabanı Arayüzü
+Kullanıcı hesapları, sözleşme meta verileri, ayrıştırılmış madde kayıtları, risk değerlen-
+dirme sonuçları, onay kararları ve denetim izi (audit trail) verilerinin kalıcı olarak saklan-
+ması için ilişkisel bir veritabanı kullanılacaktır.
+Sayfa 13 / 38
+
+===== PAGE 15 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+2.3.5 Vektör Arama Arayüzü
+Sözleşme maddelerinin ve Playbook kurallarının vektörel temsillerinin saklanması ve an-
+lamsal benzerlik araması yapılması için bir vektör arama bileşeni kullanılacaktır.
+2.3.6 Önbellek Arayüzü
+Kullanıcı oturum bilgilerinin, ajan iş akışı durumlarının ve sık erişilen verilerin geçici
+olarak saklanması için bir bellek içi (in-memory) veri deposu kullanılacaktır. Bu bile-
+şen, tekrarlayan sorguların hızlandırılması ve kısa ömürlü durum verilerinin yönetilmesi
+amacıyla görev yapacaktır.
+2.3.7 Nesne Depolama Arayüzü
+Kullanıcılarınyüklediğisözleşmedosyalarının(PDF, DOCX)ve sistemtarafındanüretilen
+rapor dosyalarının güvenli biçimde saklanması için bir nesne depolama (object storage)
+servisi kullanılacaktır.
+2.3.8 İletişim Yöntemleri
+Sistem bileşenleri arasındaki iletişimde aşağıdaki protokoller kullanılacaktır:
+Protokol Katman Kullanım Amacı
+HTTPS / REST /
+JSON
+Uygulama Sunucu tarafı API uç noktaları ile is-
+temci ve harici servisler arasındaki ya-
+pılandırılmış veri alışverişi.
+WebSocket (WSS) Uygulama Uzun süren ajan işlemleri (sözleşme
+analizi, risk skorlama, revizyon üre-
+timi) sırasında kullanıcıya gerçek za-
+manlı ilerleme bildirimi gönderilmesi.
+TCP/IP İletim Veritabanı, önbellek ve nesne depolama
+bileşenlerine yapılan iç ağ bağlantıları.
+2.4 YKE Dahili Arayüz Gereksinimleri
+Sistemin dahili arayüzleri, çok ajanlı yapı içindeki bileşenler arasındaki iç iletişimi kapsar.
+Aşağıdaki dahili arayüzler tanımlanmıştır:
+1.Orkestratör – Ajan İletişimi:Orkestrasyon mekanizması, ayrıştırma ajanı, sınıf-
+landırma ajanı, risk değerlendirme ajanı ve müzakere ajanı arasındaki görev dağıtım
+ve sonuç toplama iletişimi yapılandırılmış mesaj formatıyla (JSON) gerçekleştirile-
+cektir.
+2.API Katmanı – Ajan Katmanı:Sunucu tarafı API, ajan orkestratörüne görev
+başlatma istekleri gönderecek ve sonuçları alacaktır. Bu iletişim, asenkron kuyruk
+veya doğrudan fonksiyon çağrısı mekanizmasıyla sağlanacaktır.
+Sayfa 14 / 38
+
+===== PAGE 16 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+3.Ajan Katmanı – Veri Katmanı:Ajanlar, veritabanı ve vektör arama altyapısına
+erişim için ortak bir veri erişim katmanı (repository pattern) kullanacaktır.
+4.Konteyner İçi İletişim:Konteynerize edilen servisler arasındaki iletişim, iç ağ
+(internal network) üzerinden sağlanacaktır.
+2.5 YKE Dahili Veri Gereksinimleri
+Sistem, farklı veri türlerinin etkin yönetimi için çok katmanlı bir veri depolama stratejisi
+kullanacaktır.
+2.5.1 İlişkisel Veritabanı
+Yapılandırılmış verilerin kalıcı olarak saklanması için ilişkisel bir veritabanı yönetim sis-
+temi kullanılacaktır. Aşağıdaki temel veri kümeleri sistemde yer alacaktır:
+1.Kullanıcılar:Kullanıcı hesap bilgileri: benzersiz tanımlayıcı (id), e-posta adresi,
+şifre hash değeri, ad-soyad, hesap oluşturma tarihi, son güncelleme tarihi ve aktiflik
+durumu.
+2.Sözleşmeler:Yüklenen sözleşmelerin meta verileri: benzersiz tanımlayıcı, ilişkili
+kullanıcı referansı, dosya adı, depolama yolu, yükleme tarihi, işleme durumu (yük-
+lendi, işleniyor, tamamlandı, hata) ve toplam madde sayısı.
+3.Maddeler:Ayrıştırılmış sözleşme maddeleri: benzersiz tanımlayıcı, ilişkili sözleşme
+referansı, madde sıra numarası, orijinal metin, atanan kategori, güven skoru.
+4.RiskDeğerlendirmeleri:Riskanalizisonuçları:benzersiztanımlayıcı,ilişkilimadde
+referansı, risk seviyesi (düşük/orta/yüksek), risk gerekçesi açıklaması, değerlendirme
+tarihi.
+5.Revizyon Önerileri:Üretilen alternatif ifade önerileri: benzersiz tanımlayıcı, iliş-
+kili madde referansı, önerilen metin, kullanılan bağlam bilgisi, oluşturma tarihi.
+6.Onay Kararları:Madde bazlı karar kayıtları: benzersiz tanımlayıcı, ilişkili madde
+referansı, karar türü (onaylandı/reddedildi/revize), kullanıcı yorumu, karar veren
+kullanıcı referansı, karar tarihi ve zaman damgası.
+7.Politika Tanımları (Playbook):Kullanıcı politika kayıtları: benzersiz tanımla-
+yıcı, ilişkili kullanıcı referansı, politika adı, açıklama, kural kümesi (yapılandırılmış
+veri formatında), oluşturma ve güncelleme tarihleri.
+8.Denetim Günlüğü (Audit Log):Sistemdeki tüm kritik işlemlerin denetim kaydı:
+benzersiz tanımlayıcı, ilişkili kullanıcı referansı, işlem tipi, detay açıklaması ve za-
+man damgası.
+Sayfa 15 / 38
+
+===== PAGE 17 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+2.5.2 Vektör Veritabanı
+1. SözleşmemaddelerininvePlaybookkurallarınınanlamsaltemsilleri(embeddingvek-
+törleri), vektörel arama yapılabilecek bir altyapıda saklanacaktır.
+2. Vektör boyutu, kullanılan embedding modeline uygun olarak yapılandırılabilir ola-
+caktır.
+3. Anlamsal benzerlik sorguları için uygun bir mesafe metriği (cosine similarity vb.)
+ile indeksleme yapılacaktır.
+4. Vektör veritabanı, ilişkisel veritabanı ile entegre çalışabilecek; madde ve politika
+kayıtları arasında referans bütünlüğü korunacaktır.
+2.5.3 Önbellek ve Durum Yönetimi
+1. Kullanıcı oturum bilgileri, bellek içi veri deposunda saklanacaktır. Oturum süresi
+yapılandırılabilir olacaktır.
+2. Ajan iş akışı durumları (orkestrasyon durum bilgileri), geçici olarak bellek içi depoda
+tutulacaktır.
+3. Sık erişilen Playbook kuralları ve referans madde verileri önbelleğe alınarak tekrar-
+layan sorguların hızlandırılması sağlanacaktır.
+4. Önbellek verileri için uygun bir geçersizleştirme (cache invalidation) stratejisi uygu-
+lanacaktır.
+2.5.4 Dosya Depolama
+1. Yüklenen sözleşme dosyaları (PDF, DOCX) nesne depolama servisinde kullanıcı
+bazlı mantıksal klasör yapısında saklanacaktır.
+2. Dosyalara doğrudan yetkisiz erişim engellenecektir.
+2.6 Uyarlama Gereksinimleri
+1. Sistem, farklı hukuki alanlara (kira sözleşmeleri, ticari anlaşmalar, iş sözleşmeleri
+vb.) uyarlanabilecek şekilde yapılandırılabilir olacaktır. Bu uyarlama, Playbook ku-
+ralları ve sınıflandırma kategorileri aracılığıyla gerçekleştirilecektir.
+2. İlk sürümde yalnızca Türkçe dil desteği sunulacak olup, dil parametresi yapılandı-
+rılabilir bir şekilde tasarlanacak ve gelecekte çoklu dil desteği eklenebilecektir.
+3. Risk değerlendirme rubriği ve eşik değerler, farklı sektörel ihtiyaçlara göre ayarla-
+nabilecektir.
+4. Dosya boyutu üst limiti, desteklenen dosya formatları ve zaman aşımı süreleri gibi
+işletimsel parametreler ortam değişkenleri veya yapılandırma dosyaları aracılığıyla
+değiştirilebilecektir.
+Sayfa 16 / 38
+
+===== PAGE 18 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+2.7 Emniyet Gereksinimleri
+1. Sistem, hukuki tavsiye niteliği taşımaz ve bir avukatın yerini almayı hedeflemez.
+Nihai karar ve sorumluluk her zaman kullanıcıya aittir. Bu uyarı, analiz sonuç ek-
+ranlarında açıkça gösterilecektir.
+2. Yüksek risk seviyesindeki maddelerde otomatik onay mekanizması uygulanmayacak;
+bu maddelerde insan onayı zorunlu olacaktır. Bu önlem, hatalı otomatik onaydan
+kaynaklanabilecek ticari ve hukuki zararları önlemeye yöneliktir.
+3. Yapay zeka modelinin ürettiği tüm çıktılar (sınıflandırma, risk skoru, revizyon öne-
+risi), deterministik olmayan doğası gereği yanlış pozitif veya yanlış negatif sonuçlar
+içerebilir; bu nedenle çapraz doğrulama mekanizmaları uygulanacak ve kullanıcıya
+sonuçların “yapay zeka destekli ön değerlendirme” niteliğinde olduğu bildirilecektir.
+4. Kritik işlemlerde (toplu onay, sözleşme silme vb.) kullanıcıdan onay istenerek kazara
+yapılan işlemler önlenecektir.
+2.8 Güvenlik ve Gizlilik Gereksinimleri
+1. Kullanıcı şifreleri, endüstri standardı tek yönlü hash algoritmaları (bcrypt veya ar-
+gon2) ile saklanacaktır.
+2. Şifreler en az 12 karakter uzunluğunda olacaktır.
+3. Token geçerlilik süresi maksimum 60 dakika olacaktır.
+4. 3 başarısız girişten sonra hesap 5 dakika kilitlenecektir.
+5. Kimlik doğrulama token’ları imzalanacak ve geçerlilik süresi sınırlandırılacaktır.
+6. Harici servis anahtarları ve kimlik bilgileri, ortam değişkenlerinde veya güvenli bir
+sır yönetimi (secret management) çözümünde saklanacak; kaynak kodda açık metin
+olarak bulunmayacaktır.
+7. Kullanıcılar yalnızca kendi hesaplarına ait sözleşmelere ve verilere erişebilecektir
+(yetkilendirme kontrolü).
+8. Tüm güvenlik olayları (başarısız giriş denemeleri, yetki ihlali girişimleri vb.) logla-
+nacaktır.
+9. İstemci ile sunucu arasındaki tüm iletişim HTTPS protokolü üzerinden şifrelenecek-
+tir.
+10. Kullanıcıların yüklediği sözleşme verileri üçüncü taraflarla paylaşılmayacaktır. Ha-
+rici LLM servisine gönderilen veriler için gizlilik politikası kullanıcıya açıkça bildi-
+rilecektir.
+11. Kullanıcı istediğinde hesabına ait tüm verilerin silinmesini talep edebilecektir.
+Sayfa 17 / 38
+
+===== PAGE 19 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+2.9 YKE Ortam Gereksinimleri
+1. Sistem, konteyner teknolojisi (Docker) destekleyen herhangi bir Linux tabanlı su-
+nucu ortamında çalıştırılabilecektir.
+2. İstemci tarafı için modern web tarayıcıları (Google Chrome, Mozilla Firefox, Mic-
+rosoft Edge, Safari’nin güncel sürümleri) desteklenecektir.
+3. Tüm sunucu tarafı bileşenlerinin birbirinden izole, tekrarlanabilir ve ortam bağımsız
+biçimde çalıştırılabilmesi için bir konteynerizasyon platformu kullanılacaktır.
+2.10 Bilgisayar Kaynak Gereksinimleri
+2.10.1 Bilgisayar Donanım Gereksinimleri
+Sunucu tarafı için asgari donanım gereksinimleri:
+•İşlemci:En az 4 çekirdekli x86_64 mimarisi işlemci.
+•Bellek (RAM):Minimum 8 GB RAM (16 GB önerilir).
+•Disk Alanı:Minimum 50 GB SSD depolama (veritabanı, dosya depolama ve kon-
+teyner imajları dahil).
+•Ağ:Minimum 100 Mbps ağ bağlantısı.
+İstemci tarafı için:
+•Güncel web tarayıcısı çalıştırabilen herhangi bir masaüstü veya dizüstü bilgisayar.
+•Minimum 1280×720 piksel ekran çözünürlüğü.
+2.10.2 Bilgisayar Donanımı Kaynak Kullanımı Gereksinimleri
+1. Normal işletim koşullarında (5 eş zamanlı kullanıcı) sunucu CPU kullanımı ortalama
+%60’ın altında kalacaktır.
+2. Bellek kullanımı, tahsis edilen RAM kapasitesinin %80’ini aşmayacaktır.
+3. Disk I/O performansı, veritabanı sorgularının ortalama 50 ms altında yanıt verme-
+sini sağlayacak düzeyde olacaktır.
+2.10.3 Bilgisayar Yazılım Gereksinimleri
+Sistemin çalışması için gereken yazılım bileşenleri:
+•İşletim Sistemi:Linux (Ubuntu 22.04 LTS veya eşdeğeri).
+•Konteyner Platformu:Docker ve Docker Compose.
+Sayfa 18 / 38
+
+===== PAGE 20 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+•Veritabanı:İlişkisel veritabanı yönetim sistemi (PostgreSQL veya eşdeğeri).
+•Önbellek:Bellek içi veri deposu (Redis veya eşdeğeri).
+•Nesne Depolama:S3 uyumlu nesne depolama servisi (MinIO veya eşdeğeri).
+•Vektör Veritabanı:Vektörel arama altyapısı (Qdrant, Pinecone veya eşdeğeri).
+2.10.4 Bilgisayar İletişim Gereksinimleri
+1. Sunucu, harici LLM API servisine kesintisiz HTTPS erişimi sağlayacaktır.
+2. Konteynerler arası iletişim, Docker iç ağı (bridge network) üzerinden sağlanacaktır.
+3. Kullanıcıdan sunucuya iletişim için HTTPS (443 portu) kullanılacaktır.
+4. WebSocket bağlantıları için WSS (güvenli WebSocket) protokolü desteklenecektir.
+2.11 Yazılım Kalite Faktörleri
+1.Fonksiyonellik:Sistem, belirtilen tüm işlevsel gereksinimleri eksiksiz olarak yerine
+getirecektir.
+2.Güvenilirlik:Harici dil modeli servisi kesintiye uğradığında, sistem kullanıcıya
+durumu bildiren uygun bir hata mesajı gösterecek ve daha önce tamamlanmış analiz
+sonuçlarına erişimi sürdürecektir. Sözleşme madde sınıflandırmasında en az %70
+doğruluk oranı hedeflenecektir.
+3.İdame Edilebilirlik:Sistem, modüler bir mimari üzerine inşa edilecektir; her bile-
+şen (ajan, API, arayüz vb.) bağımsız olarak güncellenebilecek ve dağıtılabilecektir.
+Birim test kapsama oranı en az %60 olacaktır.
+4.Erişilebilirlik:Sistem, 7 gün 24 saat erişilebilir olacaktır (planlı bakım süreleri
+hariç). Konteynerize mimari sayesinde servisler, hata durumunda hızlı bir şekilde
+yeniden başlatılabilecektir.
+5.Esneklik:Playbook mekanizması aracılığıyla farklı sektörlere ve hukuki alanlara
+uyarlanabilecektir. Yeni sınıflandırma kategorileri ve risk rubrik parametreleri yapı-
+landırma ile eklenebilecektir.
+6.Taşınabilirlik:Sistem, konteyner teknolojisi aracılığıyla farklı işletim sistemlerinde
+(Linux, macOS, Windows) çalıştırılabilecektir. Tüm konfigürasyon parametreleri,
+ortam değişkenleri veya harici yapılandırma dosyaları ile yönetilecek; kod içine sabit
+kodlanmayacaktır.
+7.Yeniden Kullanılabilirlik:Ajan mimarisi, farklı doküman analiz senaryolarında
+yeniden kullanılabilecek şekilde tasarlanacaktır.
+8.Test Edilebilirlik:Birim, entegrasyon ve uçtan uca test senaryoları CI/CD hat-
+tında otomatik olarak çalıştırılacaktır.
+Sayfa 19 / 38
+
+===== PAGE 21 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+9.Kullanılabilirlik:Yeni kullanıcı onboarding sürecini maksimum 5 dakika içinde
+tamamlayabilmelidir, hukuki terminolojiye aşina olmayan kullanıcılar için açıklayıcı
+etiketler ve ipuçları sunulacaktır. Kullanıcı sözleşme yükleme işlemini en fazla 3
+adımda gerçekleştirebilmelidir.
+2.12 Tasarım ve Uygulama Kısıtlamaları
+1. Sistem, doğal dil işleme ve metin üretimi görevlerinde harici bir büyük dil modeli
+(LLM) servisine bağımlıdır. Bu servisin erişilebilirliği ve yanıt kalitesi, sistem per-
+formansını doğrudan etkileyecektir.
+2. Optik karakter tanıma (OCR) doğruluğu, yüklenen taranmış dokümanların görüntü
+kalitesine bağlıdır; düşük çözünürlüklü veya bozuk taramalar hatalı metin çıktısına
+yol açabilecektir.
+3. İlk sürümde yalnızca Türkçe sözleşme metinleri desteklenecektir.
+4. Yapay zeka modelinin ürettiği tüm çıktılar, deterministik olmayan doğası gereği
+yanlış pozitif veya yanlış negatif sonuçlar içerebilecektir.
+5. Kod tabanı, dilin ve çerçevenin belirlediği stil kılavuzlarına ve en iyi uygulamalara
+uygun olacaktır.
+6. Sürekli entegrasyon ve sürekli dağıtım (CI/CD) hattı aracılığıyla otomatik derleme,
+test ve dağıtım süreçleri uygulanacaktır.
+7. Kod tabanı, versiyon kontrol sistemi (Git) üzerinde yönetilecektir.
+8. Veritabanı şeması, migration araçları ile versiyonlanacak ve şema değişiklikleri geri
+alınabilir olacaktır.
+9. Büyümenin beklendiği alanlar (çoklu dil desteği, gelişmiş analiz modülleri) için ge-
+nişleyebilir bir mimari sağlanacaktır.
+2.13 Personelle İlgili Gereksinimler
+1. Sistem, eş zamanlı en az 5 aktif kullanıcıyı kabul edilebilir performans düzeyinde
+destekleyecektir.
+2. Bireysel kullanıcılar, KOBİ yöneticileri ve hukuk danışmanları olmak üzere farklı
+yetenek seviyelerindeki kullanıcı grupları desteklenecektir. Hukuki ön bilgi gerektir-
+meyen, sezgisel bir arayüz sunulacaktır.
+3. Hata mesajları açık ve anlaşılır olacak; kullanıcıyı sonraki adıma yönlendirecektir.
+4. Kritik göstergeler (risk renk kodlaması, onay durumları) görsel olarak belirgin bi-
+çimde sunulacaktır.
+Sayfa 20 / 38
+
+===== PAGE 22 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+2.14 Eğitimle İlgili Gereksinimler
+1. Sistem, ilk kullanıma yönelik bir başlangıç rehberi (onboarding wizard) içerecektir.
+2. Playbook oluşturma ve sözleşme analizi süreçleri için bağlam içi yardım metinleri
+(tooltip, info box) sağlanacaktır.
+3. Kullanıcı dokümantasyonu (kullanım kılavuzu) web tabanlı olarak erişilebilir ola-
+caktır.
+4. Sistem yöneticileri için kurulum, yapılandırma ve bakım süreçlerini kapsayan teknik
+dokümantasyon hazırlanacaktır.
+2.15 Lojistikle İlgili Gereksinimler
+1. Sistem, Docker imajları olarak paketlenecek ve konteyner kayıt defterinde (container
+registry) yayımlanacaktır.
+2. Dağıtım ve kurulum için Docker Compose veya eşdeğeri orkestrasyon dosyaları sağ-
+lanacaktır.
+3. Sistem güncellemeleri, sıfır kesinti veya minimum kesinti ile uygulanabilecek şekilde
+tasarlanacaktır.
+4. Yedekleme ve geri yükleme prosedürleri dokümante edilecektir.
+2.16 Diğer Gereksinimler
+1. API yanıt süreleri (harici LLM çağrıları hariç) ortalama 500 milisaniyenin altında
+olacaktır.
+2. Sözleşme analizi, toplu risk değerlendirme gibi uzun süren işlemlerde zaman aşımı
+mekanizması uygulanacak ve kullanıcıya bildirilecektir.
+3. Sistem, beklenmeyen bir hata sonrasında veri bütünlüğünü koruyacak şekilde kur-
+tarılabilir olacaktır.
+2.17 Ambalajlama Gereksinimleri
+1. Sistem, Docker konteyner imajları olarak paketlenecektir. Her mikro servis/bileşen
+ayrı bir imaj olarak dağıtılacaktır.
+2. İmajlar, sürüm etiketi (tag) ile versiyonlanacak ve konteyner kayıt defterinde sak-
+lanacaktır.
+3. Dağıtımpaketi;DockerComposedosyası,ortamdeğişkenleriörnekdosyası(.env.example)
+ve kurulum talimatlarını (README) içerecektir.
+Sayfa 21 / 38
+
+===== PAGE 23 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+2.18 Gereksinimlerin Önceliği ve Kritikliği
+Aşağıdaki tablo, gereksinimlerin göreceli önem sırasını belirtmektedir:
+Gereksinim Alanı Öncelik Kritiklik Açıklama
+Güvenlik ve Gizlilik Çok Yüksek Kritik Kullanıcı verileri
+ve sözleşme içe-
+riklerinin korun-
+ması.
+Emniyet (İnsan Onayı) Çok Yüksek Kritik Yüksek riskli
+maddelerde
+otomatik onay
+engeli.
+Fonksiyonel Gereksinimler
+(Analiz)
+Yüksek Yüksek Ayrıştırma, sı-
+nıflandırma, risk
+analizi temel
+işlevleri.
+Dış Arayüz (Kullanıcı Ara-
+yüzü)
+Yüksek Yüksek Kullanıcı dene-
+yiminin sağlan-
+ması.
+Dahili Veri Gereksinimleri Yüksek Yüksek Veri bütünlüğü
+ve kalıcılık.
+Performans Orta Orta Yanıt süreleri ve
+eş zamanlı kulla-
+nıcı desteği.
+Uyarlama ve Esneklik Orta Orta Farklı sektörlere
+uyarlanabilirlik.
+Eğitim ve Dokümantasyon Düşük Düşük Kullanıcı ve
+yönetici kılavuz-
+ları.
+Lojistik Düşük Düşük Dağıtım süreç-
+leri.
+Sayfa 22 / 38
+
+===== PAGE 24 =====
+Yazılım Gereksinimleri Belirtimi (SRS) Lagent
+3 EK MATERYALLER
+3.1 Kullanım Senaryoları Özeti
+Aşağıdaki tablo, sistemin destekleyeceği temel kullanım senaryolarını özetlemektedir. Her
+senaryonun detaylı akışı, alternatif akışları ve hata durumları SDD dokümanında ele alı-
+nacaktır.
+3.1.1 Genel Kullanım Senaryosu Diyagramı
+Şekil 1, sistemin tüm kullanım senaryolarını ve aktörlerle olan ilişkilerini genel bir bakışla
+göstermektedir.
+Multi-Agent Legal Ops - Use Case Diyagramı
+Multi-Agent Legal Ops
+(Çok AjanlıSözleşmeİnceleme ve Müzakere Orkestratörü)
+UC-01
+KullanıcıKaydıve
+Girişi
+UC-02
+Sözleşme Yükleme
+UC-03
+Otomatik Ayrıştırma
+ve Sınıflandırma
+UC-04
+Risk Analizi
+Görüntüleme
+UC-05
+Revizyon Önerisi
+İnceleme
+UC-06
+Madde Bazlı
+Karar Verme
+UC-07
+Karşılaştırmalı İnceleme
+(Redline)
+UC-08
+Rapor Oluşturma
+veİndirme
+UC-09
+Playbook Oluşturma
+ve Yönetimi
+UC-10
+Revize Sözleşme
+Dışa Aktarımı
+UC-11
+Kullanıcıve Sistem
+YapılandırmasınıYönet
+DosyayıDüz Metne
+Dönüştür
+OCR Uygula
+Madde Sınıflandırma
+(Clause Agent)
+Politika Kontrolü
+(Risk Agent)
+Revizyon Önerisi Üret
+(Negotiation Agent)
+Denetimİzi Kaydet
+(Audit Trail)
+Kimlik Doğrulama
+(Token Tabanlı)
+Manuel Doğrulama
+(Düşük Güven Skoru)
+Bireysel Kullanıcı
+KOBİYöneticisi
+Hukuk Danışmanı
+Sistem Yöneticisi
+Kullanıcı
+LLM Servisi
+«system»
+OCR Servisi
+«system»
+«include»
+«include»
+«include»
+«include»
+«include»
+«extend»
+[taranmışbelge ise]
+«extend»
+[güven skoru düşük ise]
+«extend»
+[yüksek/kritik risk ise]
+«include»
+«triggers»
+Şekil 1: Genel Kullanım Senaryosu (Use Case) Diyagramı
+3.1.2 Kullanım Senaryoları Tablosu
+ID Senaryo Açıklama
+UC-01 Kullanıcı Kaydı ve Gi-
+rişi
+Kullanıcı sisteme kayıt olur ve kimlik doğrula-
+ması ile giriş yapar.
+UC-02 Sözleşme Yükleme Kullanıcı,incelenmesiniistediğisözleşmedosya-
+sını sisteme yükler.
+Sayfa 23 / 38
+
+===== PAGE 25 =====
+ID Senaryo Açıklama
+UC-03 Otomatik Ayrıştırma
+ve Sınıflandırma
+Sistem, yüklenen sözleşmeyi maddelere ayırır ve
+her maddeyi hukuki kategorilere sınıflandırır.
+UC-04 Risk Analizi Görüntü-
+leme
+Kullanıcı, her maddenin risk seviyesini, risk ge-
+rekçesini ve politika uyumluluk durumunu ince-
+ler.
+UC-05 RevizyonÖnerisiİnce-
+leme
+Kullanıcı, riskli maddeler için üretilen alternatif
+ifadeleri görüntüler, karşılaştırır ve değerlendi-
+rir.
+UC-06 Madde Bazlı Karar
+Verme
+Kullanıcı,hermaddeiçinonay,redveyayeniden
+revize kararı verir ve gerekirse yorum ekler.
+UC-07 Karşılaştırmalı İnce-
+leme (Redline)
+Kullanıcı,orijinalveönerilenmetinleriyanyana
+karşılaştırmalı görünümde inceler.
+UC-08 Rapor Oluşturma ve
+İndirme
+Kullanıcı, inceleme sonuçlarını özet veya detaylı
+rapor olarak görüntüler ve dosya formatında in-
+dirir.
+UC-09 Playbook Oluşturma
+ve Yönetimi
+Kullanıcı, kendi sözleşme politikalarını tanım-
+lar, düzenler ve analiz için etkinleştirir.
+UC-10 Revize Sözleşme Dışa
+Aktarımı
+Kullanıcı, onaylanan değişikliklerle güncellen-
+miş sözleşme taslağını dosya olarak indirir.
+UC-11 Kullanıcı ve Sistem
+Yapılandırması Yöne-
+timi
+Sistem yöneticisi, kullanıcı hesaplarını ve sistem
+yapılandırma parametrelerini yönetir.
+3.1.3 Kullanım Senaryosu Diyagramları
+Aşağıda her bir kullanım senaryosunun detaylı diyagramları yer almaktadır.
+
+===== PAGE 26 =====
+UC-01: KullanıcıKaydıve Girişi
+Multi-Agent Legal Ops
+UC-01
+KullanıcıKaydıve Girişi Yeni Hesap Oluştur
+E-posta/Şifre ile GirişYap Token Tabanlı
+Kimlik Doğrulama
+Hata MesajıGöster
+(Başarısız Giriş)
+Bireysel Kullanıcı
+KOBİYöneticisi
+Hukuk Danışmanı Sistem Yöneticisi
+Kullanıcı
+Ön Koşul:Kullanıcısisteme erişim sağlamışolmalıdır.
+Son Koşul:Kullanıcıbaşarıyla girişyapar ve
+token alır veya hata mesajıgörür.
+Temel Akış:
+1. Kullanıcıe-posta veşifre girer
+2. Sistem kimlik doğrulamasıyapar
+3. Token üretilir ve oturum başlar
+Alternatif Akış:
+- Yeni kullanıcıkayıt olur
+- Başarısız girişte hata mesajıgösterilir
+«include»
+«include»
+«include»
+«extend»
+[başarısız giriş]
+Şekil 2: UC-01: Kullanıcı Kaydı ve Girişi
+
+===== PAGE 27 =====
+UC-02: Sözleşme Yükleme
+Multi-Agent Legal Ops
+UC-02
+Sözleşme Yükleme
+Dosya Format ve Boyut
+Doğrulaması
+Düz Metne Dönüştür
+OCR Uygula
+Nesne Depolamaya Kaydet
+Hata MesajıGöster
+(Dönüştürme Başarısız)
+Kullanıcı
+OCR Servisi
+«system»
+Ön Koşul:Kullanıcıgirişyapmışolmalıdır.
+Son Koşul:Dosya sisteme yüklenir, düz metne
+dönüştürülür ve depolanır.
+Temel Akış:
+1. Kullanıcıdosyayısürükle-bırak veya dosya seçici
+ile yükler (PDF, DOCX)
+2.İstemci tarafında format ve boyut doğrulamasıyapılır
+(maks. 10 MB)
+3. Dosya nesne depolamaya kaydedilir
+4. Doküman düz metne dönüştürülür
+Alternatif Akış:
+- Taranmışbelgeler için OCR uygulanır
+- Dönüştürme başarısız olursa hata mesajıgösterilir
+«include»
+«include»
+«include»
+«extend»
+[taranmışbelge ise]
+«extend»
+[dönüştürme hatası]
+Şekil 3: UC-02: Sözleşme Yükleme
+
+===== PAGE 28 =====
+UC-03: Otomatik Ayrıştırma ve Sınıflandırma
+Multi-Agent Legal Ops
+UC-03
+Otomatik Ayrıştırma
+ve Sınıflandırma
+Maddelere Bölme
+(Clause Agent)
+Hukuki Kategoriye
+Sınıflandırma
+Güven Skoru Hesapla
+Belirsiz Olarakİşaretle
+(Manuel Doğrulama)
+Kullanıcı
+LLM Servisi
+«system»
+Ön Koşul:Sözleşme dosyasıbaşarıyla
+düz metne dönüştürülmüşolmalıdır (UC-02).
+Son Koşul:Her madde bir hukuki kategoriye
+atanır ve güven skoru hesaplanır.
+Kategoriler:
+Gizlilik, Tazminat, Fesih, Fikri Mülkiyet,
+Sorumluluk Sınırlandırma, Uyuşmazlık Çözümü,
+Ödeme Koşulları, Genel Hükümler
+Alternatif Akış:
+- Düşük güven skorlu maddeler "Belirsiz" olarak
+işaretlenir ve kullanıcıya sunulur
+«include»
+«include»
+«include»
+«extend»
+[güven skoru eşiğin
+altında ise]
+Şekil 4: UC-03: Otomatik Ayrıştırma ve Sınıflandırma
+
+===== PAGE 29 =====
+UC-04: Risk Analizi Görüntüleme
+Multi-Agent Legal Ops
+UC-04
+Risk Analizi
+Görüntüleme
+Politika Kontrolü
+(Risk Agent)
+RAG ile Anlamsal
+Benzerlik Araması
+Çok Boyutlu Risk
+Derecelendirme
+Çapraz Doğrulama
+(Kural Motoru)
+Eksik Hüküm Tespiti
+Risk Gerekçesi
+AçıklamaKullanıcı
+Hukuk Danışmanı
+LLM Servisi
+«system»
+Ön Koşul:Maddeler sınıflandırılmışolmalıdır (UC-03).
+Kullanıcının en az bir Playbook tanımlanmışolmalıdır.
+Son Koşul:Her maddeye risk seviyesi (düşük/orta/
+yüksek/kritik) atanır ve gerekçe sunulur.
+Temel Akış:
+1. Risk Agent sınıflandırılmışmaddeleri alır
+2. RAG ile Playbook kurallarına karşıkarşılaştırır
+3. Ticari ve hukuki boyutlarla risk derecelendirmesi yapar
+4. Kural motoru ile çapraz doğrulama yapılır
+5. Her madde için risk gerekçesi oluşturulur
+Alternatif Akış:
+- Eksik hükümler otomatik tespit edilip raporlanır
+«include»
+«include»
+«include»
+«include»
+«include»
+«extend»
+[Playbook'ta tanımlıancak
+sözleşmede eksik hüküm varsa]
+Şekil 5: UC-04: Risk Analizi Görüntüleme
+
+===== PAGE 30 =====
+UC-05: Revizyon Önerisiİnceleme
+Multi-Agent Legal Ops
+UC-05
+Revizyon Önerisi
+İnceleme
+Alternatifİfade
+Önerisi Üret
+(Negotiation Agent)
+Playbook Bağlamı
+Kullan
+Revizyon Metnini
+Düzenle
+Kullanıcı
+Hukuk Danışmanı
+LLM Servisi
+«system»
+Ön Koşul:Risk analizi tamamlanmışolmalıdır (UC-04).
+Yüksek/kritik risk seviyesinde maddeler bulunmalıdır.
+Son Koşul:Riskli maddeler için alternatif ifade
+önerileri üretilir ve kullanıcıya sunulur.
+Temel Akış:
+1. Sistem yüksek/kritik riskli maddeleri belirler
+2. Negotiation Agent, Playbook ve referans havuzunu
+bağlam olarak kullanır
+3. Her riskli madde için alternatif ifade önerisi üretir
+4. Kullanıcıönerileri inceler
+Alternatif Akış:
+- Kullanıcıönerilen metni arayüz üzerinden düzenler
+«include» «include»
+«extend»
+[kullanıcımetni
+düzenlemek isterse]
+Şekil 6: UC-05: Revizyon Önerisi İnceleme
+
+===== PAGE 31 =====
+UC-06: Madde BazlıKarar Verme
+Multi-Agent Legal Ops
+UC-06
+Madde Bazlı
+Karar Verme
+Onayla / Reddet /
+Yeniden Revize Et
+Yorum Ekle
+Toplu Karar Verme Denetimİzi Kaydet
+(Audit Trail)
+Yeniden Değerlendirme
+Döngüsüne Al
+İnsan OnayıZorunlu
+(Yüksek Risk)
+Kullanıcı
+Hukuk Danışmanı
+Ön Koşul:Risk analizi ve revizyon önerileri
+tamamlanmışolmalıdır (UC-04, UC-05).
+Son Koşul:Her madde için karar kaydedilir,
+denetim izi oluşturulur.
+Durum Geçişleri:
+Taslak→ İncelemede→Onay Bekliyor→
+Onaylandı/ Reddedildi
+Temel Akış:
+1. Kullanıcımaddeyi inceler
+2. Onayla, Reddet veya Yeniden Revize Et seçer
+3.İsteğe bağlıyorum ekler
+4. Karar denetim izi olarak kaydedilir
+Kısıtlar:
+- Yüksek risk maddelerinde otomatik onay YAPILMAZ,
+insan onayızorunludur
+«include»
+«include»
+«extend»
+[yorum eklemek
+isterse]
+«extend»
+[birden fazla madde
+seçilirse]
+«extend»
+[reddedilirse veya
+revize kararıverilirse]
+«extend»
+[yüksek risk
+seviyesinde]
+Şekil 7: UC-06: Madde Bazlı Karar Verme
+
+===== PAGE 32 =====
+UC-07: Karşılaştırmalı İnceleme (Redline)
+Multi-Agent Legal Ops
+UC-07
+Karşılaştırmalı İnceleme
+(Redline)
+Orijinal ve Önerilen
+Metni Yan Yana Göster
+Ekleme/Silme Farklarını
+Renk ile Vurgula
+Satırİçi
+Karşılaştırma Modu
+Kullanıcı
+Hukuk Danışmanı
+Ön Koşul:Revizyon önerileri üretilmişolmalıdır (UC-05).
+Son Koşul:Orijinal ve revize metinler karşılaştırmalı
+olarak görüntülenir.
+Temel Akış:
+1. Orijinal madde metni sol panelde gösterilir
+2. Önerilen revizyon metni sağpanelde gösterilir
+3. Eklenen kısımlar yeşil, silinen kısımlar kırmızı
+renk ile vurgulanır
+Alternatif Akış:
+- Satır içi karşılaştırma modu seçilebilir
+«include»
+«include»«extend»
+[kullanıcısatır içi
+mod seçerse]
+Şekil 8: UC-07: Karşılaştırmalı İnceleme (Redline)
+
+===== PAGE 33 =====
+UC-08: Rapor Oluşturma veİndirme
+Multi-Agent Legal Ops
+UC-08
+Rapor Oluşturma
+veİndirme Özet Rapor Oluştur
+DetaylıRapor Oluştur
+PDF/DOCX Olarakİndir
+Kullanıcı
+Ön Koşul:Sözleşme incelemesi tamamlanmış
+ve kararlar verilmişolmalıdır (UC-06).
+Son Koşul:Rapor oluşturulur ve kullanıcı
+dosya olarak indirebilir.
+Özet Raporİçeriği:
+- Toplam madde sayısı
+- Risk seviyesi dağılımı
+- Karar durumlarının özeti
+DetaylıRaporİçeriği:
+- Madde bazlıkategori, risk seviyesi
+- Risk gerekçesi, verilen karar
+- Kullanıcıyorumları
+Dışa Aktarım Formatları:PDF, DOCX
+«include»
+«include»«extend»
+[detaylırapor
+istenirse]
+Şekil 9: UC-08: Rapor Oluşturma ve İndirme
+
+===== PAGE 34 =====
+UC-09: Playbook Oluşturma ve Yönetimi
+Multi-Agent Legal Ops
+UC-09
+Playbook Oluşturma
+ve Yönetimi
+Yeni Playbook Oluştur
+Playbook Kuralları
+TanımlaPlaybook Düzenle
+Playbook Sil
+Şablondan Oluştur
+Vektörelİndeks
+Otomatik Yenile
+Analizİçin Playbook Seç
+Kullanıcı
+Ön Koşul:Kullanıcıgirişyapmışolmalıdır.
+Son Koşul:Playbook oluşturulur/düzenlenir/silinir
+ve vektörel indeksler güncellenir.
+Kural Tipleri:
+- Kabul edilebilir ifadeler
+- Reddedilecek ifadeler
+- Zorunlu olmasıgereken hükümler
+- Sayısal eşik değerler
+Temel Akış:
+1. Kullanıcıyeni Playbook oluşturur (veyaşablondan)
+2. Kurallarıtanımlar
+3. Birden fazla Playbook tanımlanabilir
+4. Güncelleme sonrasıvektörel indeksler otomatik yenilenir
+5. Sözleşme analizinde hangi Playbook kullanılacağıseçilir
+Özellik:
+- Sistem varsayılan bir Playbookşablonu sunar
+«include»
+«include»
+«extend»
+[şablon kullanmak
+isterse]
+«include»
+«extend»
+«extend»
+«extend»
+[sözleşme analizi
+başlatılacaksa]
+Şekil 10: UC-09: Playbook Oluşturma ve Yönetimi
+
+===== PAGE 35 =====
+UC-10: Revize Sözleşme Dışa Aktarımı
+Multi-Agent Legal Ops
+UC-10
+Revize Sözleşme
+Dışa Aktarımı
+Onaylanan Değişiklikleri
+Birleştir
+Sözleşme Taslağı
+Oluştur
+DOCX Olarakİndir
+Kullanıcı
+Ön Koşul:Madde bazlıkararlar verilmiş
+olmalıdır (UC-06). En az bir madde onaylanmış
+olmalıdır.
+Son Koşul:Revize edilmişsözleşme taslağı
+dosya olarak indirilir.
+Temel Akış:
+1. Sistem onaylanan değişiklikleri birleştirir
+2. Güncellenmişsözleşme taslağıoluşturulur
+3. Kullanıcıtaslağıdosya olarak indirir
+ÇıktıFormatı:DOCX (python-docx ile üretilir)
+«include»
+«include»
+«include»
+Şekil 11: UC-10: Revize Sözleşme Dışa Aktarımı
+
+===== PAGE 36 =====
+UC-11: Kullanıcıve Sistem YapılandırmasınıYönet
+Multi-Agent Legal Ops
+UC-11
+Kullanıcıve Sistem
+YapılandırmasınıYönet
+KullanıcıHesaplarını
+Yönet
+Rol ve Yetki Atama
+Sistem Parametrelerini
+Yapılandır
+Güvenlik Loglarını
+İncele
+Bakım ve
+İzleme
+Sistem Yöneticisi
+Ön Koşul:Sistem Yöneticisi rolü ile
+girişyapılmışolmalıdır.
+Son Koşul:Sistem yapılandırmasıgüncellenir.
+Temel Akış:
+1. Yönetici kullanıcıhesaplarınıyönetir
+2. Rol ve yetkileri atar
+3. Sistem parametrelerini yapılandırır
+(dosya boyutu limiti, oturum süresi vb.)
+4. Güvenlik loglarınıinceler
+Güvenlik Olayları:
+- Başarısız girişdenemeleri
+- Yetki ihlali girişimleri
+- Kritik sistem olayları
+«include»
+«include»
+«include»
+«extend»
+[güvenlik olayı
+oluşursa]
+«extend»
+Şekil 12: UC-11: Kullanıcı ve Sistem Yapılandırması Yönetimi
+
+===== PAGE 37 =====
+Multi-Agent Legal Ops - UML Sınıf Diyagramı
+Kullanıcı
++kullanıcıId : UUID
++email : String
++şifreHash : String
++adSoyad : String
++rol : String
++hesapOluşturmaTarihi : DateTime
++sonGüncellemeTarihi : DateTime
++aktiflikDurumu : Boolean
+Sözleşme
++sözleşmeId : UUID
++kullanıcıId : UUID
++dosyaAdı: String
++depolamaYolu : String
++dosyaFormatı: String
++dosyaBoyutu : Long
++yüklenmeTarihi : DateTime
++işlemeDurumu : String
++toplamMaddeSayısı: Integer
+Madde
++maddeId : UUID
++sözleşmeId : UUID
++sıraNo : Integer
++orijinalMetin : Text
++kategori : String
++güvenSkoru : Float
++durum : String
+RiskDeğerlendirmesi
++riskId : UUID
++maddeId : UUID
++riskSeviyesi : String
++gerekçe : Text
++ticariRiskSkoru : Float
++hukukiRiskSkoru : Float
++politikaUyumlulukDurumu : Boolean
++değerlendirmeTarihi : DateTime
+RevizyonÖnerisi
++öneriId : UUID
++maddeId : UUID
++önerilenMetin : Text
++kullanılanBağlam : Text
++oluşturmaTarihi : DateTime
++revizyonDurumu : String
+OnayKararı
++kararId : UUID
++maddeId : UUID
++kullanıcıId : UUID
++kararTürü : String
++yorum : Text
++kararTarihi : DateTime
++zamanDamgası: Timestamp
+Playbook
++playbookId : UUID
++kullanıcıId : UUID
++ad : String
++açıklama : Text
++oluşturmaTarihi : DateTime
++güncellemeTarihi : DateTime
++aktifMi : Boolean
+PlaybookKuralı
++kuralId : UUID
++playbookId : UUID
++kuralTipi : String
++içerik : Text
++eşikDeğeri : Float
+Rapor
++raporId : UUID
++sözleşmeId : UUID
++raporTipi : String
++oluşturmaTarihi : DateTime
++toplamMaddeSayısı: Integer
++özetBilgi : Text
+AuditLog
++logId : UUID
++kullanıcıId : UUID
++işlemTipi : String
++ilgiliSözleşmeId : UUID
++ilgiliMaddeId : UUID
++detay : Text
++zamanDamgası: Timestamp
+yükler
+1
+0..*
+oluşturur
+1
+0..*
+verir
+1
+0..*
+işlem yapar
+1
+0..*
+içerir
+1
+1..*
+üretir
+1
+0..*
+analiz sonucu
+sahiptir
+1
+0..1
+için üretilir
+1
+0..*
+alternatif metinalır
+1
+0..*
+içerir
+1
+1..*
+kurallara göre
+değerlendirir
+bağlam olarak
+kullanır
+ilgili işlem
+ilgili işlem
+değerlendirmede
+kullanılır
+Şekil 13: Genel UML Sınıf Diyagramı
+
+===== PAGE 38 =====
+3.2 Veri Akışı Genel Görünümü
+3.2.1 UML Sınıf Diyagramı
+Şekil 13, sistemin nesne yönelimli analiz kapsamındaki genel UML sınıf diyagramını gös-
+termektedir.
+3.2.2 Veri Akışı
+Sistemdeki temel veri akışı aşağıdaki sırayı takip etmektedir:
+1. Kullanıcı, sözleşme dosyasını web arayüzü üzerinden yükler.
+2. Doküman işleme katmanı, yüklenen dosyayı düz metne dönüştürür (gerektiğinde
+OCR uygular).
+3. Ayrıştırma ajanı, metni bağımsız sözleşme maddelerine böler ve her maddeyi hukuki
+kategorilere sınıflandırır.
+4. Risk değerlendirme ajanı, sınıflandırılmış maddeleri kullanıcı Playbook’u ve referans
+madde havuzu ile karşılaştırarak risk analizi yapar.
+5. Riskli bulunan maddeler için müzakere ajanı, bağlam bilgisini kullanarak alternatif
+ifade önerileri üretir.
+6. Tüm analiz sonuçları (sınıflandırma, risk skoru, revizyon önerisi) kullanıcıya kontrol
+paneli üzerinden sunulur.
+7. Kullanıcı, her madde için onay, red veya yeniden revize kararını verir.
+8. Kararlar ve ilişkili yorum bilgileri denetim izi olarak veritabanına kaydedilir.
+9. Kullanıcı isteğine bağlı olarak özet/detaylı rapor veya revize edilmiş sözleşme taslağı
+oluşturularak dışa aktarılır.
+3.3 Sözlük
+Terim Tanım
+YKE (Yazılım Konfigü-
+rasyon Elemanı)
+Yazılım sisteminin bağımsız olarak tanımlanabi-
+len, yönetilebilen ve kontrol edilebilen bir bileşeni.
+Bu projede sistemin tamamını ifade eder.
+SRS Yazılım Gereksinimleri Belirtimi (Software Requ-
+irementsSpecification).Sisteminişlevselveişlevsel
+olmayan gereksinimlerini tanımlayan doküman.
+SDD Yazılım Tasarım Dokümanı (Software Design Do-
+cument). Sistemin nasıl tasarlanacağını ve uygula-
+nacağını tanımlayan doküman.
+
+===== PAGE 39 =====
+Terim Tanım
+LLM Büyük Dil Modeli (Large Language Model). Do-
+ğal dil işleme görevlerinde kullanılan yapay zeka
+modeli.
+RAG Retrieval-Augmented Generation. Bilgi erişimi ile
+metin üretimini birleştiren yapay zeka tekniği.
+OCR OptikKarakterTanıma(OpticalCharacterRecog-
+nition). Görüntülerdeki metni dijital metne dönüş-
+türme teknolojisi.
+Playbook Kullanıcının sözleşme inceleme sürecinde kullanıl-
+mak üzere tanımladığı politikalar, kurallar ve eşik
+değerler kümesi.
+Ajan (Agent) Belirli bir görev alanında (ayrıştırma, sınıflan-
+dırma, risk analizi, müzakere) bağımsız çalışan ya-
+pay zeka bileşeni.
+Orkestratör Birden fazla ajanın koordineli çalışmasını sağla-
+yan, görev dağıtımı ve sonuç toplama işlemlerini
+yöneten mekanizma.
+Redline Orijinal metin ile önerilen revizyon metni arasın-
+daki farkları görsel olarak gösteren karşılaştırmalı
+görünüm.
+Embedding Metin verilerinin, anlamsal benzerlik araması ya-
+pılabilecek sayısal vektör temsillerine dönüştürül-
+mesi.
+CI/CD Sürekli Entegrasyon / Sürekli Dağıtım (Continu-
+ous Integration / Continuous Deployment). Oto-
+matik derleme, test ve dağıtım süreçleri.
+Audit Trail Denetim İzi. Sistemde gerçekleştirilen tüm kritik
+işlemlerin kaydını tutan günlük mekanizması.
+API Uygulama Programlama Arayüzü (Application
+Programming Interface). Yazılım bileşenleri ara-
+sındaki iletişimi sağlayan arayüz.
+REST Temsili Durum Transferi (Representational State
+Transfer). Web servisleri için kullanılan mimari
+yaklaşım.
+WebSocket İstemci ile sunucu arasında çift yönlü, gerçek za-
+manlı iletişim sağlayan protokol.
+KOBİ Küçük ve Orta Büyüklükteki İşletme.

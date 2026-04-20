@@ -1,0 +1,3336 @@
+{
+  "nodes": [
+    {
+      "id": "spmp_project_management",
+      "label": "Software Project Management Plan (SPMP)",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "srs_requirements",
+      "label": "Software Requirements Specification (SRS)",
+      "file_type": "document",
+      "source_file": "SRS.md",
+      "source_location": null
+    },
+    {
+      "id": "implementation_plan",
+      "label": "Implementation Plan",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "sdd_explanations",
+      "label": "Software Design Document Explanations",
+      "file_type": "document",
+      "source_file": "SDD_aciklamalar.md",
+      "source_location": null
+    },
+    {
+      "id": "lagent_system",
+      "label": "Multi-Agent Legal Contract Review System",
+      "file_type": "document",
+      "source_file": "Lagent_SPMP.pdf",
+      "source_location": null
+    },
+    {
+      "id": "kanban_methodology",
+      "label": "Kanban Project Management",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "agile_principles",
+      "label": "Agile Software Development",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "multi_agent_architecture",
+      "label": "Multi-Agent AI Architecture",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "rag_infrastructure",
+      "label": "Retrieval-Augmented Generation (RAG)",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "clause_agent",
+      "label": "Clause Agent - Document Classification",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "risk_agent",
+      "label": "Risk Agent - Risk Assessment",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "negotiation_agent",
+      "label": "Negotiation Agent - Revision Suggestions",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "orchestrator",
+      "label": "LangGraph Orchestrator",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "fastapi_backend",
+      "label": "FastAPI Backend Framework",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "nextjs_frontend",
+      "label": "Next.js React Frontend",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "postgresql_db",
+      "label": "PostgreSQL Relational Database",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "pgvector",
+      "label": "pgvector Vector Database",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "redis_cache",
+      "label": "Redis In-Memory Cache",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "minio_storage",
+      "label": "MinIO Object Storage",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "openai_api",
+      "label": "OpenAI API - GPT-4o",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "docker_containers",
+      "label": "Docker Containerization",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "git_version_control",
+      "label": "Git Version Control with GitHub",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "ci_cd_pipeline",
+      "label": "CI/CD Pipeline with GitHub Actions",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "pytest_testing",
+      "label": "Pytest Testing Framework",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "playwright_e2e",
+      "label": "Playwright End-to-End Testing",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "ocr_service",
+      "label": "OCR Document Processing Service",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "uc01_user_auth",
+      "label": "UC-01: User Registration and Authentication",
+      "file_type": "document",
+      "source_file": "SRS/UC-01.pdf",
+      "source_location": null
+    },
+    {
+      "id": "uc02_contract_upload",
+      "label": "UC-02: Contract Upload",
+      "file_type": "document",
+      "source_file": "SRS/UC-02.pdf",
+      "source_location": null
+    },
+    {
+      "id": "uc03_parsing_classification",
+      "label": "UC-03: Automatic Parsing and Classification",
+      "file_type": "document",
+      "source_file": "SRS/UC-03.pdf",
+      "source_location": null
+    },
+    {
+      "id": "uc04_risk_analysis",
+      "label": "UC-04: Risk Analysis Display",
+      "file_type": "document",
+      "source_file": "SRS/UC-04.pdf",
+      "source_location": null
+    },
+    {
+      "id": "uc05_revision_review",
+      "label": "UC-05: Revision Suggestion Review",
+      "file_type": "document",
+      "source_file": "SRS/UC-05.pdf",
+      "source_location": null
+    },
+    {
+      "id": "uc06_clause_decision",
+      "label": "UC-06: Clause-based Decision Making",
+      "file_type": "document",
+      "source_file": "SRS/UC-06.pdf",
+      "source_location": null
+    },
+    {
+      "id": "uc07_redline_review",
+      "label": "UC-07: Comparative Review (Redline)",
+      "file_type": "document",
+      "source_file": "SRS/UC-07.pdf",
+      "source_location": null
+    },
+    {
+      "id": "uc08_report_generation",
+      "label": "UC-08: Report Generation and Download",
+      "file_type": "document",
+      "source_file": "SRS/UC-08.pdf",
+      "source_location": null
+    },
+    {
+      "id": "uc09_playbook_management",
+      "label": "UC-09: Playbook Creation and Management",
+      "file_type": "document",
+      "source_file": "SRS/UC-09.pdf",
+      "source_location": null
+    },
+    {
+      "id": "uc10_revision_export",
+      "label": "UC-10: Revised Contract Export",
+      "file_type": "document",
+      "source_file": "SRS/UC-10.pdf",
+      "source_location": null
+    },
+    {
+      "id": "uc11_system_config",
+      "label": "UC-11: User and System Configuration Management",
+      "file_type": "document",
+      "source_file": "SRS/UC-11.pdf",
+      "source_location": null
+    },
+    {
+      "id": "jwt_authentication",
+      "label": "JWT Token-based Authentication",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "websocket_manager",
+      "label": "WebSocket Progress Notifications",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "diff_viewer",
+      "label": "Diff/Redline Viewer Component",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "approval_workflow",
+      "label": "Approval Workflow State Machine",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "audit_trail",
+      "label": "Audit Trail Logging System",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "rule_engine",
+      "label": "Deterministic Rule Engine",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "document_processor",
+      "label": "Document Processing Service (PDF/DOCX)",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "playbook_service",
+      "label": "Playbook Management Service",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "report_service",
+      "label": "Report Generation Service",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "security_requirements",
+      "label": "Security and Privacy Requirements",
+      "file_type": "document",
+      "source_file": "SRS.md",
+      "source_location": null
+    },
+    {
+      "id": "user_interfaces",
+      "label": "User Interface Screens and Components",
+      "file_type": "document",
+      "source_file": "SRS.md",
+      "source_location": null
+    },
+    {
+      "id": "api_endpoints",
+      "label": "RESTful API Endpoints",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "data_model",
+      "label": "Database Schema and Data Models",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "sprint_phases",
+      "label": "Sprint Development Phases",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "test_strategy",
+      "label": "Testing Strategy and Coverage",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "risk_management",
+      "label": "Project Risk Management Plan",
+      "file_type": "document",
+      "source_file": "IMPLEMENTATION_PLAN.md",
+      "source_location": null
+    },
+    {
+      "id": "team_roles",
+      "label": "Team Roles and Responsibilities",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "emir_ceran",
+      "label": "Mustafa Emir Ceran - Project Manager & AI Coordinator",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "mert_ayranci",
+      "label": "Mert Ayranc\u0131 - Backend & RAG Developer",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "osman_atalay",
+      "label": "Osman Gazi Atalay - Frontend & Test/QA",
+      "file_type": "document",
+      "source_file": "SPMP.md",
+      "source_location": null
+    },
+    {
+      "id": "uc09_upload_agent_workflow",
+      "label": "UC-09 Upload Agent Workflow",
+      "file_type": "image",
+      "source_file": "SRS/UC-09.pdf"
+    },
+    {
+      "id": "uml_architecture_diagram",
+      "label": "UML Architecture Diagram",
+      "file_type": "image",
+      "source_file": "SRS/UML.pdf"
+    },
+    {
+      "id": "srs_explanations",
+      "label": "SRS Explanations Document",
+      "file_type": "document",
+      "source_file": "SRS/SRS_aciklamalar.pdf"
+    },
+    {
+      "id": "lagent_use_case_diagram",
+      "label": "Lagent Use Case Diagram",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.pdf"
+    },
+    {
+      "id": "sequence_upload",
+      "label": "Upload Sequence Diagram",
+      "file_type": "image",
+      "source_file": "figures/sequence-upload.pdf"
+    },
+    {
+      "id": "sequence_analysis",
+      "label": "Analysis Sequence Diagram",
+      "file_type": "image",
+      "source_file": "figures/sequence-analysis.pdf"
+    },
+    {
+      "id": "sequence_agents",
+      "label": "Multi-Agent Sequence Diagram",
+      "file_type": "image",
+      "source_file": "figures/sequence-agents.pdf"
+    },
+    {
+      "id": "uc03_classification_use_case",
+      "label": "UC-03 Classification Use Case",
+      "file_type": "image",
+      "source_file": "SRS/UC-03.jpg"
+    },
+    {
+      "id": "uc02_playbook_use_case",
+      "label": "UC-02 Playbook Management Use Case",
+      "file_type": "image",
+      "source_file": "SRS/UC-02.jpg"
+    },
+    {
+      "id": "uc01_user_registration",
+      "label": "UC-01 User Registration and Login",
+      "file_type": "image",
+      "source_file": "SRS/UC-01.jpg"
+    },
+    {
+      "id": "uc04_risk_analysis_svg",
+      "label": "UC-04 Risk Analysis Use Case SVG",
+      "file_type": "image",
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "id": "uc11_document_management",
+      "label": "UC-11 Document Management",
+      "file_type": "image",
+      "source_file": "SRS/UC-11.jpg"
+    },
+    {
+      "id": "uc05_document_upload",
+      "label": "UC-05 Document Upload",
+      "file_type": "image",
+      "source_file": "SRS/UC-05.jpg"
+    },
+    {
+      "id": "uc10_decision_support",
+      "label": "UC-10 Decision Support",
+      "file_type": "image",
+      "source_file": "SRS/UC-10.jpg"
+    },
+    {
+      "id": "uc04_risk_analysis_jpg",
+      "label": "UC-04 Risk Analysis Use Case JPG",
+      "file_type": "image",
+      "source_file": "SRS/UC-04.jpg"
+    },
+    {
+      "id": "uc01_user_registration_svg",
+      "label": "UC-01 User Registration and Login SVG",
+      "file_type": "image",
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "id": "uc06_decision_review",
+      "label": "UC-06 Decision Review",
+      "file_type": "image",
+      "source_file": "SRS/UC-06.jpg"
+    },
+    {
+      "id": "uc07_approval_workflow",
+      "label": "UC-07 Approval Workflow",
+      "file_type": "image",
+      "source_file": "SRS/UC-07.jpg"
+    },
+    {
+      "id": "uc08_reporting",
+      "label": "UC-08 Report Generation and Download",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Olu\u015fturma ve \u0130ndirme.svg"
+    },
+    {
+      "id": "multi_agent_legal_ops",
+      "label": "Multi-Agent Legal Ops System",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.pdf"
+    },
+    {
+      "id": "user_actor",
+      "label": "User Actor",
+      "file_type": "image",
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "id": "individual_user",
+      "label": "Individual User",
+      "file_type": "image",
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "id": "kobi_manager",
+      "label": "KOBI Manager",
+      "file_type": "image",
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "id": "legal_consultant",
+      "label": "Legal Consultant",
+      "file_type": "image",
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "id": "system_admin",
+      "label": "System Administrator",
+      "file_type": "image",
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "id": "risk_agent",
+      "label": "Risk Agent",
+      "file_type": "image",
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "id": "rag_semantic_search",
+      "label": "RAG-based Semantic Search",
+      "file_type": "image",
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "id": "multi_dimensional_risk_rating",
+      "label": "Multi-Dimensional Risk Rating",
+      "file_type": "image",
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "id": "cross_validation",
+      "label": "Cross Validation (Rule Engine)",
+      "file_type": "image",
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "id": "missing_clause_detection",
+      "label": "Missing Clause Detection",
+      "file_type": "image",
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "id": "risk_rationale_explanation",
+      "label": "Risk Rationale Explanation",
+      "file_type": "image",
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "id": "llm_service",
+      "label": "LLM Service",
+      "file_type": "image",
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "id": "token_authentication",
+      "label": "Token-based Authentication",
+      "file_type": "image",
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "id": "error_handling",
+      "label": "Error Message Display",
+      "file_type": "image",
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "id": "new_account_creation",
+      "label": "New Account Creation",
+      "file_type": "image",
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "id": "email_password_login",
+      "label": "Email/Password Login",
+      "file_type": "image",
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "id": "summary_report_generation",
+      "label": "Summary Report Generation",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Olu\u015fturma ve \u0130ndirme.svg"
+    },
+    {
+      "id": "detailed_report_generation",
+      "label": "Detailed Report Generation",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Olu\u015fturma ve \u0130ndirme.svg"
+    },
+    {
+      "id": "pdf_docx_export",
+      "label": "PDF/DOCX Export",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Olu\u015fturma ve \u0130ndirme.svg"
+    },
+    {
+      "id": "uc07_redline_analysis",
+      "label": "UC-07: Comparative Review (Redline)",
+      "file_type": "image",
+      "source_file": "SRS/UC-07 Redline I\u0307nceleme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc07_show_side_by_side",
+      "label": "Show Original and Proposed Text Side by Side",
+      "file_type": "image",
+      "source_file": "SRS/UC-07 Redline I\u0307nceleme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc07_highlight_differences",
+      "label": "Highlight Add/Delete Differences in Color",
+      "file_type": "image",
+      "source_file": "SRS/UC-07 Redline I\u0307nceleme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc07_inline_comparison_mode",
+      "label": "Inline Comparison Mode",
+      "file_type": "image",
+      "source_file": "SRS/UC-07 Redline I\u0307nceleme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc03_auto_segment_classification",
+      "label": "UC-03: Auto Segmentation and Classification",
+      "file_type": "image",
+      "source_file": "SRS/UC-03 Otomatik Ayr\u0131s\u0327t\u0131rma ve S\u0131n\u0131fland\u0131rma.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc03_split_into_clauses",
+      "label": "Split into Clauses (Clause Agent)",
+      "file_type": "image",
+      "source_file": "SRS/UC-03 Otomatik Ayr\u0131s\u0327t\u0131rma ve S\u0131n\u0131fland\u0131rma.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc03_classify_by_category",
+      "label": "Classify by Legal Category",
+      "file_type": "image",
+      "source_file": "SRS/UC-03 Otomatik Ayr\u0131s\u0327t\u0131rma ve S\u0131n\u0131fland\u0131rma.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc03_calculate_confidence",
+      "label": "Calculate Confidence Score",
+      "file_type": "image",
+      "source_file": "SRS/UC-03 Otomatik Ayr\u0131s\u0327t\u0131rma ve S\u0131n\u0131fland\u0131rma.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc03_mark_as_uncertain",
+      "label": "Mark as Uncertain (Manual Review)",
+      "file_type": "image",
+      "source_file": "SRS/UC-03 Otomatik Ayr\u0131s\u0327t\u0131rma ve S\u0131n\u0131fland\u0131rma.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc05_revision_review",
+      "label": "UC-05: Revision Proposal Review",
+      "file_type": "image",
+      "source_file": "SRS/UC-05 Revizyon O\u0308nerisi I\u0307nceleme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc05_generate_alternative",
+      "label": "Generate Alternative Phrasing (Negotiation Agent)",
+      "file_type": "image",
+      "source_file": "SRS/UC-05 Revizyon O\u0308nerisi I\u0307nceleme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc05_use_playbook_context",
+      "label": "Use Playbook Context",
+      "file_type": "image",
+      "source_file": "SRS/UC-05 Revizyon O\u0308nerisi I\u0307nceleme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc05_edit_revision_text",
+      "label": "Edit Revision Text",
+      "file_type": "image",
+      "source_file": "SRS/UC-05 Revizyon O\u0308nerisi I\u0307nceleme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc06_article_decision",
+      "label": "UC-06: Article-Based Decision Making",
+      "file_type": "image",
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc06_approve_reject_revise",
+      "label": "Approve / Reject / Revise Again",
+      "file_type": "image",
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc06_add_comment",
+      "label": "Add Comment",
+      "file_type": "image",
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc06_bulk_decision",
+      "label": "Bulk Decision Making",
+      "file_type": "image",
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc06_record_audit_trail",
+      "label": "Record Audit Trail",
+      "file_type": "image",
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc06_review_loop",
+      "label": "Re-evaluation Loop",
+      "file_type": "image",
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc06_human_approval_required",
+      "label": "Human Approval Required (High Risk)",
+      "file_type": "image",
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "main_use_case_diagram",
+      "label": "Multi-Agent Legal Ops Main Use Case Diagram",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc01_user_registration_login",
+      "label": "UC-01: User Registration and Login",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc02_contract_upload",
+      "label": "UC-02: Contract Upload",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc03_2_segment_classify",
+      "label": "UC-03: Auto Segmentation and Classification",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc04_risk_analysis",
+      "label": "UC-04: Risk Analysis Review",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc05_2_revision_review",
+      "label": "UC-05: Revision Proposal Review",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc06_2_article_decision",
+      "label": "UC-06: Article-Based Decision Making",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc07_2_redline_analysis",
+      "label": "UC-07: Comparative Review (Redline)",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc08_report_generation",
+      "label": "UC-08: Report Generation and Download",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc09_playbook_management",
+      "label": "UC-09: Playbook Creation and Management",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc10_export_revised",
+      "label": "UC-10: Revised Contract Export",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc11_system_configuration",
+      "label": "UC-11: User and System Configuration Management",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sub_auth_token_based",
+      "label": "Authentication (Token-Based)",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sub_parse_text",
+      "label": "Convert File to Plain Text",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sub_classify_clause_agent",
+      "label": "Clause Classification (Clause Agent)",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sub_policy_risk_agent",
+      "label": "Policy Check (Risk Agent)",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sub_revision_negotiation_agent",
+      "label": "Revision Proposal Generation (Negotiation Agent)",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sub_audit_audit_trail",
+      "label": "Record Audit Trail (Audit Trail)",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sub_manual_low_confidence",
+      "label": "Manual Review (Low Confidence)",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "sub_ocr_apply",
+      "label": "Apply OCR",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc09_playbook",
+      "label": "UC-09: Playbook Creation and Management",
+      "file_type": "image",
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc09_new_playbook",
+      "label": "Create New Playbook",
+      "file_type": "image",
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc09_define_rules",
+      "label": "Define Playbook Rules",
+      "file_type": "image",
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc09_edit_playbook",
+      "label": "Edit Playbook",
+      "file_type": "image",
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc09_delete_playbook",
+      "label": "Delete Playbook",
+      "file_type": "image",
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc09_create_from_template",
+      "label": "Create from Template",
+      "file_type": "image",
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc09_vector_refresh",
+      "label": "Vector Index Auto Refresh",
+      "file_type": "image",
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc09_select_for_analysis",
+      "label": "Select Playbook for Analysis",
+      "file_type": "image",
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc11_configuration",
+      "label": "UC-11: User and System Configuration Management",
+      "file_type": "image",
+      "source_file": "SRS/UC-11 Kullan\u0131c\u0131 ve Sistem Yap\u0131land\u0131rmas\u0131 Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc11_manage_accounts",
+      "label": "Manage User Accounts",
+      "file_type": "image",
+      "source_file": "SRS/UC-11 Kullan\u0131c\u0131 ve Sistem Yap\u0131land\u0131rmas\u0131 Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc11_role_permission",
+      "label": "Role and Permission Assignment",
+      "file_type": "image",
+      "source_file": "SRS/UC-11 Kullan\u0131c\u0131 ve Sistem Yap\u0131land\u0131rmas\u0131 Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc11_configure_system",
+      "label": "Configure System Parameters",
+      "file_type": "image",
+      "source_file": "SRS/UC-11 Kullan\u0131c\u0131 ve Sistem Yap\u0131land\u0131rmas\u0131 Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc11_review_logs",
+      "label": "Review Security Logs",
+      "file_type": "image",
+      "source_file": "SRS/UC-11 Kullan\u0131c\u0131 ve Sistem Yap\u0131land\u0131rmas\u0131 Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc11_maintenance_monitoring",
+      "label": "Maintenance and Monitoring",
+      "file_type": "image",
+      "source_file": "SRS/UC-11 Kullan\u0131c\u0131 ve Sistem Yap\u0131land\u0131rmas\u0131 Yo\u0308netimi.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc10_export",
+      "label": "UC-10: Revised Contract Export",
+      "file_type": "image",
+      "source_file": "SRS/UC-10 Revize So\u0308zles\u0327me D\u0131s\u0327a Aktar\u0131m\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc10_merge_approved",
+      "label": "Merge Approved Changes",
+      "file_type": "image",
+      "source_file": "SRS/UC-10 Revize So\u0308zles\u0327me D\u0131s\u0327a Aktar\u0131m\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc10_create_draft",
+      "label": "Create Contract Draft",
+      "file_type": "image",
+      "source_file": "SRS/UC-10 Revize So\u0308zles\u0327me D\u0131s\u0327a Aktar\u0131m\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc10_download_docx",
+      "label": "Download as DOCX",
+      "file_type": "image",
+      "source_file": "SRS/UC-10 Revize So\u0308zles\u0327me D\u0131s\u0327a Aktar\u0131m\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "seq_upload",
+      "label": "Sequence Diagram: User Login and Contract Upload",
+      "file_type": "image",
+      "source_file": "figures/sequence-upload.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "seq_analysis",
+      "label": "Sequence Diagram: Multi-Agent Analysis and Approval Flow",
+      "file_type": "image",
+      "source_file": "figures/sequence-analysis.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "seq_agents",
+      "label": "Sequence Diagram: Multi-Agent Analysis and Approval Flow (duplicate)",
+      "file_type": "image",
+      "source_file": "figures/sequence-agents.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "actor_user",
+      "label": "User Actor",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "actor_individual_user",
+      "label": "Individual User",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "actor_sme_manager",
+      "label": "SME Manager",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "actor_legal_advisor",
+      "label": "Legal Advisor",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "actor_system_admin",
+      "label": "System Administrator",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "actor_llm_service",
+      "label": "LLM Service (System)",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "actor_ocr_service",
+      "label": "OCR Service (System)",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "system_multi_agent_legal_ops",
+      "label": "Multi-Agent Legal Ops System",
+      "file_type": "image",
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "orchestrator",
+      "label": "Orchestrator Component",
+      "file_type": "image",
+      "source_file": "figures/sequence-analysis.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "clause_agent",
+      "label": "Clause Agent",
+      "file_type": "image",
+      "source_file": "figures/sequence-analysis.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "risk_rag",
+      "label": "Risk + RAG Agent",
+      "file_type": "image",
+      "source_file": "figures/sequence-analysis.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "redline_agent",
+      "label": "Redline Agent",
+      "file_type": "image",
+      "source_file": "figures/sequence-analysis.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "pgvector_ann",
+      "label": "pgvector ANN (top-k)",
+      "file_type": "image",
+      "source_file": "figures/sequence-analysis.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "spmp_project_management",
+      "target": "lagent_system",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "spmp_project_management",
+      "target": "kanban_methodology",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "spmp_project_management",
+      "target": "agile_principles",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "spmp_project_management",
+      "target": "team_roles",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "lagent_system",
+      "target": "multi_agent_architecture",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "lagent_system",
+      "target": "rag_infrastructure",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "lagent_system",
+      "target": "fastapi_backend",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "lagent_system",
+      "target": "nextjs_frontend",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "lagent_system",
+      "target": "postgresql_db",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "lagent_system",
+      "target": "pgvector",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "lagent_system",
+      "target": "redis_cache",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "lagent_system",
+      "target": "minio_storage",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "multi_agent_architecture",
+      "target": "clause_agent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "multi_agent_architecture",
+      "target": "risk_agent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "multi_agent_architecture",
+      "target": "negotiation_agent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "multi_agent_architecture",
+      "target": "orchestrator",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "orchestrator",
+      "target": "clause_agent",
+      "relation": "coordinates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "orchestrator",
+      "target": "risk_agent",
+      "relation": "coordinates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "orchestrator",
+      "target": "negotiation_agent",
+      "relation": "coordinates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "fastapi_backend",
+      "target": "api_endpoints",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "fastapi_backend",
+      "target": "postgresql_db",
+      "relation": "interacts_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "fastapi_backend",
+      "target": "openai_api",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "nextjs_frontend",
+      "target": "api_endpoints",
+      "relation": "consumes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "nextjs_frontend",
+      "target": "websocket_manager",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "rag_infrastructure",
+      "target": "pgvector",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "rag_infrastructure",
+      "target": "openai_api",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "clause_agent",
+      "target": "openai_api",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "risk_agent",
+      "target": "openai_api",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "risk_agent",
+      "target": "rag_infrastructure",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "risk_agent",
+      "target": "rule_engine",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "negotiation_agent",
+      "target": "openai_api",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "negotiation_agent",
+      "target": "rag_infrastructure",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "document_processor",
+      "target": "ocr_service",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "uc01_user_auth",
+      "target": "jwt_authentication",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "uc02_contract_upload",
+      "target": "document_processor",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "uc02_contract_upload",
+      "target": "minio_storage",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "uc03_parsing_classification",
+      "target": "clause_agent",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "uc04_risk_analysis",
+      "target": "risk_agent",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "uc05_revision_review",
+      "target": "negotiation_agent",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "uc07_redline_review",
+      "target": "diff_viewer",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "uc06_clause_decision",
+      "target": "approval_workflow",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "uc06_clause_decision",
+      "target": "audit_trail",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "uc08_report_generation",
+      "target": "report_service",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "uc09_playbook_management",
+      "target": "playbook_service",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "uc09_playbook_management",
+      "target": "pgvector",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "uc10_revision_export",
+      "target": "report_service",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "sprint_phases",
+      "target": "clause_agent",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "sprint_phases",
+      "target": "risk_agent",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "sprint_phases",
+      "target": "negotiation_agent",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "test_strategy",
+      "target": "pytest_testing",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "test_strategy",
+      "target": "playwright_e2e",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "ci_cd_pipeline",
+      "target": "docker_containers",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "ci_cd_pipeline",
+      "target": "git_version_control",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "security_requirements",
+      "target": "jwt_authentication",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "security_requirements",
+      "target": "audit_trail",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "user_interfaces",
+      "target": "nextjs_frontend",
+      "relation": "implemented_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "data_model",
+      "target": "postgresql_db",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "data_model",
+      "target": "pgvector",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "team_roles",
+      "target": "emir_ceran",
+      "relation": "assigns",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "team_roles",
+      "target": "mert_ayranci",
+      "relation": "assigns",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "team_roles",
+      "target": "osman_atalay",
+      "relation": "assigns",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "emir_ceran",
+      "target": "kanban_methodology",
+      "relation": "manages",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "emir_ceran",
+      "target": "multi_agent_architecture",
+      "relation": "designs",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "mert_ayranci",
+      "target": "fastapi_backend",
+      "relation": "develops",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "mert_ayranci",
+      "target": "rag_infrastructure",
+      "relation": "develops",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "osman_atalay",
+      "target": "nextjs_frontend",
+      "relation": "develops",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "osman_atalay",
+      "target": "playwright_e2e",
+      "relation": "develops",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SPMP.md"
+    },
+    {
+      "source": "spmp_project_management",
+      "target": "risk_management",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "source": "srs_requirements",
+      "target": "uc01_user_auth",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "srs_requirements",
+      "target": "uc02_contract_upload",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "srs_requirements",
+      "target": "uc03_parsing_classification",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "srs_requirements",
+      "target": "uc04_risk_analysis",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "srs_requirements",
+      "target": "uc05_revision_review",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "srs_requirements",
+      "target": "uc06_clause_decision",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "srs_requirements",
+      "target": "uc07_redline_review",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "srs_requirements",
+      "target": "uc08_report_generation",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "srs_requirements",
+      "target": "uc09_playbook_management",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "srs_requirements",
+      "target": "uc10_revision_export",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "srs_requirements",
+      "target": "uc11_system_config",
+      "relation": "describes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS.md"
+    },
+    {
+      "source": "uc09_upload_agent_workflow",
+      "target": "sequence_upload",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-09.pdf"
+    },
+    {
+      "source": "uc09_upload_agent_workflow",
+      "target": "sequence_analysis",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-09.pdf"
+    },
+    {
+      "source": "uml_architecture_diagram",
+      "target": "lagent_use_case_diagram",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UML.pdf"
+    },
+    {
+      "source": "srs_explanations",
+      "target": "lagent_use_case_diagram",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/SRS_aciklamalar.pdf"
+    },
+    {
+      "source": "srs_explanations",
+      "target": "uc01_user_registration",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/SRS_aciklamalar.pdf"
+    },
+    {
+      "source": "srs_explanations",
+      "target": "uc04_risk_analysis_svg",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/SRS_aciklamalar.pdf"
+    },
+    {
+      "source": "srs_explanations",
+      "target": "uc08_reporting",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/SRS_aciklamalar.pdf"
+    },
+    {
+      "source": "sequence_upload",
+      "target": "sequence_agents",
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "figures/sequence-upload.pdf"
+    },
+    {
+      "source": "sequence_analysis",
+      "target": "sequence_agents",
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "figures/sequence-analysis.pdf"
+    },
+    {
+      "source": "uc03_classification_use_case",
+      "target": "uc04_risk_analysis_svg",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "uc02_playbook_use_case",
+      "target": "uc04_risk_analysis_svg",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "uc01_user_registration",
+      "target": "uc01_user_registration_svg",
+      "relation": "semantically_similar_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01.jpg"
+    },
+    {
+      "source": "uc04_risk_analysis_svg",
+      "target": "uc04_risk_analysis_jpg",
+      "relation": "semantically_similar_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04.jpg"
+    },
+    {
+      "source": "multi_agent_legal_ops",
+      "target": "uc01_user_registration_svg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "source": "multi_agent_legal_ops",
+      "target": "uc04_risk_analysis_svg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "multi_agent_legal_ops",
+      "target": "uc08_reporting",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Olu\u015fturma ve \u0130ndirme.svg"
+    },
+    {
+      "source": "individual_user",
+      "target": "user_actor",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "source": "kobi_manager",
+      "target": "user_actor",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "source": "legal_consultant",
+      "target": "user_actor",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "source": "uc04_risk_analysis_svg",
+      "target": "risk_agent",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "uc04_risk_analysis_svg",
+      "target": "rag_semantic_search",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "uc04_risk_analysis_svg",
+      "target": "multi_dimensional_risk_rating",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "uc04_risk_analysis_svg",
+      "target": "cross_validation",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "uc04_risk_analysis_svg",
+      "target": "risk_rationale_explanation",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "risk_agent",
+      "target": "rag_semantic_search",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "risk_agent",
+      "target": "multi_dimensional_risk_rating",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "risk_agent",
+      "target": "cross_validation",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "risk_agent",
+      "target": "risk_rationale_explanation",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "missing_clause_detection",
+      "target": "risk_agent",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "llm_service",
+      "target": "risk_agent",
+      "relation": "supports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "llm_service",
+      "target": "multi_dimensional_risk_rating",
+      "relation": "supports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "source": "uc01_user_registration_svg",
+      "target": "token_authentication",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "source": "uc01_user_registration_svg",
+      "target": "new_account_creation",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "source": "uc01_user_registration_svg",
+      "target": "email_password_login",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "source": "uc01_user_registration_svg",
+      "target": "error_handling",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "source": "email_password_login",
+      "target": "token_authentication",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "source": "error_handling",
+      "target": "email_password_login",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "source": "user_actor",
+      "target": "uc01_user_registration_svg",
+      "relation": "initiates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "source": "system_admin",
+      "target": "uc01_user_registration_svg",
+      "relation": "initiates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "source": "uc08_reporting",
+      "target": "summary_report_generation",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Olu\u015fturma ve \u0130ndirme.svg"
+    },
+    {
+      "source": "uc08_reporting",
+      "target": "detailed_report_generation",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Olu\u015fturma ve \u0130ndirme.svg"
+    },
+    {
+      "source": "uc08_reporting",
+      "target": "pdf_docx_export",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Olu\u015fturma ve \u0130ndirme.svg"
+    },
+    {
+      "source": "detailed_report_generation",
+      "target": "uc08_reporting",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Olu\u015fturma ve \u0130ndirme.svg"
+    },
+    {
+      "source": "uc05_document_upload",
+      "target": "uc09_upload_agent_workflow",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "SRS/UC-05.jpg"
+    },
+    {
+      "source": "uc06_decision_review",
+      "target": "uc08_reporting",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Olu\u015fturma ve \u0130ndirme.svg"
+    },
+    {
+      "id": "multi_agent_workflow",
+      "label": "Multi-Agent Workflow Pattern",
+      "nodes": [
+        "uc09_upload_agent_workflow",
+        "sequence_upload",
+        "sequence_analysis",
+        "sequence_agents"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "figures/"
+    },
+    {
+      "source": "uc07_redline_analysis",
+      "target": "uc07_show_side_by_side",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-07 Redline I\u0307nceleme.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc07_redline_analysis",
+      "target": "uc07_highlight_differences",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-07 Redline I\u0307nceleme.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc07_inline_comparison_mode",
+      "target": "uc07_redline_analysis",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-07 Redline I\u0307nceleme.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc03_auto_segment_classification",
+      "target": "uc03_split_into_clauses",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-03 Otomatik Ayr\u0131s\u0327t\u0131rma ve S\u0131n\u0131fland\u0131rma.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc03_auto_segment_classification",
+      "target": "uc03_classify_by_category",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-03 Otomatik Ayr\u0131s\u0327t\u0131rma ve S\u0131n\u0131fland\u0131rma.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc03_auto_segment_classification",
+      "target": "uc03_calculate_confidence",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-03 Otomatik Ayr\u0131s\u0327t\u0131rma ve S\u0131n\u0131fland\u0131rma.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc03_mark_as_uncertain",
+      "target": "uc03_auto_segment_classification",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-03 Otomatik Ayr\u0131s\u0327t\u0131rma ve S\u0131n\u0131fland\u0131rma.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc05_revision_review",
+      "target": "uc05_generate_alternative",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-05 Revizyon O\u0308nerisi I\u0307nceleme.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc05_generate_alternative",
+      "target": "uc05_use_playbook_context",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-05 Revizyon O\u0308nerisi I\u0307nceleme.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc05_edit_revision_text",
+      "target": "uc05_revision_review",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-05 Revizyon O\u0308nerisi I\u0307nceleme.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc06_article_decision",
+      "target": "uc06_approve_reject_revise",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc06_article_decision",
+      "target": "uc06_record_audit_trail",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc06_add_comment",
+      "target": "uc06_approve_reject_revise",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc06_bulk_decision",
+      "target": "uc06_article_decision",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc06_review_loop",
+      "target": "uc06_article_decision",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc06_human_approval_required",
+      "target": "uc06_article_decision",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-06 Madde Bazl\u0131 Karar Verme.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_user",
+      "target": "uc01_user_registration_login",
+      "relation": "participates_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_user",
+      "target": "uc02_contract_upload",
+      "relation": "participates_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_user",
+      "target": "uc04_risk_analysis",
+      "relation": "participates_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_user",
+      "target": "uc05_2_revision_review",
+      "relation": "participates_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_user",
+      "target": "uc06_2_article_decision",
+      "relation": "participates_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_user",
+      "target": "uc07_2_redline_analysis",
+      "relation": "participates_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_user",
+      "target": "uc08_report_generation",
+      "relation": "participates_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_user",
+      "target": "uc09_playbook_management",
+      "relation": "participates_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_user",
+      "target": "uc10_export_revised",
+      "relation": "participates_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_system_admin",
+      "target": "uc01_user_registration_login",
+      "relation": "participates_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_system_admin",
+      "target": "uc11_system_configuration",
+      "relation": "participates_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc01_user_registration_login",
+      "target": "sub_auth_token_based",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc02_contract_upload",
+      "target": "sub_parse_text",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc03_2_segment_classify",
+      "target": "sub_classify_clause_agent",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc04_risk_analysis",
+      "target": "sub_policy_risk_agent",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc06_2_article_decision",
+      "target": "sub_audit_audit_trail",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "sub_ocr_apply",
+      "target": "sub_parse_text",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "sub_manual_low_confidence",
+      "target": "uc03_2_segment_classify",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "sub_revision_negotiation_agent",
+      "target": "uc04_risk_analysis",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc02_contract_upload",
+      "target": "uc03_2_segment_classify",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc03_2_segment_classify",
+      "target": "uc04_risk_analysis",
+      "relation": "triggers",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_llm_service",
+      "target": "uc03_2_segment_classify",
+      "relation": "provides_ai_capability",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_llm_service",
+      "target": "uc04_risk_analysis",
+      "relation": "provides_ai_capability",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_llm_service",
+      "target": "uc05_2_revision_review",
+      "relation": "provides_ai_capability",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_ocr_service",
+      "target": "sub_ocr_apply",
+      "relation": "provides_ocr_capability",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc09_playbook",
+      "target": "uc09_new_playbook",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc09_playbook",
+      "target": "uc09_define_rules",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc09_playbook",
+      "target": "uc09_vector_refresh",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc09_create_from_template",
+      "target": "uc09_new_playbook",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc09_edit_playbook",
+      "target": "uc09_playbook",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc09_delete_playbook",
+      "target": "uc09_playbook",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc09_select_for_analysis",
+      "target": "uc09_playbook",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-09 Playbook Olus\u0327tuma ve Yo\u0308netimi.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc11_configuration",
+      "target": "uc11_manage_accounts",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-11 Kullan\u0131c\u0131 ve Sistem Yap\u0131land\u0131rmas\u0131 Yo\u0308netimi.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc11_configuration",
+      "target": "uc11_role_permission",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-11 Kullan\u0131c\u0131 ve Sistem Yap\u0131land\u0131rmas\u0131 Yo\u0308netimi.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc11_configuration",
+      "target": "uc11_configure_system",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-11 Kullan\u0131c\u0131 ve Sistem Yap\u0131land\u0131rmas\u0131 Yo\u0308netimi.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc11_review_logs",
+      "target": "uc11_configuration",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-11 Kullan\u0131c\u0131 ve Sistem Yap\u0131land\u0131rmas\u0131 Yo\u0308netimi.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc11_maintenance_monitoring",
+      "target": "uc11_configuration",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-11 Kullan\u0131c\u0131 ve Sistem Yap\u0131land\u0131rmas\u0131 Yo\u0308netimi.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc10_export",
+      "target": "uc10_merge_approved",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-10 Revize So\u0308zles\u0327me D\u0131s\u0327a Aktar\u0131m\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc10_export",
+      "target": "uc10_create_draft",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-10 Revize So\u0308zles\u0327me D\u0131s\u0327a Aktar\u0131m\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc10_export",
+      "target": "uc10_download_docx",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-10 Revize So\u0308zles\u0327me D\u0131s\u0327a Aktar\u0131m\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "seq_upload",
+      "target": "seq_analysis",
+      "relation": "flows_into",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "figures/",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "seq_analysis",
+      "target": "seq_agents",
+      "relation": "semantically_similar_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "figures/",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "orchestrator",
+      "target": "clause_agent",
+      "relation": "coordinates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "figures/sequence-analysis.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "orchestrator",
+      "target": "risk_rag",
+      "relation": "coordinates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "figures/sequence-analysis.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "risk_rag",
+      "target": "redline_agent",
+      "relation": "coordinates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "figures/sequence-analysis.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "clause_agent",
+      "target": "pgvector_ann",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "figures/sequence-analysis.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "risk_rag",
+      "target": "pgvector_ann",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "figures/sequence-analysis.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_individual_user",
+      "target": "actor_user",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_sme_manager",
+      "target": "actor_user",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "actor_legal_advisor",
+      "target": "actor_user",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc03_2_segment_classify",
+      "target": "uc03_auto_segment_classification",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "SRS/",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc05_2_revision_review",
+      "target": "uc05_revision_review",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "SRS/",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc06_2_article_decision",
+      "target": "uc06_article_decision",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "SRS/",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc07_2_redline_analysis",
+      "target": "uc07_redline_analysis",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "SRS/",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc09_playbook_management",
+      "target": "uc09_playbook",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "SRS/",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc10_export_revised",
+      "target": "uc10_export",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "SRS/",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "uc11_system_configuration",
+      "target": "uc11_configuration",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "SRS/",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "ai_agents_workflow",
+      "label": "AI Agents Workflow Pipeline",
+      "nodes": [
+        "clause_agent",
+        "risk_agent",
+        "negotiation_agent",
+        "orchestrator"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "id": "tech_stack_backend",
+      "label": "Backend Technology Stack",
+      "nodes": [
+        "fastapi_backend",
+        "postgresql_db",
+        "pgvector",
+        "redis_cache",
+        "minio_storage",
+        "openai_api"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "id": "use_cases_sequence",
+      "label": "Contract Review Use Case Flow",
+      "nodes": [
+        "uc02_contract_upload",
+        "uc03_parsing_classification",
+        "uc04_risk_analysis",
+        "uc05_revision_review",
+        "uc06_clause_decision",
+        "uc07_redline_review"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.85,
+      "source_file": "SRS.md"
+    },
+    {
+      "id": "risk_analysis_workflow",
+      "label": "Risk Analysis Workflow",
+      "nodes": [
+        "uc04_risk_analysis_svg",
+        "risk_agent",
+        "rag_semantic_search",
+        "multi_dimensional_risk_rating",
+        "cross_validation",
+        "risk_rationale_explanation",
+        "llm_service"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "SRS/UC-04 Risk Analizi G\u00f6r\u00fcnt\u00fcleme.svg"
+    },
+    {
+      "id": "authentication_workflow",
+      "label": "Authentication Workflow",
+      "nodes": [
+        "uc01_user_registration_svg",
+        "token_authentication",
+        "new_account_creation",
+        "email_password_login",
+        "error_handling",
+        "user_actor",
+        "individual_user",
+        "kobi_manager",
+        "legal_consultant",
+        "system_admin"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giri\u015fi.svg"
+    },
+    {
+      "id": "reporting_workflow",
+      "label": "Reporting Workflow",
+      "nodes": [
+        "uc08_reporting",
+        "summary_report_generation",
+        "detailed_report_generation",
+        "pdf_docx_export",
+        "uc06_decision_review"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "SRS/UC-08 Rapor Olu\u015fturma ve \u0130ndirme.svg"
+    },
+    {
+      "id": "multi_agent_workflow",
+      "label": "Multi-Agent Legal Analysis Workflow",
+      "nodes": [
+        "orchestrator",
+        "clause_agent",
+        "risk_rag",
+        "redline_agent",
+        "pgvector_ann"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "figures/sequence-analysis.svg"
+    },
+    {
+      "id": "contract_analysis_pipeline",
+      "label": "Contract Analysis Pipeline",
+      "nodes": [
+        "uc02_contract_upload",
+        "uc03_2_segment_classify",
+        "uc04_risk_analysis",
+        "uc05_2_revision_review",
+        "uc06_2_article_decision"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg"
+    },
+    {
+      "id": "user_roles",
+      "label": "User Role Hierarchy",
+      "nodes": [
+        "actor_user",
+        "actor_individual_user",
+        "actor_sme_manager",
+        "actor_legal_advisor",
+        "actor_system_admin"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/Lagent Use Case Diyagram\u0131.svg"
+    }
+  ],
+  "input_tokens": 150000,
+  "output_tokens": 5000
+}

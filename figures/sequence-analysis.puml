@@ -1,0 +1,147 @@
+@startuml sequence-analysis
+!theme plain
+skinparam sequenceArrowThickness 1.5
+skinparam responseMessageBelowArrow true
+skinparam maxMessageSize 160
+skinparam SequenceGroupBodyBackgroundColor #F9F9F9
+skinparam SequenceGroupBackgroundColor #E8E8E8
+skinparam SequenceGroupBorderColor #888888
+skinparam ParticipantBackgroundColor #DDEEFF
+skinparam ParticipantBorderColor #336699
+skinparam SequenceLifeLineBackgroundColor #FAFAFA
+skinparam NoteBackgroundColor #FFFFCC
+skinparam NoteBorderColor #CCCC66
+
+title Sözleşme Analiz Akışı — Sequence Diagram
+
+actor       "Kullanıcı"              as USER
+participant "SU-FE-01\nWeb İstemci"  as FE
+participant "SU-GW-01\nAPI Gateway"  as GW
+participant "SU-AUTH-01\nKimlik Doğr." as AUTH
+participant "SU-ING-01\nIngestion"   as ING
+participant "SU-OS-01\nMinIO"        as MINIO
+participant "SU-ORK-01\nOrkestratör" as ORK
+participant "SU-AG-CLA\nClause Agent" as CLA
+participant "SU-AG-RSK\nRisk Agent"  as RSK
+participant "SU-RAG-01\nRAG Katmanı" as RAG
+participant "SU-AG-RDL\nRedline Agent" as RDL
+participant "SU-REPO-01\nRepository" as REPO
+database    "SU-DB-01\nPostgreSQL"   as DB
+database    "SU-CH-01\nRedis"        as REDIS
+
+== Kimlik Doğrulama ==
+USER -> FE   : Giriş (e-posta, şifre)
+FE   -> GW   : POST /auth/login
+GW   -> AUTH : doğrula(credentials)
+AUTH -> DB   : SELECT users WHERE email=?
+DB   --> AUTH: kullanıcı kaydı
+AUTH --> GW  : JWT token
+GW   --> FE  : 200 OK {token}
+FE   --> USER: Dashboard
+
+== Sözleşme Yükleme ==
+USER -> FE   : Dosya seç ve yükle (PDF/DOCX ≤10 MB)
+FE   -> GW   : POST /contracts\n[Authorization: Bearer JWT]
+GW   -> AUTH : JWT doğrula
+AUTH --> GW  : geçerli (user_id)
+GW   -> ING  : ingest(file_stream, user_id)
+
+group Parse / OCR
+    ING -> MINIO : PUT orijinal dosya\n(kullanıcı bucket'ı)
+    MINIO --> ING: storage_uri
+    ING -> ING   : PyMuPDF parse
+    alt Görüntü tabanlı sayfa
+        ING -> ING : Tesseract OCR
+        note right of ING
+            Fallback: GPT-4o Vision\n
+            veya AWS Textract
+        end note
+    end
+    ING -> ING   : Metin normalize
+    ING -> REPO  : INSERT contracts\n{user_id, file_name, storage_uri, status="processing"}
+    REPO -> DB   : SQL INSERT
+    DB --> REPO  : contract_id
+    REPO --> ING : contract_id
+    ING --> GW   : {contract_id, normalized_text}
+end
+
+GW --> FE    : 202 Accepted {contract_id}
+FE --> USER  : "Analiz başlatıldı..."
+
+== WebSocket İlerleme Kanalı ==
+FE -> GW     : WSS /ws/progress/{contract_id}
+note right: Bağlantı analiz boyunca açık kalır
+
+== Çok Ajanlı Analiz (Asenkron) ==
+GW -> ORK    : analyze(contract_id, normalized_text, playbook_id)
+
+group LangGraph Düğüm — Madde Ayrıştırma
+    ORK -> CLA   : extract_clauses(normalized_text)
+    CLA -> CLA   : Heuristik regex ön-bölümleme
+    CLA -> CLA   : LLM Structured Output\n{category, confidence}
+    CLA --> ORK  : List[Clause{index, text, category, confidence}]
+    ORK -> REPO  : INSERT clauses (toplu)
+    REPO -> DB   : SQL INSERT
+    GW --> FE    : WSS event: {stage:"clauses", progress:33%}
+    FE --> USER  : İlerleme göstergesi güncellendi
+end
+
+group LangGraph Düğüm — Risk Değerlendirmesi
+    ORK -> RSK   : assess_risk(clauses, playbook_id)
+    loop Her madde için
+        RSK -> RAG   : embed(clause_text)
+        RAG -> DB    : pgvector ANN sorgusu\n(cosine similarity, top-k)
+        DB --> RAG   : referans clause'lar
+        RAG --> RSK  : bağlam (context)
+        RSK -> RSK   : LLM prompt (temperature≤0.2)\n+ kural motoru çapraz doğrulama
+        RSK -> RSK   : {level, rationale, rule_hits}
+        note right of RSK
+            Yüksek risk →\notomatik onay YASAK
+        end note
+    end
+    RSK --> ORK  : List[RiskAssessment]
+    ORK -> REPO  : INSERT risk_assessments
+    REPO -> DB   : SQL INSERT
+    GW --> FE    : WSS event: {stage:"risk", progress:66%}
+    FE --> USER  : İlerleme göstergesi güncellendi
+end
+
+group LangGraph Düğüm — Redline / Revizyon
+    ORK -> RDL   : generate_revisions(high_risk_clauses)
+    loop Yüksek/orta risk maddeler
+        RDL -> RAG  : benzer fallback clause'lar
+        RAG --> RDL : fallback bağlamı
+        RDL -> RDL  : LLM alternatif ifade üretimi\n(≤5 sn / madde)
+        RDL -> RDL  : Myers diff → diff_html
+    end
+    RDL --> ORK  : List[Revision{original, proposed, diff_html}]
+    ORK -> REPO  : INSERT revisions
+    REPO -> DB   : SQL INSERT
+    ORK -> REPO  : UPDATE contracts SET status="completed"
+    REPO -> DB   : SQL UPDATE
+    GW --> FE    : WSS event: {stage:"done", progress:100%}
+    FE --> USER  : Analiz tamamlandı bildirimi
+end
+
+== Sonuç İnceleme ==
+USER -> FE   : Madde listesini aç
+FE   -> GW   : GET /contracts/{id}/clauses
+GW   -> REPO : findClausesByContract(contract_id)
+REPO -> DB   : SQL SELECT (clauses + risk + revisions JOIN)
+DB  --> REPO : sonuç kümesi
+REPO --> GW  : madde + risk + revizyon listesi
+GW  --> FE   : 200 OK {clauses[]}
+FE  --> USER : Renk kodlu madde listesi + redline
+
+== Madde Bazlı Onay Kararı ==
+USER -> FE   : Madde için Onayla / Reddet / Revize
+FE   -> GW   : POST /clauses/{id}/decision\n{type, comment}
+GW   -> REPO : insertDecision(clause_id, type, comment, user_id)
+REPO -> DB   : INSERT decisions + audit_log\n(zaman damgalı)
+REPO -> REDIS: oturum/durum güncelle
+DB  --> REPO : OK
+REPO --> GW  : 200 OK
+GW  --> FE   : Durum: APPROVED / REJECTED / REVISE
+FE  --> USER : Durum rozeti güncellendi (≤1 sn)
+
+@enduml

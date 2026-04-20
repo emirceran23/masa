@@ -1,0 +1,573 @@
+{
+  "nodes": [
+    {
+      "id": "system_multi_agent_legal_ops",
+      "label": "Multi-Agent Legal Ops System",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 5-6 (1.1.1 Ürün Perspektifi)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "layer_document_processing",
+      "label": "Doküman İşleme Katmanı",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 5 (1.1.1, item 1)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "layer_multi_agent_ai",
+      "label": "Çok Ajanlı Yapay Zeka Katmanı",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 5 (1.1.1, item 2)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "layer_rag",
+      "label": "Bilgi Erişim Katmanı (RAG)",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 6 (1.1.1, item 3)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "layer_server_api",
+      "label": "Sunucu Tarafı API Katmanı",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 6 (1.1.1, item 4)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "layer_client",
+      "label": "İstemci Katmanı",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 6 (1.1.1, item 5)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "layer_data_management",
+      "label": "Veri Yönetimi Katmanı",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 6 (1.1.1, item 6)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "agent_orchestrator",
+      "label": "Orkestrasyon Mekanizması",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 15 (2.4, item 1)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "agent_clause",
+      "label": "Ayrıştırma Ajanı (Clause Agent)",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 10 (2.2.3, item 1)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "agent_risk",
+      "label": "Risk Değerlendirme Ajanı (Risk Agent)",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 10-11 (2.2.4, items 1-2)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "agent_negotiation",
+      "label": "Müzakere Ajanı (Negotiation Agent)",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 15 (2.4, item 1) & page 30 (UC-05)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "playbook_rules",
+      "label": "Playbook Kuralları",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 10-12 (2.2.4, 2.2.8)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "component_vector_search",
+      "label": "Vektör Arama Bileşeni",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 15 (2.3.5)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "external_llm_service",
+      "label": "Harici LLM Servisi",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 13-14 (2.3.3)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "token_auth_mechanism",
+      "label": "Token Tabanlı Kimlik Doğrulama",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 9 (2.2.1, item 2)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "https_encrypted_transport",
+      "label": "HTTPS/WSS Şifreli İletişim",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 14-15 (2.3.3, 2.3.8) & page 18 (2.8, item 9)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "security_privacy_requirements",
+      "label": "Güvenlik ve Gizlilik Gereksinimleri",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 18 (2.8)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "rationale_llm_dependency",
+      "label": "Rationale: LLM servisi bağımlılığı performansı etkiler",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 21 (2.12, item 1)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "rationale_ocr_quality",
+      "label": "Rationale: OCR doğruluğu belge görüntü kalitesine bağlıdır",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 21 (2.12, item 2)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "requirement_llm_variable_latency",
+      "label": "Gereksinim: LLM çağrılarında yanıt süresi değişkenliği notu",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 10-11 (2.2.3 item 6; 2.2.4 item 8)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "requirement_ocr_processing",
+      "label": "Gereksinim: Taranmış belgelerde OCR uygulanması",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 10 (2.2.2, item 4)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "srs_functional_requirements",
+      "label": "SRS Fonksiyonel Gereksinimler (2.2)",
+      "file_type": "document",
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 9-12 (2.2)",
+      "source_url": "file:///Users/emirceran/Developer/masa/Lagent_SRS.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Lagent",
+      "contributor": "Mustafa Emir Ceran; Mert Ayrancı; Osman Gazi Atalay"
+    },
+    {
+      "id": "sdd_scope_section",
+      "label": "SDD Bölüm 1: Kapsam",
+      "file_type": "document",
+      "source_file": "SDD_aciklamalar.pdf",
+      "source_location": "page 2 (1 KAPSAM)",
+      "source_url": "file:///Users/emirceran/Developer/masa/SDD_aciklamalar.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Belirtilmemiş",
+      "contributor": "Belirtilmemiş"
+    },
+    {
+      "id": "sdd_design_decisions_section",
+      "label": "SDD Bölüm 3: YKE Çapında Tasarım Kararları",
+      "file_type": "document",
+      "source_file": "SDD_aciklamalar.pdf",
+      "source_location": "page 2 (3 YKE ÇAPINDA TASARIM KARARLARI)",
+      "source_url": "file:///Users/emirceran/Developer/masa/SDD_aciklamalar.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Belirtilmemiş",
+      "contributor": "Belirtilmemiş"
+    },
+    {
+      "id": "sdd_structural_design_section",
+      "label": "SDD Bölüm 4: YKE’nin Yapısal Tasarımı",
+      "file_type": "document",
+      "source_file": "SDD_aciklamalar.pdf",
+      "source_location": "page 2-3 (4 YKE’NIN YAPISAL TASARIMI)",
+      "source_url": "file:///Users/emirceran/Developer/masa/SDD_aciklamalar.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Belirtilmemiş",
+      "contributor": "Belirtilmemiş"
+    },
+    {
+      "id": "sdd_traceability_section",
+      "label": "SDD Bölüm 6: Gereksinimlerin İzlenebilirliği",
+      "file_type": "document",
+      "source_file": "SDD_aciklamalar.pdf",
+      "source_location": "page 4 (6 GEREKSINIMLERIN IZLENEBILIRLIĞI)",
+      "source_url": "file:///Users/emirceran/Developer/masa/SDD_aciklamalar.pdf",
+      "captured_at": "2026-04-20T20:03:41Z",
+      "author": "Belirtilmemiş",
+      "contributor": "Belirtilmemiş"
+    }
+  ],
+  "edges": [
+    {
+      "source": "system_multi_agent_legal_ops",
+      "target": "layer_document_processing",
+      "relation": "has_layer",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 5 (1.1.1 item 1)",
+      "weight": 1.0
+    },
+    {
+      "source": "system_multi_agent_legal_ops",
+      "target": "layer_multi_agent_ai",
+      "relation": "has_layer",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 5 (1.1.1 item 2)",
+      "weight": 1.0
+    },
+    {
+      "source": "system_multi_agent_legal_ops",
+      "target": "layer_rag",
+      "relation": "has_layer",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 6 (1.1.1 item 3)",
+      "weight": 1.0
+    },
+    {
+      "source": "system_multi_agent_legal_ops",
+      "target": "layer_server_api",
+      "relation": "has_layer",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 6 (1.1.1 item 4)",
+      "weight": 1.0
+    },
+    {
+      "source": "system_multi_agent_legal_ops",
+      "target": "layer_client",
+      "relation": "has_layer",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 6 (1.1.1 item 5)",
+      "weight": 1.0
+    },
+    {
+      "source": "system_multi_agent_legal_ops",
+      "target": "layer_data_management",
+      "relation": "has_layer",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 6 (1.1.1 item 6)",
+      "weight": 1.0
+    },
+    {
+      "source": "layer_multi_agent_ai",
+      "target": "agent_orchestrator",
+      "relation": "contains_component",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 15 (2.4 item 1)",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_orchestrator",
+      "target": "agent_clause",
+      "relation": "coordinates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 15 (2.4 item 1)",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_orchestrator",
+      "target": "agent_risk",
+      "relation": "coordinates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 15 (2.4 item 1)",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_orchestrator",
+      "target": "agent_negotiation",
+      "relation": "coordinates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 15 (2.4 item 1)",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_risk",
+      "target": "playbook_rules",
+      "relation": "compares_against",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 10 (2.2.4 item 1)",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_risk",
+      "target": "component_vector_search",
+      "relation": "uses_semantic_similarity_search",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 10 (2.2.4 item 2) & page 15 (2.3.5)",
+      "weight": 1.0
+    },
+    {
+      "source": "system_multi_agent_legal_ops",
+      "target": "external_llm_service",
+      "relation": "depends_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 13-14 (2.3.3)",
+      "weight": 1.0
+    },
+    {
+      "source": "srs_functional_requirements",
+      "target": "token_auth_mechanism",
+      "relation": "requires",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 9 (2.2.1 item 2)",
+      "weight": 1.0
+    },
+    {
+      "source": "security_privacy_requirements",
+      "target": "https_encrypted_transport",
+      "relation": "requires",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 18 (2.8 item 9)",
+      "weight": 1.0
+    },
+    {
+      "source": "security_privacy_requirements",
+      "target": "token_auth_mechanism",
+      "relation": "requires_signed_expiring_tokens",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 18 (2.8 items 3,5)",
+      "weight": 1.0
+    },
+    {
+      "source": "rationale_llm_dependency",
+      "target": "requirement_llm_variable_latency",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 21 (2.12 item 1) + page 10-11 latency caveats",
+      "weight": 0.85
+    },
+    {
+      "source": "rationale_ocr_quality",
+      "target": "requirement_ocr_processing",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.83,
+      "source_file": "Lagent_SRS.pdf",
+      "source_location": "page 21 (2.12 item 2) + page 10 (2.2.2 item 4)",
+      "weight": 0.83
+    },
+    {
+      "source": "sdd_scope_section",
+      "target": "sdd_design_decisions_section",
+      "relation": "precedes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SDD_aciklamalar.pdf",
+      "source_location": "page 2 section order",
+      "weight": 1.0
+    },
+    {
+      "source": "sdd_design_decisions_section",
+      "target": "sdd_structural_design_section",
+      "relation": "informs",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SDD_aciklamalar.pdf",
+      "source_location": "page 2 lines describing design decisions affecting unit design",
+      "weight": 1.0
+    },
+    {
+      "source": "sdd_traceability_section",
+      "target": "sdd_structural_design_section",
+      "relation": "traces_units_from",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SDD_aciklamalar.pdf",
+      "source_location": "page 4 (Section 6a)",
+      "weight": 1.0
+    },
+    {
+      "source": "sdd_traceability_section",
+      "target": "srs_functional_requirements",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.72,
+      "source_file": "SDD_aciklamalar.pdf + Lagent_SRS.pdf",
+      "source_location": "SDD section 6 traceability concept vs SRS section 2.2 requirements",
+      "weight": 0.72
+    },
+    {
+      "source": "sdd_design_decisions_section",
+      "target": "layer_multi_agent_ai",
+      "relation": "semantically_similar_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.25,
+      "source_file": "SDD_aciklamalar.pdf + Lagent_SRS.pdf",
+      "source_location": "SDD generic YKE design decisions vs SRS concrete layered architecture",
+      "weight": 0.25
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "h_layered_architecture",
+      "label": "Lagent Katmanlı Mimari",
+      "nodes": [
+        "system_multi_agent_legal_ops",
+        "layer_document_processing",
+        "layer_multi_agent_ai",
+        "layer_rag",
+        "layer_server_api",
+        "layer_client",
+        "layer_data_management"
+      ],
+      "relation": "layered_architecture",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Lagent_SRS.pdf"
+    },
+    {
+      "id": "h_agent_analysis_pipeline",
+      "label": "Ajan Tabanlı Analiz Akışı",
+      "nodes": [
+        "agent_orchestrator",
+        "agent_clause",
+        "agent_risk",
+        "agent_negotiation",
+        "playbook_rules",
+        "component_vector_search"
+      ],
+      "relation": "orchestrated_analysis_pipeline",
+      "confidence": "INFERRED",
+      "confidence_score": 0.86,
+      "source_file": "Lagent_SRS.pdf"
+    },
+    {
+      "id": "h_sdd_core_structure",
+      "label": "SDD Çekirdek Bölüm Akışı",
+      "nodes": [
+        "sdd_scope_section",
+        "sdd_design_decisions_section",
+        "sdd_structural_design_section",
+        "sdd_traceability_section"
+      ],
+      "relation": "document_structure_flow",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SDD_aciklamalar.pdf"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

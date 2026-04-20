@@ -1,0 +1,1 @@
+{"nodes": [{"id": "uc04_risk_analysis_jpg", "label": "UC-04 Risk Analysis Use Case JPG", "file_type": "image", "source_file": "SRS/UC-04.jpg"}], "edges": [{"source": "uc04_risk_analysis_svg", "target": "uc04_risk_analysis_jpg", "relation": "semantically_similar_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "SRS/UC-04.jpg"}], "hyperedges": []}

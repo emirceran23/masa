@@ -1,0 +1,78 @@
+@startuml sequence-agents
+!theme plain
+scale 0.85
+skinparam sequenceArrowThickness 1.5
+skinparam responseMessageBelowArrow true
+skinparam maxMessageSize 130
+skinparam ParticipantBackgroundColor #DDEEFF
+skinparam ParticipantBorderColor #336699
+skinparam NoteBackgroundColor #FFFFCC
+skinparam NoteBorderColor #CCCC66
+skinparam SequenceGroupBodyBackgroundColor #F5F5F5
+skinparam SequenceGroupBackgroundColor #E0E0E0
+skinparam SequenceGroupBorderColor #888888
+skinparam sequenceParticipantFontSize 12
+skinparam sequenceArrowFontSize 11
+skinparam ParticipantPadding 8
+
+title Diyagram 2 — Çok Ajanlı Analiz ve Onay Akışı
+
+actor  "Kullanıcı"  as USER
+participant "İstemci\n(FE + GW)" as CLIENT
+participant "Orkestratör" as ORK
+participant "Clause Agent" as CLA
+participant "Risk + RAG" as RSK
+participant "Redline Agent" as RDL
+
+note over CLIENT, ORK
+    WSS kanalı açık (Diyagram 1'den devam)
+end note
+
+CLIENT -> ORK : analyze(contract_id, text, playbook_id)
+
+group LangGraph — Madde Ayrıştırma
+    ORK -> CLA  : extract_clauses(text)
+    CLA -> CLA  : regex + LLM Structured Output\n{category, confidence}
+    CLA --> ORK : List[Clause]
+    note right of ORK : INSERT clauses → DB
+    CLIENT <-- ORK : WSS {stage:"clauses", 33%}
+    USER   <-- CLIENT: İlerleme göstergesi
+end
+
+group LangGraph — Risk Değerlendirmesi
+    ORK -> RSK  : assess_risk(clauses, playbook_id)
+    RSK -> RSK  : pgvector ANN (top-k)\n+ LLM (temp ≤ 0.2)\n+ kural motoru çapraz doğrulama
+    note right of RSK
+        Yüksek risk →\notomatik onay YASAK
+    end note
+    RSK --> ORK : List[RiskAssessment{level, rationale}]
+    note right of ORK : INSERT risk_assessments → DB
+    CLIENT <-- ORK : WSS {stage:"risk", 66%}
+    USER   <-- CLIENT: İlerleme göstergesi
+end
+
+group LangGraph — Revizyon Önerisi
+    ORK -> RDL  : generate_revisions(riskli maddeler)
+    RDL -> RSK  : fallback clause bağlamı (RAG)
+    RSK --> RDL : benzer referans ifadeler
+    RDL -> RDL  : LLM alternatif üretimi (≤5 sn/madde)\n+ Myers diff → diff_html
+    RDL --> ORK : List[Revision{original, proposed, diff_html}]
+    note right of ORK : INSERT revisions\nUPDATE contracts → "completed"
+    CLIENT <-- ORK : WSS {stage:"done", 100%}
+    USER   <-- CLIENT: "Analiz tamamlandı"
+end
+
+== Sonuç İnceleme ==
+USER   -> CLIENT : Madde listesini aç
+CLIENT -> RSK    : GET clauses + risk + revisions (DB)
+RSK   --> CLIENT : sonuç kümesi
+CLIENT --> USER  : Renk kodlu madde listesi + redline
+
+== Madde Bazlı Onay Kararı ==
+USER   -> CLIENT : Onayla / Reddet / Revize
+CLIENT -> RSK    : INSERT decision + audit_log (DB)
+note right : Zaman damgası +\nuser_id kaydedilir
+RSK   --> CLIENT : OK (≤ 1 sn)
+CLIENT --> USER  : APPROVED / REJECTED / REVISE
+
+@enduml

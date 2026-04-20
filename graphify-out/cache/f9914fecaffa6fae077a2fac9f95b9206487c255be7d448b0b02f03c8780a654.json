@@ -1,0 +1,1 @@
+{"nodes": [{"id": "uc05_document_upload", "label": "UC-05 Document Upload", "file_type": "image", "source_file": "SRS/UC-05.jpg"}], "edges": [{"source": "uc05_document_upload", "target": "uc09_upload_agent_workflow", "relation": "semantically_similar_to", "confidence": "INFERRED", "confidence_score": 0.75, "source_file": "SRS/UC-05.jpg"}], "hyperedges": []}

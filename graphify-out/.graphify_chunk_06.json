@@ -1,0 +1,255 @@
+{
+  "nodes": [
+    {
+      "id": "uc08_main_use_case",
+      "label": "UC-08 Rapor Oluşturma ve İndirme",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "title + ent0004",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc08_user_actor",
+      "label": "Kullanıcı",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0002",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc08_summary_report",
+      "label": "Özet Rapor Oluştur",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0005",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc08_detailed_report",
+      "label": "Detaylı Rapor Oluştur",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0006",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc08_download_pdf_docx",
+      "label": "PDF/DOCX Olarak İndir",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0007",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc08_precondition_uc06",
+      "label": "Ön Koşul: Sözleşme incelemesi tamamlanmış ve kararlar verilmiş olmalıdır (UC-06)",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0013 precondition text",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc08_postcondition_downloadable",
+      "label": "Son Koşul: Rapor oluşturulur ve kullanıcı dosya olarak indirebilir",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0013 postcondition text",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc08_summary_content_spec",
+      "label": "Özet Rapor İçeriği: toplam madde, risk dağılımı, karar özeti",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0013 summary content",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc08_detailed_content_spec",
+      "label": "Detaylı Rapor İçeriği: madde/kategori/risk, gerekçe, karar, kullanıcı yorumları",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0013 detailed content",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "uc08_export_formats",
+      "label": "Dışa Aktarım Formatları: PDF, DOCX",
+      "file_type": "image",
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0013 export formats",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "uc08_user_actor",
+      "target": "uc08_main_use_case",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "lnk11",
+      "weight": 1.0
+    },
+    {
+      "source": "uc08_main_use_case",
+      "target": "uc08_summary_report",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "lnk8 <<include>>",
+      "weight": 1.0
+    },
+    {
+      "source": "uc08_main_use_case",
+      "target": "uc08_download_pdf_docx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "lnk9 <<include>>",
+      "weight": 1.0
+    },
+    {
+      "source": "uc08_detailed_report",
+      "target": "uc08_main_use_case",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "lnk10 <<extend>> [detaylı rapor istenirse]",
+      "weight": 1.0
+    },
+    {
+      "source": "uc08_precondition_uc06",
+      "target": "uc08_main_use_case",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0013",
+      "weight": 1.0
+    },
+    {
+      "source": "uc08_postcondition_downloadable",
+      "target": "uc08_main_use_case",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0013",
+      "weight": 1.0
+    },
+    {
+      "source": "uc08_summary_content_spec",
+      "target": "uc08_summary_report",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0013",
+      "weight": 1.0
+    },
+    {
+      "source": "uc08_detailed_content_spec",
+      "target": "uc08_detailed_report",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0013",
+      "weight": 1.0
+    },
+    {
+      "source": "uc08_export_formats",
+      "target": "uc08_download_pdf_docx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "ent0013",
+      "weight": 1.0
+    },
+    {
+      "source": "uc08_summary_report",
+      "target": "uc08_detailed_report",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.86,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "inferred from paired report variants",
+      "weight": 1.0
+    },
+    {
+      "source": "uc08_download_pdf_docx",
+      "target": "uc08_user_actor",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.78,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "postcondition implies user receives downloadable file",
+      "weight": 1.0
+    },
+    {
+      "source": "uc08_detailed_report",
+      "target": "uc08_download_pdf_docx",
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.22,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg",
+      "source_location": "download step likely applies, but explicit linkage only to UC-08 core",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "uc08_reporting_flow",
+      "label": "UC-08 Reporting and Export Flow",
+      "nodes": [
+        "uc08_user_actor",
+        "uc08_main_use_case",
+        "uc08_summary_report",
+        "uc08_detailed_report",
+        "uc08_download_pdf_docx"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SRS/UC-08 Rapor Oluşturma ve İndirme.svg"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

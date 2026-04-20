@@ -1,0 +1,44 @@
+{
+  "chunks": [
+    [
+      "Lagent_SRS.pdf",
+      "SDD_aciklamalar.pdf"
+    ],
+    [
+      "SRS/Lagent Use Case Diyagram\u0131.jpg"
+    ],
+    [
+      "SRS/UC-01 Kullan\u0131c\u0131 Kayd\u0131 ve Giris\u0327i.svg"
+    ],
+    [
+      "SRS/UC-02 So\u0308zles\u0327me Yu\u0308kleme.svg"
+    ],
+    [
+      "SRS/UC-04 Risk Analizi Go\u0308ru\u0308ntu\u0308leme.svg"
+    ],
+    [
+      "SRS/UC-08 Rapor Olus\u0327turma ve I\u0307ndirme.svg"
+    ],
+    [
+      "SRS/UC-08.jpg"
+    ],
+    [
+      "SRS/UC-09.jpg"
+    ],
+    [
+      "SRS/UML.jpg"
+    ],
+    [
+      "SRS/UML.svg"
+    ],
+    [
+      "figures/sequence-agents.png"
+    ],
+    [
+      "figures/sequence-analysis.png"
+    ],
+    [
+      "figures/sequence-upload.png"
+    ]
+  ]
+}

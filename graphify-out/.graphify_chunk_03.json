@@ -1,0 +1,261 @@
+{
+  "nodes": [
+    {
+      "id": "system_multi_agent_legal_ops",
+      "label": "Multi-Agent Legal Ops",
+      "type": "system",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "actor_user",
+      "label": "Kullanıcı",
+      "type": "actor",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "actor_bireysel_kullanici",
+      "label": "Bireysel Kullanıcı",
+      "type": "actor",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "actor_kobi_yoneticisi",
+      "label": "KOBİ Yöneticisi",
+      "type": "actor",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "actor_hukuk_danismani",
+      "label": "Hukuk Danışmanı",
+      "type": "actor",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "actor_sistem_yoneticisi",
+      "label": "Sistem Yöneticisi",
+      "type": "actor",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "uc01_kullanici_kaydi_ve_girisi",
+      "label": "UC-01 Kullanıcı Kaydı ve Girişi",
+      "type": "use_case",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "uc01a_yeni_hesap_olustur",
+      "label": "Yeni Hesap Oluştur",
+      "type": "use_case",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "uc01b_eposta_sifre_ile_giris_yap",
+      "label": "E-posta/Şifre ile Giriş Yap",
+      "type": "use_case",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "uc01c_token_tabanli_kimlik_dogrulama",
+      "label": "Token Tabanlı Kimlik Doğrulama",
+      "type": "use_case",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "uc01d_hata_mesaji_goster",
+      "label": "Hata Mesajı Göster (Başarısız Giriş)",
+      "type": "use_case",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "precondition_system_access",
+      "label": "Ön Koşul: Kullanıcı sisteme erişim sağlamış olmalıdır",
+      "type": "constraint",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "postcondition_login_or_error",
+      "label": "Son Koşul: Kullanıcı giriş yapar ve token alır veya hata mesajı görür",
+      "type": "constraint",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "basic_flow_login_sequence",
+      "label": "Temel Akış: e-posta/şifre gir, kimlik doğrula, token üret",
+      "type": "flow",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "alternative_flow_new_user_registration",
+      "label": "Alternatif Akış: Yeni kullanıcı kayıt olur",
+      "type": "flow",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    },
+    {
+      "id": "alternative_flow_failed_login_error",
+      "label": "Alternatif Akış: Başarısız girişte hata mesajı gösterilir",
+      "type": "flow",
+      "source_file": "SRS/UC-01 Kullanıcı Kaydı ve Girişi.svg"
+    }
+  ],
+  "edges": [
+    {
+      "source": "actor_bireysel_kullanici",
+      "target": "actor_user",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actor_kobi_yoneticisi",
+      "target": "actor_user",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actor_hukuk_danismani",
+      "target": "actor_user",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actor_user",
+      "target": "uc01_kullanici_kaydi_ve_girisi",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actor_sistem_yoneticisi",
+      "target": "uc01_kullanici_kaydi_ve_girisi",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uc01_kullanici_kaydi_ve_girisi",
+      "target": "uc01a_yeni_hesap_olustur",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uc01_kullanici_kaydi_ve_girisi",
+      "target": "uc01b_eposta_sifre_ile_giris_yap",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uc01b_eposta_sifre_ile_giris_yap",
+      "target": "uc01c_token_tabanli_kimlik_dogrulama",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uc01d_hata_mesaji_goster",
+      "target": "uc01b_eposta_sifre_ile_giris_yap",
+      "relation": "extends",
+      "condition": "başarısız giriş",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uc01_kullanici_kaydi_ve_girisi",
+      "target": "precondition_system_access",
+      "relation": "has_precondition",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.97
+    },
+    {
+      "source": "uc01_kullanici_kaydi_ve_girisi",
+      "target": "postcondition_login_or_error",
+      "relation": "has_postcondition",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.97
+    },
+    {
+      "source": "uc01_kullanici_kaydi_ve_girisi",
+      "target": "basic_flow_login_sequence",
+      "relation": "has_basic_flow",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95
+    },
+    {
+      "source": "uc01_kullanici_kaydi_ve_girisi",
+      "target": "alternative_flow_new_user_registration",
+      "relation": "has_alternative_flow",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95
+    },
+    {
+      "source": "uc01_kullanici_kaydi_ve_girisi",
+      "target": "alternative_flow_failed_login_error",
+      "relation": "has_alternative_flow",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95
+    },
+    {
+      "source": "uc01a_yeni_hesap_olustur",
+      "target": "uc01b_eposta_sifre_ile_giris_yap",
+      "relation": "precedes_for_first_time_user",
+      "confidence": "INFERRED",
+      "confidence_score": 0.72
+    },
+    {
+      "source": "uc01b_eposta_sifre_ile_giris_yap",
+      "target": "postcondition_login_or_error",
+      "relation": "produces_outcome",
+      "confidence": "INFERRED",
+      "confidence_score": 0.84
+    },
+    {
+      "source": "actor_user",
+      "target": "uc01a_yeni_hesap_olustur",
+      "relation": "initiates",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.46
+    },
+    {
+      "source": "actor_user",
+      "target": "uc01b_eposta_sifre_ile_giris_yap",
+      "relation": "initiates",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.56
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "h_uc01_authentication_path",
+      "label": "UC-01 Authentication Path",
+      "nodes": [
+        "actor_user",
+        "uc01_kullanici_kaydi_ve_girisi",
+        "uc01b_eposta_sifre_ile_giris_yap",
+        "uc01c_token_tabanli_kimlik_dogrulama",
+        "postcondition_login_or_error"
+      ],
+      "relation": "authentication_flow",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.91
+    },
+    {
+      "id": "h_uc01_onboarding_and_failure_alternatives",
+      "label": "UC-01 Alternative Flows",
+      "nodes": [
+        "uc01_kullanici_kaydi_ve_girisi",
+        "uc01a_yeni_hesap_olustur",
+        "uc01d_hata_mesaji_goster",
+        "alternative_flow_new_user_registration",
+        "alternative_flow_failed_login_error"
+      ],
+      "relation": "alternative_flow_group",
+      "confidence": "INFERRED",
+      "confidence_score": 0.79
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

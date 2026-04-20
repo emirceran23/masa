@@ -1,0 +1,1 @@
+{"nodes": [{"id": "sequence_upload", "label": "Upload Sequence Diagram", "file_type": "image", "source_file": "figures/sequence-upload.pdf"}], "edges": [{"source": "sequence_upload", "target": "sequence_agents", "relation": "participate_in", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "figures/sequence-upload.pdf"}], "hyperedges": []}

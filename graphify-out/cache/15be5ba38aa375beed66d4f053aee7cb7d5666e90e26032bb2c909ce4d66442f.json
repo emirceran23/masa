@@ -1,0 +1,1 @@
+{"nodes": [{"id": "sequence_analysis", "label": "Analysis Sequence Diagram", "file_type": "image", "source_file": "figures/sequence-analysis.pdf"}], "edges": [{"source": "sequence_analysis", "target": "sequence_agents", "relation": "participate_in", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "figures/sequence-analysis.pdf"}], "hyperedges": []}

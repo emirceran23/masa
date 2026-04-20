@@ -1,0 +1,303 @@
+{
+  "nodes": [
+    {
+      "id": "system_multi_agent_legal_ops",
+      "label": "Multi-Agent Legal Ops",
+      "type": "system",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "actor_kullanici",
+      "label": "Kullanıcı",
+      "type": "actor",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "actor_hukuk_danismani",
+      "label": "Hukuk Danışmanı",
+      "type": "actor",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "actor_llm_servisi",
+      "label": "LLM Servisi",
+      "type": "external_system",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "uc04_risk_analizi_goruntuleme",
+      "label": "UC-04 Risk Analizi Görüntüleme",
+      "type": "use_case",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "uc04a_politika_kontrolu",
+      "label": "Politika Kontrolü (Risk Agent)",
+      "type": "use_case",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "uc04b_rag_anlamsal_benzerlik",
+      "label": "RAG ile Anlamsal Benzerlik Araması",
+      "type": "use_case",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "uc04c_cok_boyutlu_risk_derecelendirme",
+      "label": "Çok Boyutlu Risk Derecelendirme",
+      "type": "use_case",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "uc04d_capraz_dogrulama",
+      "label": "Çapraz Doğrulama (Kural Motoru)",
+      "type": "use_case",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "uc04e_eksik_hukum_tespiti",
+      "label": "Eksik Hüküm Tespiti",
+      "type": "use_case",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "uc04f_risk_gerekcesi_aciklama",
+      "label": "Risk Gerekçesi Açıklama",
+      "type": "use_case",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "precondition_uc04_clauses_classified",
+      "label": "Ön Koşul: Maddeler sınıflandırılmış olmalıdır (UC-03)",
+      "type": "constraint",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "precondition_uc04_playbook_defined",
+      "label": "Ön Koşul: Kullanıcının en az bir Playbook tanımlanmış olmalıdır",
+      "type": "constraint",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "postcondition_uc04_risk_level_and_rationale",
+      "label": "Son Koşul: Her maddeye risk seviyesi atanır ve gerekçe sunulur",
+      "type": "constraint",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "basic_flow_uc04",
+      "label": "Temel Akış: madde al, RAG karşılaştır, derecelendir, çapraz doğrula, gerekçe üret",
+      "type": "flow",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    },
+    {
+      "id": "alternative_flow_uc04_missing_clause",
+      "label": "Alternatif Akış: Eksik hükümler otomatik tespit edilip raporlanır",
+      "type": "flow",
+      "source_file": "SRS/UC-04 Risk Analizi Görüntüleme.svg"
+    }
+  ],
+  "edges": [
+    {
+      "source": "system_multi_agent_legal_ops",
+      "target": "uc04_risk_analizi_goruntuleme",
+      "relation": "contains_use_case",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.99
+    },
+    {
+      "source": "actor_kullanici",
+      "target": "uc04_risk_analizi_goruntuleme",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actor_hukuk_danismani",
+      "target": "uc04_risk_analizi_goruntuleme",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "actor_llm_servisi",
+      "target": "uc04a_politika_kontrolu",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.97
+    },
+    {
+      "source": "actor_llm_servisi",
+      "target": "uc04c_cok_boyutlu_risk_derecelendirme",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.97
+    },
+    {
+      "source": "uc04_risk_analizi_goruntuleme",
+      "target": "uc04a_politika_kontrolu",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uc04a_politika_kontrolu",
+      "target": "uc04b_rag_anlamsal_benzerlik",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uc04_risk_analizi_goruntuleme",
+      "target": "uc04c_cok_boyutlu_risk_derecelendirme",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uc04_risk_analizi_goruntuleme",
+      "target": "uc04d_capraz_dogrulama",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uc04_risk_analizi_goruntuleme",
+      "target": "uc04f_risk_gerekcesi_aciklama",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uc04e_eksik_hukum_tespiti",
+      "target": "uc04a_politika_kontrolu",
+      "relation": "extends",
+      "condition": "Playbook'ta tanımlı ancak sözleşmede eksik hüküm varsa",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "uc04_risk_analizi_goruntuleme",
+      "target": "precondition_uc04_clauses_classified",
+      "relation": "has_precondition",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98
+    },
+    {
+      "source": "uc04_risk_analizi_goruntuleme",
+      "target": "precondition_uc04_playbook_defined",
+      "relation": "has_precondition",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98
+    },
+    {
+      "source": "uc04_risk_analizi_goruntuleme",
+      "target": "postcondition_uc04_risk_level_and_rationale",
+      "relation": "has_postcondition",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.98
+    },
+    {
+      "source": "uc04_risk_analizi_goruntuleme",
+      "target": "basic_flow_uc04",
+      "relation": "has_basic_flow",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.97
+    },
+    {
+      "source": "uc04_risk_analizi_goruntuleme",
+      "target": "alternative_flow_uc04_missing_clause",
+      "relation": "has_alternative_flow",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.97
+    },
+    {
+      "source": "basic_flow_uc04",
+      "target": "uc04b_rag_anlamsal_benzerlik",
+      "relation": "invokes_step",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.94
+    },
+    {
+      "source": "basic_flow_uc04",
+      "target": "uc04c_cok_boyutlu_risk_derecelendirme",
+      "relation": "invokes_step",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.94
+    },
+    {
+      "source": "alternative_flow_uc04_missing_clause",
+      "target": "uc04e_eksik_hukum_tespiti",
+      "relation": "mapped_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.88
+    },
+    {
+      "source": "uc04b_rag_anlamsal_benzerlik",
+      "target": "uc04c_cok_boyutlu_risk_derecelendirme",
+      "relation": "supports",
+      "confidence": "INFERRED",
+      "confidence_score": 0.84
+    },
+    {
+      "source": "uc04d_capraz_dogrulama",
+      "target": "uc04c_cok_boyutlu_risk_derecelendirme",
+      "relation": "validates",
+      "confidence": "INFERRED",
+      "confidence_score": 0.86
+    },
+    {
+      "source": "uc04f_risk_gerekcesi_aciklama",
+      "target": "uc04c_cok_boyutlu_risk_derecelendirme",
+      "relation": "explains",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85
+    },
+    {
+      "source": "actor_kullanici",
+      "target": "uc04e_eksik_hukum_tespiti",
+      "relation": "may_trigger",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.43
+    },
+    {
+      "source": "actor_hukuk_danismani",
+      "target": "uc04f_risk_gerekcesi_aciklama",
+      "relation": "consumes_output",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.39
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "h_uc04_risk_pipeline",
+      "label": "UC-04 Risk Analysis Pipeline",
+      "nodes": [
+        "uc04_risk_analizi_goruntuleme",
+        "uc04a_politika_kontrolu",
+        "uc04b_rag_anlamsal_benzerlik",
+        "uc04c_cok_boyutlu_risk_derecelendirme",
+        "uc04d_capraz_dogrulama",
+        "uc04f_risk_gerekcesi_aciklama"
+      ],
+      "relation": "pipeline",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95
+    },
+    {
+      "id": "h_uc04_alternative_missing_clause",
+      "label": "UC-04 Missing Clause Alternative",
+      "nodes": [
+        "uc04_risk_analizi_goruntuleme",
+        "alternative_flow_uc04_missing_clause",
+        "uc04e_eksik_hukum_tespiti",
+        "uc04a_politika_kontrolu"
+      ],
+      "relation": "alternative_flow_group",
+      "confidence": "INFERRED",
+      "confidence_score": 0.89
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

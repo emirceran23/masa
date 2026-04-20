@@ -1,0 +1,1 @@
+{"nodes": [{"id": "uc01_user_registration", "label": "UC-01 User Registration and Login", "file_type": "image", "source_file": "SRS/UC-01.jpg"}], "edges": [{"source": "uc01_user_registration", "target": "uc01_user_registration_svg", "relation": "semantically_similar_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "SRS/UC-01.jpg"}], "hyperedges": []}
