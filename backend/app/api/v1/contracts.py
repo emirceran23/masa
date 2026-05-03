@@ -1,5 +1,7 @@
 """Contract endpoints — upload, list, detail, delete, analyze."""
 
+import asyncio
+import logging
 from uuid import UUID
 from typing import Optional
 
@@ -7,7 +9,7 @@ from fastapi import APIRouter, Depends, File, Query, UploadFile
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.api.deps import get_current_user
-from app.core.database import get_db
+from app.core.database import get_db, async_session_factory
 from app.core.redis import get_analysis_progress
 from app.models.user import User
 from app.schemas.common import MessageResponse
@@ -18,6 +20,8 @@ from app.schemas.contract import (
     ContractResponse,
 )
 from app.services import contract_service, analysis_service, audit_service
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/contracts", tags=["Contracts"])
 
@@ -86,16 +90,19 @@ async def delete_contract(
     return MessageResponse(message="Sözleşme başarıyla silindi.")
 
 
-@router.post("/{contract_id}/analyze", response_model=MessageResponse)
+@router.post("/{contract_id}/analyze", response_model=MessageResponse, status_code=202)
 async def analyze_contract(
     contract_id: UUID,
     payload: Optional[AnalyzeRequest] = None,
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    """Sözleşme analizi başlatır (Clause Agent → sınıflandırma)."""
+    """Analizi arka planda başlatır ve hemen 202 döner."""
     playbook_id = payload.playbook_id if payload else None
-    await analysis_service.start_analysis(db, contract_id, current_user.id, playbook_id)
+
+    # Validate and immediately mark as processing so the frontend sees it.
+    await analysis_service.validate_and_mark_processing(db, contract_id, current_user.id, playbook_id)
+
     await audit_service.log_action(
         db,
         user_id=current_user.id,
@@ -103,7 +110,18 @@ async def analyze_contract(
         resource_type="contract",
         resource_id=contract_id,
     )
-    return MessageResponse(message="Analiz başarıyla tamamlandı.")
+
+    async def _run_in_own_session() -> None:
+        async with async_session_factory() as bg_db:
+            try:
+                await analysis_service.start_analysis(bg_db, contract_id, current_user.id, playbook_id)
+                await bg_db.commit()
+            except Exception:
+                await bg_db.rollback()
+                logger.exception("Background analysis failed for contract %s", contract_id)
+
+    asyncio.create_task(_run_in_own_session())
+    return MessageResponse(message="Analiz başlatıldı.")
 
 
 @router.get("/{contract_id}/status")

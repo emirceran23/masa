@@ -5,22 +5,12 @@ from __future__ import annotations
 import json
 import logging
 
-from openai import AsyncOpenAI
-
+from app.agents.client import get_openai_client
 from app.config import settings
 from app.agents.prompts.clause_prompts import SYSTEM_PROMPT, USER_PROMPT_TEMPLATE
 from app.agents.schemas.clause_schema import ClauseAgentOutput, ClauseItem
 
 logger = logging.getLogger(__name__)
-
-_client: AsyncOpenAI | None = None
-
-
-def _get_client() -> AsyncOpenAI:
-    global _client
-    if _client is None:
-        _client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
-    return _client
 
 
 async def run_clause_agent(contract_text: str) -> list[ClauseItem]:
@@ -28,7 +18,7 @@ async def run_clause_agent(contract_text: str) -> list[ClauseItem]:
 
     Uses OpenAI's JSON mode / structured outputs for reliable parsing.
     """
-    client = _get_client()
+    client = get_openai_client()
 
     user_message = USER_PROMPT_TEMPLATE.format(contract_text=contract_text)
 

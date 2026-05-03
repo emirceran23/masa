@@ -3,6 +3,7 @@
 import type { ClauseDetail } from "@/types";
 import { cn, categoryLabel, riskColor } from "@/lib/utils";
 import { ShieldAlert, CheckCircle2, XCircle } from "lucide-react";
+import ApprovalPanel from "@/components/approval/approval-panel";
 
 interface ClauseDetailPanelProps {
   clause: ClauseDetail;
@@ -73,6 +74,19 @@ export default function ClauseDetailPanel({ clause }: ClauseDetailPanelProps) {
               Çapraz Doğrulama
             </span>
           </div>
+        </div>
+      )}
+
+      {/* Approval panel — shown when clause needs a decision */}
+      {(clause.status === "in_review" || clause.status === "draft") && (
+        <div className="rounded-xl border">
+          <div className="border-b px-4 py-2 bg-gray-50">
+            <h4 className="text-sm font-semibold text-gray-700">Onay Akışı</h4>
+          </div>
+          <ApprovalPanel
+            clause={clause}
+            riskLevel={clause.risk_assessment?.risk_level}
+          />
         </div>
       )}
 

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  BookOpen,
   FileText,
   LayoutDashboard,
   LogOut,
@@ -14,6 +15,7 @@ import { useAuthStore } from "@/stores/auth-store";
 const navItems = [
   { href: "/dashboard", label: "Panel", icon: LayoutDashboard },
   { href: "/contracts", label: "Sözleşmeler", icon: FileText },
+  { href: "/playbooks", label: "Playbook'lar", icon: BookOpen },
 ];
 
 export default function Sidebar() {

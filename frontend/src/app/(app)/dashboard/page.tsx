@@ -1,18 +1,57 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useContractStore } from "@/stores/contract-store";
 import { useAuthStore } from "@/stores/auth-store";
 import { FileText, Upload, BarChart3 } from "lucide-react";
 import Link from "next/link";
+import api from "@/lib/api";
+import type { RiskAssessmentDetail } from "@/types";
+import RiskChart from "@/components/analysis/risk-chart";
 
 export default function DashboardPage() {
   const { user } = useAuthStore();
   const { contracts, total, fetchContracts } = useContractStore();
 
+  const [riskCounts, setRiskCounts] = useState({ low: 0, medium: 0, high: 0 });
+
   useEffect(() => {
     fetchContracts();
   }, [fetchContracts]);
+
+  useEffect(() => {
+    // Aggregate risk levels across the user's analyzed contracts.
+    const analyzedIds = contracts
+      .filter((c) => c.status === "analyzed")
+      .map((c) => c.id);
+    if (analyzedIds.length === 0) {
+      setRiskCounts({ low: 0, medium: 0, high: 0 });
+      return;
+    }
+
+    let cancelled = false;
+    (async () => {
+      const totals = { low: 0, medium: 0, high: 0 };
+      const responses = await Promise.allSettled(
+        analyzedIds.map((cid) =>
+          api.get<RiskAssessmentDetail[]>(`/contracts/${cid}/risks`),
+        ),
+      );
+      responses.forEach((res) => {
+        if (res.status !== "fulfilled") return;
+        res.value.data.forEach((r) => {
+          if (r.risk_level === "low") totals.low += 1;
+          else if (r.risk_level === "medium") totals.medium += 1;
+          else if (r.risk_level === "high") totals.high += 1;
+        });
+      });
+      if (!cancelled) setRiskCounts(totals);
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [contracts]);
 
   const analyzed = contracts.filter((c) => c.status === "analyzed").length;
   const processing = contracts.filter((c) => c.status === "processing").length;
@@ -68,6 +107,9 @@ export default function DashboardPage() {
           </div>
         ))}
       </div>
+
+      {/* Aggregate risk chart */}
+      <RiskChart counts={riskCounts} title="Tüm Sözleşmelerde Risk Dağılımı" />
 
       {/* Quick actions */}
       <div className="flex gap-4">

@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "description": "Risk Agent tarafından kullanılan değerlendirme rubriği — her madde kategorisi için ticari ve hukuki risk faktörlerini tanımlar.",
+  "levels": {
+    "low": {
+      "label": "Düşük Risk",
+      "color": "green",
+      "description": "Madde standart endüstri uygulamalarıyla uyumlu, politika kurallarını karşılıyor ve karşı tarafa ciddi bir avantaj sağlamıyor.",
+      "score_range": [0.0, 0.33]
+    },
+    "medium": {
+      "label": "Orta Risk",
+      "color": "amber",
+      "description": "Madde kabul edilebilir ancak müzakere edilmesi önerilen hükümler içeriyor; net eşik aşımları yok ama standart uygulamadan sapma mevcut.",
+      "score_range": [0.34, 0.66]
+    },
+    "high": {
+      "label": "Yüksek Risk",
+      "color": "red",
+      "description": "Madde playbook tarafından yasaklanmış hükümler, sınırsız sorumluluk, eşik aşımı veya tek taraflı haklar içeriyor — müzakere edilmeden imzalanmamalı.",
+      "score_range": [0.67, 1.0]
+    }
+  },
+  "dimensions": {
+    "commercial": {
+      "label": "Ticari Risk",
+      "weight": 0.5,
+      "factors": [
+        "Ödeme koşullarının dengesizliği (aşırı kısa vade, geç ödeme cezası yokluğu)",
+        "Cezai şart tutarının sözleşme değerine oranı",
+        "Fesih bildirimi süresinin yetersizliği",
+        "Fiyat değişikliği / enflasyon ayarlaması hükümlerinin eksikliği",
+        "Rekabet yasağı kapsamının orantısızlığı"
+      ]
+    },
+    "legal": {
+      "label": "Hukuki Risk",
+      "weight": 0.5,
+      "factors": [
+        "Sorumluluk sınırlamasının yokluğu veya aşırı yüksekliği",
+        "Fikri mülkiyet devrinin ölçüsüzlüğü",
+        "Uyuşmazlık çözümü forumu (yetkili mahkeme, tahkim) belirsizliği",
+        "Gizlilik ve veri koruma yükümlülüklerinin eksikliği",
+        "Mücbir sebep tanımının dar kapsamı",
+        "Yürürlük hukukunun karşı taraf lehine seçilmesi"
+      ]
+    }
+  },
+  "category_weights": {
+    "gizlilik": { "commercial": 0.2, "legal": 0.8 },
+    "tazminat": { "commercial": 0.4, "legal": 0.6 },
+    "fesih": { "commercial": 0.6, "legal": 0.4 },
+    "fikri_mulkiyet": { "commercial": 0.3, "legal": 0.7 },
+    "sorumluluk_sinirlandirma": { "commercial": 0.3, "legal": 0.7 },
+    "uyusmazlik_cozumu": { "commercial": 0.1, "legal": 0.9 },
+    "odeme_kosullari": { "commercial": 0.8, "legal": 0.2 },
+    "genel_hukumler": { "commercial": 0.4, "legal": 0.6 },
+    "diger": { "commercial": 0.5, "legal": 0.5 },
+    "belirsiz": { "commercial": 0.5, "legal": 0.5 }
+  },
+  "required_categories": [
+    "gizlilik",
+    "uyusmazlik_cozumu",
+    "fesih",
+    "sorumluluk_sinirlandirma"
+  ],
+  "escalation_rules": [
+    {
+      "condition": "Bir 'rejected' tipi playbook kuralı ile eşleşme",
+      "risk_level": "high",
+      "policy_compliance": false
+    },
+    {
+      "condition": "Bir 'threshold' tipi kuralın eşik değerini aşma",
+      "risk_level": "high",
+      "policy_compliance": false
+    },
+    {
+      "condition": "Bir 'required' tipi kuralın karşılığı sözleşmede bulunmuyor",
+      "risk_level": "high",
+      "missing_provision": true
+    },
+    {
+      "condition": "Hiçbir playbook kuralı eşleşmedi ve madde 'belirsiz' kategoride",
+      "risk_level": "medium"
+    }
+  ]
+}

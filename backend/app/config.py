@@ -14,9 +14,12 @@ class Settings(BaseSettings):
     API_HOST: str = "0.0.0.0"
     API_PORT: int = 8000
 
-    # ── OpenAI ───────────────────────────────────────────
+    # ── OpenAI / OpenRouter ──────────────────────────────
     OPENAI_API_KEY: str = ""
-    OPENAI_MODEL: str = "gpt-4o"
+    # Leave empty to use the default OpenAI endpoint.
+    # Set to "https://openrouter.ai/api/v1" to route through OpenRouter.
+    OPENAI_BASE_URL: str = ""
+    OPENAI_MODEL: str = "gpt-4o-mini"
     OPENAI_EMBEDDING_MODEL: str = "text-embedding-3-small"
     OPENAI_TEMPERATURE: float = 0.2
 

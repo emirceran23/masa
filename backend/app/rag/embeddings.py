@@ -4,20 +4,10 @@ from __future__ import annotations
 
 import logging
 
-from openai import AsyncOpenAI
-
+from app.agents.client import get_openai_client
 from app.config import settings
 
 logger = logging.getLogger(__name__)
-
-_client: AsyncOpenAI | None = None
-
-
-def _get_client() -> AsyncOpenAI:
-    global _client
-    if _client is None:
-        _client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
-    return _client
 
 
 async def embed_texts(texts: list[str]) -> list[list[float]]:
@@ -29,7 +19,7 @@ async def embed_texts(texts: list[str]) -> list[list[float]]:
     if not texts:
         return []
 
-    client = _get_client()
+    client = get_openai_client()
     response = await client.embeddings.create(
         model=settings.OPENAI_EMBEDDING_MODEL,
         input=texts,

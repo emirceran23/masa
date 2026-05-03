@@ -22,13 +22,17 @@ export interface Contract {
   file_size: number;
   status: "uploaded" | "processing" | "analyzed" | "error";
   total_clauses: number;
-  created_at: string;
-  updated_at: string;
+  uploaded_at: string;
+  analyzed_at: string | null;
+}
+
+export interface ClauseListResponse {
+  total: number;
+  items: Clause[];
 }
 
 export interface ContractDetail extends Contract {
   raw_text: string | null;
-  clauses: Clause[];
 }
 
 export interface Clause {
@@ -83,4 +87,102 @@ export interface AnalysisProgress {
 
 export interface MessageResponse {
   message: string;
+}
+
+/* ── Playbook ─────────────────────────────────────────────── */
+
+export type PlaybookRuleType = "acceptable" | "rejected" | "required" | "threshold";
+
+export interface PlaybookRule {
+  id: string;
+  rule_type: PlaybookRuleType;
+  content: string;
+  threshold_value: number | null;
+  created_at: string;
+}
+
+export interface PlaybookRuleInput {
+  rule_type: PlaybookRuleType;
+  content: string;
+  threshold_value: number | null;
+}
+
+export interface Playbook {
+  id: string;
+  user_id: string;
+  name: string;
+  description: string | null;
+  is_default: boolean;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface PlaybookDetail extends Playbook {
+  rules: PlaybookRule[];
+}
+
+/* ── Risk summary / missing provisions ───────────────────── */
+
+export interface RiskAssessmentDetail extends RiskAssessment {
+  clause_id: string;
+  assessed_at: string;
+}
+
+export interface MissingProvision {
+  id: string;
+  contract_id: string;
+  playbook_rule_id: string | null;
+  description: string;
+  detected_at: string;
+}
+
+/* ── Revisions ───────────────────────────────────────────────── */
+
+export type RevisionStatus = "pending" | "accepted" | "rejected" | "edited";
+
+export interface RevisionDetail {
+  id: string;
+  clause_id: string;
+  suggested_text: string;
+  context_used: string | null;
+  diff_html: string | null;
+  status: RevisionStatus;
+  edited_text: string | null;
+  created_at: string;
+}
+
+/* ── Approvals ───────────────────────────────────────────────── */
+
+export type ApprovalDecision = "approved" | "rejected" | "revise";
+
+export interface ApprovalDecisionRecord {
+  id: string;
+  clause_id: string;
+  user_id: string;
+  decision: ApprovalDecision;
+  comment: string | null;
+  decided_at: string;
+}
+
+/* ── Reports ─────────────────────────────────────────────────── */
+
+export interface ReportSummaryData {
+  risk_counts: Record<string, number>;
+  status_counts: Record<string, number>;
+  revision_counts: Record<string, number>;
+  missing_provisions_count: number;
+  missing_provisions: Array<{ key: string; description: string }>;
+  generated_at: string;
+  contract_name: string;
+}
+
+export interface Report {
+  id: string;
+  contract_id: string;
+  report_type: "summary" | "detailed";
+  total_clauses: number | null;
+  summary_data: ReportSummaryData | null;
+  storage_path: string | null;
+  created_at: string;
 }

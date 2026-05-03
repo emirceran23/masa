@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useContractStore } from "@/stores/contract-store";
 import UploadDropzone from "@/components/contracts/upload-dropzone";
@@ -9,6 +10,7 @@ import { extractApiError } from "@/lib/utils";
 import { Loader2, Plus } from "lucide-react";
 
 export default function ContractsPage() {
+  const router = useRouter();
   const {
     contracts,
     total,
@@ -53,7 +55,7 @@ export default function ContractsPage() {
   async function handleAnalyze(id: string) {
     try {
       await startAnalysis(id);
-      toast.success("Analiz başlatıldı!");
+      router.push(`/contracts/${id}`);
     } catch (err: any) {
       toast.error(extractApiError(err, "Analiz başlatılamadı."));
     }

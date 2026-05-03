@@ -1,19 +1,22 @@
 "use client";
 
 import type { Clause } from "@/types";
-import { cn, categoryLabel, riskColor } from "@/lib/utils";
+import { cn, categoryLabel } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
+import RiskBadge from "@/components/contract/risk-badge";
 
 interface ClauseListProps {
   clauses: Clause[];
   selectedId?: string;
   onSelect: (clause: Clause) => void;
+  riskLevels?: Record<string, string>;
 }
 
 export default function ClauseList({
   clauses,
   selectedId,
   onSelect,
+  riskLevels,
 }: ClauseListProps) {
   if (clauses.length === 0) {
     return (
@@ -45,6 +48,9 @@ export default function ClauseList({
               <span className="text-xs text-gray-400">
                 {(clause.confidence_score * 100).toFixed(0)}%
               </span>
+              {riskLevels?.[clause.id] && (
+                <RiskBadge level={riskLevels[clause.id]} size="sm" withIcon={false} />
+              )}
             </div>
             <p className="truncate text-sm text-gray-700">
               {clause.original_text}

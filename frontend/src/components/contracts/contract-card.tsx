@@ -39,7 +39,7 @@ export default function ContractCard({
             </p>
             <p className="text-xs text-gray-400">
               {formatFileSize(contract.file_size)} •{" "}
-              {formatDate(contract.created_at)}
+              {formatDate(contract.uploaded_at)}
             </p>
           </div>
         </Link>

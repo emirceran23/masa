@@ -4,7 +4,7 @@
 
 > **Ekip:** Mustafa Emir Ceran · Mert Ayrancı · Osman Gazi Atalay  
 > **Tarih:** 8 Nisan 2026  
-> **Durum:** 🟡 **AŞAMA 2 DEVAM EDİYOR** — RAG & Playbook Altyapısı ✅ (Mert) · Risk Agent & Frontend ⏳ (Emir + Osman)
+> **Durum:** 🟡 **AŞAMA 4 DEVAM EDİYOR** — Sprint 4.1 Raporlama & Dışa Aktarım ✅ · Sprint 4.2 UAT & Güvenlik ⏳
 
 ---
 
@@ -1001,28 +1001,28 @@ Tüm promptlar `backend/app/agents/prompts/` altında ayrı dosyalarda tutulacak
 | 6 | Playbook API uç noktaları | Mert | `api/v1/playbooks.py` | ✅ |
 | 7 | Playbook güncelleme → vektör indeks yenileme | Mert | `services/playbook_service.py` | ✅ |
 | 8 | Varsayılan Playbook şablonu | Emir | `data/seed/default_playbook.json` | ✅ |
-| 9 | Risk değerlendirme rubriği tasarımı | Emir | `data/seed/risk_rubric.json` | ⏳ |
-| 10 | Risk Agent prompt tasarımı | Emir | `agents/prompts/risk_prompts.py` | ⏳ |
-| 11 | Frontend: Playbook yönetim ekranları | Osman | `app/(dashboard)/playbooks/` | ⏳ |
-| 12 | Frontend: Playbook kural editörü | Osman | `components/playbook/rule-editor.tsx` | ⏳ |
+| 9 | Risk değerlendirme rubriği tasarımı | Emir | `data/seed/risk_rubric.json` | ✅ |
+| 10 | Risk Agent prompt tasarımı | Emir | `agents/prompts/risk_prompts.py` | ✅ |
+| 11 | Frontend: Playbook yönetim ekranları | Osman | `app/(dashboard)/playbooks/` | ✅ |
+| 12 | Frontend: Playbook kural editörü | Osman | `components/playbook/rule-editor.tsx` | ✅ |
 
 #### Sprint 2.2 — Risk Agent & Entegrasyon (4-10 Nisan)
 
 | # | Görev | Sorumlu | Dosya/Modül | Durum |
 |---|-------|---------|-------------|-------|
-| 1 | Risk Agent implementasyonu | Emir | `agents/risk_agent.py` | ⏳ |
-| 2 | Kural motoru (çapraz doğrulama) | Emir | `rules/engine.py`, `rules/validators.py` | ⏳ |
-| 3 | Eksik hüküm tespit mekanizması | Emir | `agents/risk_agent.py` | ⏳ |
+| 1 | Risk Agent implementasyonu | Emir | `agents/risk_agent.py` | ✅ |
+| 2 | Kural motoru (çapraz doğrulama) | Emir | `rules/engine.py`, `rules/validators.py` | ✅ |
+| 3 | Eksik hüküm tespit mekanizması | Emir | `agents/risk_agent.py` | ✅ |
 | 4 | Risk API uç noktaları | Mert | `api/v1/risks.py` | ✅ |
-| 5 | Orkestratöre Risk Agent eklenmesi | Emir | `agents/orchestrator.py` | ⏳ |
+| 5 | Orkestratöre Risk Agent eklenmesi | Emir | `agents/orchestrator.py` | ✅ |
 | 6 | Redis oturum ve durum yönetimi | Mert | `core/redis.py` | ✅ |
-| 7 | Frontend: Risk sonuçları görünümü | Osman | `components/analysis/risk-summary.tsx` | ⏳ |
-| 8 | Frontend: Risk renk kodlaması (badge) | Osman | `components/contract/risk-badge.tsx` | ⏳ |
-| 9 | Frontend: Dashboard istatistikleri | Osman | `components/analysis/risk-chart.tsx` | ⏳ |
-| 10 | Entegrasyon testleri: analiz pipeline | Osman | `tests/integration/test_analysis_pipeline.py` | ⏳ |
-| 11 | SDD dokümanı ilk sürüm | Emir | `docs/SDD.md` | ⏳ |
+| 7 | Frontend: Risk sonuçları görünümü | Osman | `components/analysis/risk-summary.tsx` | ✅ |
+| 8 | Frontend: Risk renk kodlaması (badge) | Osman | `components/contract/risk-badge.tsx` | ✅ |
+| 9 | Frontend: Dashboard istatistikleri | Osman | `components/analysis/risk-chart.tsx` | ✅ |
+| 10 | Entegrasyon testleri: analiz pipeline | Emir | `tests/test_analysis_pipeline.py`, `tests/test_rules_engine.py` | ✅ |
+| 11 | SDD dokümanı ilk sürüm | — | — | ⏸️ ertelendi |
 
-**Aşama 2 — Gelinen Nokta (15 Nisan 2026):**
+**Aşama 2 — Gelinen Nokta (21 Nisan 2026):**
 
 ✅ **Tamamlanan (Mert):**
 - pgvector migration (`0002_pgvector_embeddings.py`) — `clause_embeddings`, `playbook_rule_embeddings`, `missing_provisions` tabloları oluşturuldu
@@ -1036,54 +1036,102 @@ Tüm promptlar `backend/app/agents/prompts/` altında ayrı dosyalarda tutulacak
 > docker-compose exec backend alembic upgrade head
 > ```
 
-⏳ **Bekleyen (Emir):** Risk Agent, kural motoru, orkestratör, SDD dokümanı
+✅ **Tamamlanan (Emir — Sprint 2.1.9-10 + Sprint 2.2):**
+- Risk rubric (`data/seed/risk_rubric.json`) — kategori ağırlıkları, tırmanma kuralları, eşik tanımları
+- Risk Agent prompt şablonları (`agents/prompts/risk_prompts.py`) — madde değerlendirme + eksik hüküm tespiti
+- Risk Agent (`agents/risk_agent.py`) — LLM çağrısı + çapraz doğrulama, `detect_missing_provisions`
+- Kural motoru (`rules/engine.py`, `rules/validators.py`) — deterministik yüzde eşiği ve semantik eşleşme
+- Orkestratör (`agents/orchestrator.py`) — Clause → embedding → Risk Agent → missing provisions pipeline
+- `services/analysis_service.py` — Risk Phase entegrasyonu (Phase 2 güncellendi)
+- `agents/schemas/risk_schema.py` — `RiskAgentOutput`, `MissingProvisionsOutput`
+- `rules/__init__.py` — yeni paket
 
-⏳ **Bekleyen (Osman):** Frontend playbook ekranları, risk bileşenleri, entegrasyon testleri
+✅ **Tamamlanan (Osman — Sprint 2.1.11-12 + Sprint 2.2.7-10):**
+- Frontend playbook ekranları: liste (`/playbooks`), yeni (`/playbooks/new`), düzenle (`/playbooks/[id]`)
+- Playbook kural editörü (`components/playbook/rule-editor.tsx`) — acceptable/rejected/required/threshold
+- Playbook form bileşeni (`components/playbook/playbook-form.tsx`)
+- Playbook store (`stores/playbook-store.ts`)
+- Risk bileşenleri: `risk-badge.tsx`, `risk-summary.tsx`, `risk-chart.tsx`
+- Sözleşme detay sayfasına `RiskSummary` ve madde listesine `RiskBadge` entegrasyonu
+- Dashboard'a toplu risk dağılım grafiği eklendi
+- Sidebar'a "Playbook'lar" menüsü eklendi
+- Tip tanımları güncellendi (`types/api.ts` — Playbook, MissingProvision, RiskAssessmentDetail)
+- Entegrasyon testleri: `tests/test_analysis_pipeline.py`, `tests/test_rules_engine.py`
 
 **Aşama 2 Çıktıları:**
 - ✅ Playbook CRUD + vektörel indeksleme
 - ✅ RAG ile anlamsal benzerlik araması
-- ⏳ Risk Agent ile risk değerlendirme (düşük/orta/yüksek)
-- ⏳ Kural motoru çapraz doğrulaması
-- ⏳ Eksik hüküm tespiti
-- ⏳ Dashboard'da risk dağılımı görselleştirme
+- ✅ Risk Agent ile risk değerlendirme (düşük/orta/yüksek)
+- ✅ Kural motoru çapraz doğrulaması
+- ✅ Eksik hüküm tespiti
+- ✅ Dashboard'da risk dağılımı görselleştirme
 
 ---
 
-### 🟠 AŞAMA 3: Görev-3 — Revizyon, Redline & Onay Akışı (11-24 Nisan)
+### 🟠 AŞAMA 3: Görev-3 — Revizyon, Redline & Onay Akışı (11-24 Nisan) — **DEVAM EDİYOR**
 
 **Hedef:** Negotiation Agent, karşılaştırmalı görünüm, onay akışı ve denetim izi.
 
 #### Sprint 3.1 — Revizyon & Redline (11-17 Nisan)
 
-| # | Görev | Sorumlu | Dosya/Modül |
-|---|-------|---------|-------------|
-| 1 | Negotiation Agent implementasyonu | Emir | `agents/negotiation_agent.py` |
-| 2 | Negotiation Agent prompt tasarımı | Emir | `agents/prompts/negotiation_prompts.py` |
-| 3 | Orkestratöre Negotiation Agent ekleme | Emir | `agents/orchestrator.py` |
-| 4 | Diff/Redline üretim servisi | Mert | `utils/diff.py` |
-| 5 | Revizyon API uç noktaları | Mert | `api/v1/revisions.py` |
-| 6 | Revizyon metin düzenleme desteği | Mert | `api/v1/revisions.py` |
-| 7 | Frontend: Diff viewer (karşılaştırmalı) | Osman | `components/redline/diff-viewer.tsx` |
-| 8 | Frontend: Satır içi diff modu | Osman | `components/redline/inline-diff.tsx` |
-| 9 | Frontend: Redline ekranı | Osman | `app/(dashboard)/contracts/[id]/redline/` |
-| 10 | Unit testler: negotiation_agent, diff | Osman | `tests/unit/` |
+| # | Görev | Sorumlu | Dosya/Modül | Durum |
+|---|-------|---------|-------------|-------|
+| 1 | Negotiation Agent implementasyonu | Emir | `agents/negotiation_agent.py` | ✅ |
+| 2 | Negotiation Agent prompt tasarımı | Emir | `agents/prompts/negotiation_prompts.py` | ✅ |
+| 3 | Orkestratöre Negotiation Agent ekleme | Emir | `agents/orchestrator.py` | ✅ |
+| 4 | Diff/Redline üretim servisi | Emir | `utils/diff.py` | ✅ |
+| 5 | Revizyon API uç noktaları | Emir | `api/v1/revisions.py` | ✅ |
+| 6 | Revizyon metin düzenleme desteği | Emir | `api/v1/revisions.py` | ✅ |
+| 7 | Frontend: Diff viewer (karşılaştırmalı) | Osman | `components/redline/diff-viewer.tsx` | ✅ |
+| 8 | Frontend: Satır içi diff modu | Osman | `components/redline/inline-diff.tsx` | ✅ |
+| 9 | Frontend: Redline ekranı | Osman | `app/(app)/contracts/[id]/redline/` | ✅ |
+| 10 | Unit testler: negotiation_agent, diff | Emir | `tests/test_negotiation_agent.py` | ✅ |
 
 #### Sprint 3.2 — Onay Akışı & Denetim İzi (18-24 Nisan)
 
-| # | Görev | Sorumlu | Dosya/Modül |
-|---|-------|---------|-------------|
-| 1 | Onay akışı durum makinesi (state transitions) | Emir | `services/approval_service.py` |
-| 2 | Yüksek risk → zorunlu insan onayı | Emir | `services/approval_service.py` |
-| 3 | Onay API uç noktaları | Mert | `api/v1/approvals.py` |
-| 4 | Toplu onay/red desteği | Mert | `api/v1/approvals.py` |
-| 5 | Denetim izi (audit trail) servisi | Mert | `services/audit_service.py` |
-| 6 | Yeniden değerlendirme döngüsü | Emir | `agents/orchestrator.py` |
-| 7 | Frontend: Onay paneli | Osman | `components/approval/approval-panel.tsx` |
-| 8 | Frontend: Karar butonları + yorum | Osman | `components/approval/decision-buttons.tsx` |
-| 9 | Frontend: Denetim izi zaman çizelgesi | Osman | `components/approval/audit-timeline.tsx` |
-| 10 | Frontend: Madde detay ekranı birleştirme | Osman | Tüm bileşenlerin entegrasyonu |
-| 11 | Entegrasyon testleri: onay akışı | Osman | `tests/integration/test_approval_flow.py` |
+| # | Görev | Sorumlu | Dosya/Modül | Durum |
+|---|-------|---------|-------------|-------|
+| 1 | Onay akışı durum makinesi (state transitions) | Emir | `services/approval_service.py` | ✅ |
+| 2 | Yüksek risk → zorunlu insan onayı | Emir | `services/approval_service.py` | ✅ |
+| 3 | Onay API uç noktaları | Emir | `api/v1/approvals.py` | ✅ |
+| 4 | Toplu onay/red desteği | Emir | `api/v1/approvals.py` | ✅ |
+| 5 | Denetim izi (audit trail) servisi | — | `services/audit_service.py` (mevcut) | ✅ |
+| 6 | Yeniden değerlendirme döngüsü | Emir | `services/approval_service.py` (`promote_risky_clauses_to_review`) | ✅ |
+| 7 | Frontend: Onay paneli | Osman | `components/approval/approval-panel.tsx` | ✅ |
+| 8 | Frontend: Karar butonları + yorum | Osman | `components/approval/decision-buttons.tsx` | ✅ |
+| 9 | Frontend: Denetim izi zaman çizelgesi | Osman | `components/approval/audit-timeline.tsx` | ✅ |
+| 10 | Frontend: Madde detay ekranı birleştirme | Osman | `clause-detail-panel.tsx` (ApprovalPanel entegre edildi) | ✅ |
+| 11 | Entegrasyon testleri: onay akışı | Osman | `tests/integration/test_approval_flow.py` | ⏳ |
+
+**Aşama 3 — Gelinen Nokta (21 Nisan 2026):**
+
+✅ **Tamamlanan (Emir — Sprint 3.1 + 3.2):**
+- Negotiation Agent (`agents/negotiation_agent.py`) — medium/high maddeler için LLM tabanlı revizyon önerisi
+- Negotiation Agent prompt şablonları (`agents/prompts/negotiation_prompts.py`)
+- Diff servisi (`utils/diff.py`) — kelime bazlı HTML diff, `similarity_ratio`
+- Orkestratör Phase 3 güncellendi — Risk → MissingProvisions → Negotiation sıralaması
+- Revizyon servisi (`services/revision_service.py`) — list, accept, reject, edit
+- Revizyon API (`api/v1/revisions.py`) — 5 endpoint, `router.py`'ye bağlandı
+- Onay servisi (`services/approval_service.py`) — state machine, bulk decide, `promote_risky_clauses_to_review`
+- Onay API (`api/v1/approvals.py`) — 3 endpoint, `router.py`'ye bağlandı
+- `analysis_service.py` güncellendi — analiz sonunda medium/high maddeler otomatik `in_review` durumuna alınıyor
+- `agents/schemas/negotiation_schema.py`
+- Unit testler: `tests/test_negotiation_agent.py` (Negotiation Agent + diff utility)
+
+✅ **Tamamlanan (Osman — Sprint 3.1.7-9 + 3.2.7-10):**
+- `components/redline/diff-viewer.tsx` — HTML diff renderer
+- `components/redline/inline-diff.tsx` — madde inline diff toggle
+- `components/redline/revision-card.tsx` — kabul/red/düzenle kartı
+- `app/(app)/contracts/[id]/redline/page.tsx` — tam Redline ekranı
+- `components/approval/decision-buttons.tsx` — yorum + karar butonları
+- `components/approval/audit-timeline.tsx` — karar geçmişi zaman çizelgesi
+- `components/approval/approval-panel.tsx` — madde onay paneli (decisions + timeline)
+- `clause-detail-panel.tsx` — ApprovalPanel entegre edildi
+- `contracts/[id]/page.tsx` — Redline linki eklendi
+- `globals.css` — diff-del / diff-ins stilleri eklendi
+- `types/api.ts` — RevisionDetail, ApprovalDecisionRecord tipleri eklendi
+
+⏳ **Bekleyen:** Onay akışı entegrasyon testi
 
 **Aşama 3 Çıktıları:**
 - ✅ Riskli maddeler için otomatik revizyon önerisi
@@ -1094,25 +1142,40 @@ Tüm promptlar `backend/app/agents/prompts/` altında ayrı dosyalarda tutulacak
 
 ---
 
-### 🔴 AŞAMA 4: Görev-4 — Raporlama, Dışa Aktarım & Polisaj (25 Nisan - 8 Mayıs)
+### 🟡 AŞAMA 4: Görev-4 — Raporlama, Dışa Aktarım & Polisaj (25 Nisan - 8 Mayıs)
 
 **Hedef:** Rapor oluşturma, sözleşme dışa aktarımı, UAT, güvenlik, performans.
 
-#### Sprint 4.1 — Raporlama & Dışa Aktarım (25 Nisan - 1 Mayıs)
+#### Sprint 4.1 — Raporlama & Dışa Aktarım (25 Nisan - 1 Mayıs) — ✅ TAMAMLANDI
 
-| # | Görev | Sorumlu | Dosya/Modül |
-|---|-------|---------|-------------|
-| 1 | Özet rapor oluşturma servisi | Mert | `services/report_service.py` |
-| 2 | Detaylı rapor oluşturma servisi | Mert | `services/report_service.py` |
-| 3 | Rapor PDF üretimi | Mert | `services/report_service.py` (weasyprint/fpdf) |
-| 4 | Rapor DOCX üretimi | Mert | `services/report_service.py` (python-docx) |
-| 5 | Revize sözleşme DOCX dışa aktarımı | Mert | `services/export_service.py` |
-| 6 | Rapor & dışa aktarım API | Mert | `api/v1/reports.py` |
-| 7 | Frontend: Rapor ekranı | Osman | `app/(dashboard)/contracts/[id]/report/` |
-| 8 | Frontend: Özet rapor bileşeni | Osman | `components/report/summary-report.tsx` |
-| 9 | Frontend: İndirme butonları | Osman | İlgili bileşenler |
-| 10 | Onboarding wizard | Osman | Yeni bileşen |
-| 11 | Tooltip ve yardım metinleri | Osman | Tüm ekranlar |
+| # | Görev | Sorumlu | Dosya/Modül | Durum |
+|---|-------|---------|-------------|-------|
+| 1 | Özet rapor oluşturma servisi | Emir | `services/report_service.py` | ✅ |
+| 2 | Detaylı rapor oluşturma servisi | Emir | `services/report_service.py` | ✅ |
+| 3 | Rapor PDF üretimi | Emir | `services/report_service.py` (fpdf2) | ✅ |
+| 4 | Rapor DOCX üretimi | Emir | `services/report_service.py` (python-docx) | ✅ |
+| 5 | Revize sözleşme DOCX dışa aktarımı | Emir | `services/export_service.py` | ✅ |
+| 6 | Rapor & dışa aktarım API | Emir | `api/v1/reports.py` | ✅ |
+| 7 | Frontend: Rapor ekranı | Emir | `app/(app)/contracts/[id]/report/page.tsx` | ✅ |
+| 8 | Frontend: Özet rapor bileşeni | Emir | `components/reports/report-summary-card.tsx` | ✅ |
+| 9 | Frontend: İndirme + dışa aktarım butonları | Emir | `contracts/[id]/page.tsx` (Rapor linki eklendi) | ✅ |
+| 10 | pyproject.toml: fpdf2 bağımlılığı | Emir | `pyproject.toml` | ✅ |
+| 11 | Pydantic şema: ReportGenerateRequest/Response | Emir | `schemas/report.py` | ✅ |
+| 12 | API tipler: Report, ReportSummaryData | Emir | `frontend/src/types/api.ts` | ✅ |
+
+**Aşama 4.1 — Gelinen Nokta (29 Nisan 2026):**
+
+✅ **Tamamlanan (Emir — Sprint 4.1):**
+- `services/report_service.py` — veri toplama (`_build_payload`), PDF (fpdf2) ve DOCX (python-docx) üretimi; MinIO'ya yükleme; `Report` satırı kayıt
+- `services/export_service.py` — kabul edilen revizyonlar uygulanmış sözleşme DOCX üretimi; edited > accepted > original önceliği
+- `api/v1/reports.py` — 4 endpoint: POST rapor oluştur, GET listele, GET indir, GET dışa aktar
+- `api/v1/router.py` — reports router bağlandı
+- `schemas/report.py` — `ReportGenerateRequest`, `ReportResponse`
+- `pyproject.toml` — `fpdf2>=2.7.9` eklendi
+- `frontend/src/types/api.ts` — `Report`, `ReportSummaryData` tipleri eklendi
+- `frontend/src/app/(app)/contracts/[id]/report/page.tsx` — tam rapor ekranı
+- `frontend/src/components/reports/report-summary-card.tsx` — risk mini-bar, indirme butonu
+- `frontend/src/app/(app)/contracts/[id]/page.tsx` — "Rapor" linki eklendi
 
 #### Sprint 4.2 — Güvenlik, Performans & UAT (2-8 Mayıs)
 
