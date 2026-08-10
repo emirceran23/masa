@@ -131,12 +131,15 @@ async def _build_payload(db: AsyncSession, contract: Contract) -> dict[str, Any]
     # Missing provisions (stored in raw SQL table)
     missing_rows = await db.execute(
         text(
-            "SELECT provision_key, description FROM missing_provisions "
-            "WHERE contract_id = :cid ORDER BY provision_key"
+            "SELECT id, playbook_rule_id, description FROM missing_provisions "
+            "WHERE contract_id = :cid ORDER BY detected_at ASC"
         ),
-        {"cid": str(contract.id)},
+        {"cid": contract.id},
     )
-    missing_provisions = [{"key": r.provision_key, "description": r.description} for r in missing_rows]
+    missing_provisions = [
+        {"key": str(r.playbook_rule_id) if r.playbook_rule_id else "unknown", "description": r.description}
+        for r in missing_rows
+    ]
 
     # Risk distribution counts
     risk_counts: dict[str, int] = {"low": 0, "medium": 0, "high": 0, "unassessed": 0}

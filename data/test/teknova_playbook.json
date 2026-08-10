@@ -1,0 +1,91 @@
+{
+  "name": "TekNova Yazılım — SaaS Hizmet Sözleşmeleri Playbook v2.1",
+  "description": "TekNova Yazılım A.Ş.'nin SaaS ve yazılım hizmet sözleşmelerinde uyguladığı standart kural seti. Hukuk birimi onaylı, Türk Ticaret Kanunu ve KVKK uyumlu.",
+  "is_default": false,
+  "rules": [
+    {
+      "rule_type": "rejected",
+      "content": "Müşterinin kaynak koda (source code) sınırsız ve devredilmez mülkiyet hakkı talep ettiği maddeler kabul edilemez. Fikri mülkiyet hakları TekNova'da kalmalıdır."
+    },
+    {
+      "rule_type": "rejected",
+      "content": "Sözleşme süresince ve sona ermesinden itibaren 3 yılı aşan süreyle TekNova'nın benzer müşterilere hizmet vermesini yasaklayan münhasırlık maddeleri reddedilmelidir."
+    },
+    {
+      "rule_type": "rejected",
+      "content": "TekNova'nın müşteri zararlarından doğan dolaylı, arızi veya cezai zararları (indirect, incidental, punitive damages) sınırsız biçimde karşılamasını öngören sorumluluk maddeleri kabul edilemez."
+    },
+    {
+      "rule_type": "rejected",
+      "content": "Müşteriye ön bildirim yapılmaksızın sözleşmeyi tek taraflı olarak feshedip tazminat talep etme hakkı tanıyan maddeler reddedilmelidir."
+    },
+    {
+      "rule_type": "rejected",
+      "content": "TekNova'nın altyapı sağlayıcılarını (AWS, GCP, Azure vb.) müşteri onayına bağlayan ve onay verilmediği takdirde ceza öngören maddeler kabul edilemez."
+    },
+    {
+      "rule_type": "required",
+      "content": "Sözleşmede KVKK ve GDPR kapsamında kişisel verilerin işlenmesine ilişkin Veri İşleme Sözleşmesi (DPA) veya eşdeğer bir gizlilik maddesi bulunmalıdır."
+    },
+    {
+      "rule_type": "required",
+      "content": "Hizmet Seviyesi Anlaşması (SLA) maddesi bulunmalı; en az %99,5 yıllık uptime garantisi ve ihlal durumunda hizmet kredisi mekanizması tanımlanmalıdır."
+    },
+    {
+      "rule_type": "required",
+      "content": "Uyuşmazlık çözümü maddesi bulunmalıdır; İstanbul tahkimi veya İstanbul Anadolu Mahkemeleri yetkili olmalıdır."
+    },
+    {
+      "rule_type": "required",
+      "content": "Sözleşme süresi, otomatik yenileme koşulları ve yenilemeye itiraz bildirimi süresi (en az 30 gün) açıkça belirtilmelidir."
+    },
+    {
+      "rule_type": "required",
+      "content": "Fesih sonrası veri iade ve silme prosedürü (veri portability & erasure) tanımlanmalıdır; müşteriye en az 60 günlük veri erişim süresi tanınmalıdır."
+    },
+    {
+      "rule_type": "required",
+      "content": "Ödeme koşulları bölümü fatura tarihi, ödeme vadesi ve gecikme faizi oranını açıkça içermelidir."
+    },
+    {
+      "rule_type": "acceptable",
+      "content": "Karşılıklı gizlilik yükümlülükleri (mutual NDA) ve 3 yıllık gizlilik süresi kabul edilebilir."
+    },
+    {
+      "rule_type": "acceptable",
+      "content": "Yıllık en fazla %10 ücret artışı hakkı (TÜFE bağlantılı) kabul edilebilir."
+    },
+    {
+      "rule_type": "acceptable",
+      "content": "30 günlük önceden yazılı bildirim ile fesih hakkı her iki taraf için kabul edilebilir."
+    },
+    {
+      "rule_type": "acceptable",
+      "content": "Müşterinin ürüne beyaz etiket (white-label) uygulaması talebi, branding haklarının ayrıca lisanslanması koşuluyla kabul edilebilir."
+    },
+    {
+      "rule_type": "acceptable",
+      "content": "Sözleşmede bakım penceresi (maintenance window) tanımlanması ve önceden bildirim şartı kabul edilebilir."
+    },
+    {
+      "rule_type": "threshold",
+      "content": "Cezai şart (penalty clause) toplam sözleşme bedelinin %10'unu geçmemelidir.",
+      "threshold_value": 10.0
+    },
+    {
+      "rule_type": "threshold",
+      "content": "TekNova'nın toplam sorumluluğu (liability cap) ilgili dönem sözleşme bedelinin %100'ünü aşmamalıdır.",
+      "threshold_value": 100.0
+    },
+    {
+      "rule_type": "threshold",
+      "content": "Ödeme gecikme faizi yıllık %30'u geçmemelidir.",
+      "threshold_value": 30.0
+    },
+    {
+      "rule_type": "threshold",
+      "content": "Otomatik yenileme sözleşmelerinde fiyat artışı yıllık %15'i aşmamalıdır.",
+      "threshold_value": 15.0
+    }
+  ]
+}

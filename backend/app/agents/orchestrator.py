@@ -162,7 +162,7 @@ async def run_risk_phase(
             text(
                 "DELETE FROM revisions WHERE clause_id = :cid AND status = 'pending'"
             ),
-            {"cid": str(clause.id)},
+            {"cid": clause.id},
         )
         db.add(
             Revision(
@@ -195,7 +195,7 @@ async def _persist_missing_provisions(
 ) -> None:
     await db.execute(
         text("DELETE FROM missing_provisions WHERE contract_id = :cid"),
-        {"cid": str(contract_id)},
+        {"cid": contract_id},
     )
     for item in items:
         await db.execute(
@@ -204,8 +204,8 @@ async def _persist_missing_provisions(
                 "VALUES (:cid, :rid, :desc)"
             ),
             {
-                "cid": str(contract_id),
-                "rid": str(item["playbook_rule_id"]),
+                "cid": contract_id,
+                "rid": item["playbook_rule_id"],
                 "desc": item["description"],
             },
         )

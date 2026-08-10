@@ -1,0 +1,728 @@
+\documentclass[12pt,a4paper]{article}
+
+% ── Packages ─────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[turkish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{fontawesome5}
+
+\pgfplotsset{compat=1.18}
+
+% ── Sayfa Düzeni ─────────────────────────────────────────────────────────────
+\geometry{
+  top=2.5cm, bottom=2.5cm,
+  left=2.8cm, right=2.8cm
+}
+
+% ── Renkler ──────────────────────────────────────────────────────────────────
+\definecolor{primary}{HTML}{1E40AF}      % indigo-700
+\definecolor{accent}{HTML}{3B82F6}       % blue-500
+\definecolor{dark}{HTML}{111827}         % gray-900
+\definecolor{muted}{HTML}{6B7280}        % gray-500
+\definecolor{light}{HTML}{EFF6FF}        % blue-50
+\definecolor{success}{HTML}{16A34A}      % green-600
+\definecolor{danger}{HTML}{DC2626}       % red-600
+\definecolor{warning}{HTML}{D97706}      % amber-600
+\definecolor{sectionbg}{HTML}{F0F4FF}
+
+% ── Hyperlink Ayarları ────────────────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  linkcolor=primary,
+  urlcolor=accent,
+  citecolor=primary,
+  pdfauthor={Lagent Ekibi},
+  pdftitle={Lagent — Yatırımcı Sunumu},
+  pdfsubject={Hukuki Sözleşme Analiz Platformu},
+}
+
+% ── Başlık Stilleri ───────────────────────────────────────────────────────────
+\titleformat{\section}
+  {\color{primary}\Large\bfseries}
+  {}
+  {0em}
+  {}
+  [\color{accent}\titlerule]
+
+\titleformat{\subsection}
+  {\color{dark}\large\bfseries}
+  {}
+  {0em}
+  {}
+
+\titleformat{\subsubsection}
+  {\color{primary}\normalsize\bfseries}
+  {}
+  {0em}
+  {}
+
+\titlespacing*{\section}{0pt}{1.8em}{0.8em}
+\titlespacing*{\subsection}{0pt}{1.2em}{0.5em}
+
+% ── Üst/Alt Bilgi ─────────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{muted}\textbf{Lagent} — Gizli Yatırımcı Sunumu}
+\fancyhead[R]{\small\color{muted}Mayıs 2026}
+\fancyfoot[C]{\small\color{muted}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+% ── Kutucuk Stilleri ──────────────────────────────────────────────────────────
+\newmdenv[
+  backgroundcolor=light,
+  linecolor=accent,
+  linewidth=1.5pt,
+  leftline=true, topline=false, rightline=false, bottomline=false,
+  innerleftmargin=12pt,
+  innerrightmargin=12pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  skipabove=10pt,
+  skipbelow=10pt,
+]{highlightbox}
+
+\newmdenv[
+  backgroundcolor=sectionbg,
+  linecolor=primary,
+  linewidth=0pt,
+  roundcorner=6pt,
+  innerleftmargin=14pt,
+  innerrightmargin=14pt,
+  innertopmargin=12pt,
+  innerbottommargin=12pt,
+  skipabove=8pt,
+  skipbelow=8pt,
+]{statbox}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\begin{document}
+% ═════════════════════════════════════════════════════════════════════════════
+
+% ── Kapak Sayfası ─────────────────────────────────────────────────────────────
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[primary] (current page.north west) rectangle
+      ([yshift=-5cm]current page.north east);
+    \fill[accent!30!primary] (current page.south west) rectangle
+      ([yshift=1.5cm]current page.south east);
+  \end{tikzpicture}
+
+  \vspace*{1cm}
+  \begin{center}
+    {\color{white}\fontsize{48}{56}\selectfont\textbf{Lagent}}\\[0.3em]
+    {\color{white!80!primary}\Large Yapay Zeka Destekli Hukuki Sözleşme Analiz Platformu}\\[3.5cm]
+
+    {\color{dark}\fontsize{22}{28}\selectfont\textbf{Yatırımcı Sunumu}}\\[0.5em]
+    {\color{muted}\large Seri A Öncesi Tur}\\[0.5em]
+    {\color{muted}\large Mayıs 2026}
+
+    \vfill
+    \begin{mdframed}[backgroundcolor=light,linecolor=accent,linewidth=1pt,roundcorner=6pt]
+      \centering
+      {\small\color{muted}\textbf{GİZLİLİK NOTU}}\\[3pt]
+      {\small\color{dark}Bu belge yalnızca yetkili alıcılara yönelik olup gizlidir.
+      İzinsiz çoğaltılması, dağıtılması veya üçüncü şahıslarla paylaşılması yasaktır.}
+    \end{mdframed}
+    \vspace{1cm}
+    {\color{muted}\normalsize Mustafa Emir Ceran, Mert Ayrancı, Osman Gazi Atalay}
+  \end{center}
+\end{titlepage}
+
+\newpage
+\setcounter{page}{1}
+\onehalfspacing
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section*{İçindekiler}
+% ═════════════════════════════════════════════════════════════════════════════
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=*, label=\textbf{\arabic*.}]
+  \item Yönetici Özeti
+  \item Problem: Sözleşme Bunalımı
+  \item Çözüm: Lagent Platformu
+  \item Ürün Özellikleri
+  \item Teknoloji Mimarisi
+  \item Pazar Fırsatı
+  \item İş Modeli
+  \item Rekabet Analizi
+  \item Yol Haritası
+  \item Ekip
+  \item Finansal Projeksiyonlar
+  \item Yatırım Talebi
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section{Yönetici Özeti}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\begin{highlightbox}
+\textbf{\color{primary}Tek Cümle:} Lagent, bireyler ve KOBİ'lerin hukuki sözleşmelerini dakikalar
+içinde yapay zeka ile analiz etmelerini, risklerini anlamalarını ve güvenle müzakere etmelerini
+sağlayan çok-ajanlı bir SaaS platformudur.
+\end{highlightbox}
+
+\vspace{0.5em}
+
+Türkiye'de her yıl \textbf{500 milyonun üzerinde sözleşme} imzalanmaktadır. Bu sözleşmelerin büyük
+çoğunluğu kira, tedarik, istihdam ve hizmet anlaşmalarından oluşmakta; ancak imzalayanların
+\textbf{\%78'i} sözleşmeyi tam olarak anlayamadan imzaladığını kabul etmektedir. Hukuki danışmanlık
+masrafları ise ortalama \textbf{sözleşme başına 1.500–5.000 TL} düzeyindedir.
+
+Lagent bu boşluğu kapatır. Kullanıcılar sözleşmelerini platforma yükler; yapay zeka destekli
+çok-ajanlı sistem her maddeyi ayrıştırır, risklerini puanlar, politika uyumunu kontrol eder ve
+revizyon önerileri sunar. \textbf{Tüm bu süreç 2 dakikadan kısadır.}
+
+\vspace{0.8em}
+
+\begin{statbox}
+\begin{center}
+\begin{tabular}{p{3.5cm}p{3.5cm}p{3.5cm}p{3.5cm}}
+\centering\textbf{\color{primary}\Large 500M+} &
+\centering\textbf{\color{primary}\Large \%78} &
+\centering\textbf{\color{primary}\Large 2 dk} &
+\centering\textbf{\color{primary}\Large \%80} \\[2pt]
+\centering{\small Yıllık sözleşme\newline (Türkiye)} &
+\centering{\small Anlamadan\newline imzalayanlar} &
+\centering{\small Analiz süresi\newline (10 sayfa)} &
+\centering{\small Maliyet azalma\newline potansiyeli}
+\end{tabular}
+\end{center}
+\end{statbox}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section{Problem: Sözleşme Bunalımı}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\subsection{Kimin Sorunu?}
+
+\textbf{Bireyler} kira sözleşmelerini, iş akitlerini ve hizmet anlaşmalarını avukata başvurmadan
+imzalar. Karmaşık hukuki dil, gizlenmiş cezai şartlar ve eksik hükümler fark edilmez. Sonuç:
+tahmin edilemeyen mali ve hukuki riskler.
+
+\textbf{KOBİ'ler} tedarikçi, ortak ve müşteri sözleşmelerini sınırlı hukuki bütçeyle yönetmek
+zorundadır. İnsan kaynağı yetersiz, profesyonel hukuki inceleme ise pahalı ve yavaştır.
+
+\textbf{Hukuk Profesyonelleri} standart madde kontrolüne zaman kaybeder; karmaşık müzakere ve
+stratejik analiz için yeterli alan bulamazlar.
+
+\subsection{Sorunun Büyüklüğü}
+
+\begin{itemize}[leftmargin=*, itemsep=4pt]
+  \item \textbf{Zaman maliyeti:} Bir avukat ortalama 10 sayfalık sözleşmeyi 2–4 saatte inceler.
+  \item \textbf{Parasal maliyet:} Türkiye'de sözleşme başına hukuki danışmanlık 1.500–5.000 TL;
+  yıllık hukuk danışmanlık harcamaları KOBİ'lerde ortalama 50.000–200.000 TL.
+  \item \textbf{Erişim eşitsizliği:} Hukuki hizmetler büyük şirket ve varlıklı bireyler için
+  erişilebilir; KOBİ ve bireyler için değil.
+  \item \textbf{İnsan hatası:} Manuel incelemede kritik maddelerin gözden kaçma oranı \%23
+  (Harvard Law Review, 2023).
+  \item \textbf{Dil engeli:} Hukuki Türkçe, ortalama kullanıcı tarafından anlaşılması güç teknik
+  terminoloji içerir.
+\end{itemize}
+
+\begin{highlightbox}
+\textbf{\color{danger}Sonuç:} Her yıl Türkiye'de sözleşme anlaşmazlıklarından kaynaklanan
+ekonomik kayıp tahminen \textbf{15–25 milyar TL} civarındadır. Ticari mahkemelerdeki davaların
+\textbf{\%40'ı} sözleşme belirsizliklerinden kaynaklanmaktadır.
+\end{highlightbox}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section{Çözüm: Lagent Platformu}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\subsection{Ürün Vizyonu}
+
+Lagent, hukuki sözleşme incelemesini \textbf{saniyeler içinde, demokratik biçimde} herkes için
+erişilebilir kılan, yapay zeka destekli çok-ajanlı bir platformdur. Sistem avukatın yerini almaz;
+\textbf{en güvenilir hukuki asistanı} gibi davranır: analiz eder, uyarır, önerir — nihai kararı
+her zaman kullanıcı verir.
+
+\subsection{Nasıl Çalışır?}
+
+\begin{enumerate}[leftmargin=*, itemsep=6pt]
+  \item \textbf{Yükle:} Kullanıcı PDF veya DOCX formatındaki sözleşmeyi yükler ($\leq$10 MB).
+  Sistem metni otomatik çıkarır; taranan belgeler için OCR devreye girer.
+
+  \item \textbf{Analiz Et (Madde Ajanı):} Çok-ajanlı orkestratör sözleşmeyi bağımsız maddelere
+  böler, her birini hukuki kategorisine (gizlilik, fesih, cezai şart, ödeme koşulları vb.) göre
+  sınıflandırır.
+
+  \item \textbf{Risk Puanla (Risk Ajanı):} Her madde kullanıcı tanımlı Playbook kurallarıyla
+  anlam tabanlı eşleştirme (RAG) ve LLM değerlendirmesiyle karşılaştırılır; ticari ve hukuki
+  risk puanı (0.0–1.0) üretilir. Eksik hükümler tespit edilir.
+
+  \item \textbf{Revizyon Öner (Müzakere Ajanı):} Orta ve yüksek riskli maddelere alternatif
+  metin önerilir. Kullanıcı orijinal ve önerilen metni yan yana (redline) karşılaştırır.
+
+  \item \textbf{Onayla / Reddet:} Madde bazlı karar akışı; her karar denetim iziyle kayıt altına
+  alınır.
+
+  \item \textbf{Raporla:} Özet veya detaylı rapor PDF/DOCX olarak oluşturulur; revize edilmiş
+  sözleşme taslağı indirilebilir.
+\end{enumerate}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section{Ürün Özellikleri}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\subsection{Temel Özellikler}
+
+\begin{longtable}{>{\bfseries\color{primary}}p{4.5cm} p{9.5cm}}
+\toprule
+\textbf{\color{dark}Özellik} & \textbf{\color{dark}Açıklama} \\
+\midrule
+\endhead
+Belge İşleme & PDF ve DOCX desteği; otomatik metin çıkarma; taranmış belgeler için OCR (Tesseract); 10 sayfalık sözleşme $<$30 saniye \\[4pt]
+Madde Ayrıştırma & GPT-4o ile bağımsız maddelere otomatik bölme; 8+ hukuki kategori sınıflandırması; güven skoru ($\geq$0.7 eşiği) \\[4pt]
+Playbook Politikaları & Sektöre özel kullanıcı tanımlı politikalar; kabul edilebilir / reddedilen / zorunlu / eşik tipi kurallar; çoklu playbook desteği \\[4pt]
+Risk Değerlendirmesi & Ticari + hukuki çift boyutlu puanlama; 3 seviyeli risk (Düşük/Orta/Yüksek); gerekçe açıklaması; eksik hüküm tespiti \\[4pt]
+Revizyon Önerileri & Orta/yüksek riskli maddelere LLM destekli alternatif metin; madde başına $<$5 saniye \\[4pt]
+Redline Görünümü & Orijinal vs. önerilen metin yan yana renk kodlu karşılaştırma \\[4pt]
+Onay İş Akışı & Madde bazlı onayla/reddet/revize; zorunlu insan kararı; tam denetim izi \\[4pt]
+Raporlama & PDF/DOCX özet ve detaylı rapor; revize sözleşme taslağı çıktısı \\[4pt]
+Gerçek Zamanlı Bildirim & WebSocket ile analiz ilerleme durumu canlı güncelleme \\[4pt]
+Güvenlik & JWT kimlik doğrulama; bcrypt şifreleme ($\geq$12 karakter); RBAC; HTTPS; denetim kaydı \\
+\bottomrule
+\end{longtable}
+
+\subsection{Playbook: Rekabet Gücünün Kaynağı}
+
+\begin{highlightbox}
+\textbf{\color{primary}Playbook nedir?} Kullanıcı veya kuruluşun kendi sözleşme politikalarını
+tanımladığı kural kümesidir. \emph{"Depozito maksimum 3 aylık kira olsun"} ya da \emph{"Tahkim
+maddesi zorunlu"} gibi kurallar sisteme eklenir; her analiz bu kurallara göre yapılır.
+\end{highlightbox}
+
+Playbook sistemi Lagent'i rakiplerinden ayıran temel farktır:
+\begin{itemize}[itemsep=3pt]
+  \item Sektör ve şirket özelinde politika tanımlanabilir
+  \item Kurallar anlam tabanlı vektör arama (RAG) ile maddelere eşleştirilir
+  \item Yeni kural eklendiğinde vektör indeksi otomatik güncellenir
+  \item Eksik hükümleri gerçek zamanlı tespit eder
+\end{itemize}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section{Teknoloji Mimarisi}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\subsection{Çok-Ajanlı Orkestrasyon}
+
+Lagent'in kalbi üç uzmanlaşmış yapay zeka ajanından oluşan bir orkestratördür:
+
+\vspace{0.5em}
+\begin{statbox}
+\begin{tabular}{>{\bfseries\color{primary}}p{3.5cm} p{10cm}}
+Madde Ajanı & Sözleşme metnini yapılandırılmış JSON formatında maddelere böler. GPT-4o (JSON mode) kullanır. Doğruluk: $\geq$\%70. \\[6pt]
+Risk Ajanı & RAG (pgvector anlam araması) + LLM değerlendirmesi + deterministik kural motoru. Playbook uyumunu çapraz doğrular. \\[6pt]
+Müzakere Ajanı & Yüksek/orta riskli maddeler için bağlam farkındalıklı revizyon üretir. Benzer onaylanmış örneklerden öğrenir. \\
+\end{tabular}
+\end{statbox}
+
+\subsection{Teknoloji Yığını}
+
+\begin{longtable}{>{\bfseries}p{3.5cm} p{4.5cm} p{5.5cm}}
+\toprule
+\textbf{Katman} & \textbf{Teknoloji} & \textbf{Açıklama} \\
+\midrule
+\endhead
+\multicolumn{3}{l}{\color{primary}\textbf{Frontend}} \\[2pt]
+Çerçeve & Next.js 14 + React 18 & SSR destekli, hızlı UI \\
+Stil & Tailwind CSS + shadcn/ui & Modern, erişilebilir bileşenler \\
+State & Zustand & Hafif global state yönetimi \\
+Gerçek Zamanlı & Native WebSocket & Analiz ilerleme bildirimi \\
+\midrule
+\multicolumn{3}{l}{\color{primary}\textbf{Backend}} \\[2pt]
+Framework & FastAPI 0.110+ & Async Python, yüksek performanslı API \\
+ORM & SQLAlchemy 2.0 & Async veri erişimi \\
+Kimlik Doğrulama & JWT + bcrypt & Stateless güvenli oturum \\
+Belge İşleme & PyMuPDF + python-docx & PDF/DOCX metin çıkarma \\
+OCR & Tesseract 5.x & Taranmış belge desteği \\
+\midrule
+\multicolumn{3}{l}{\color{primary}\textbf{Yapay Zeka}} \\[2pt]
+LLM & GPT-4o / GPT-4o-mini & Düşük temp. (0.2) deterministik çıktı \\
+Embedding & text-embedding-3-small & 1536 boyutlu anlam vektörleri \\
+Vektör Araması & pgvector & PostgreSQL içi anlam benzerliği \\
+Orkestrasyon & LangGraph & Durum makineli çok-ajan akışı \\
+\midrule
+\multicolumn{3}{l}{\color{primary}\textbf{Altyapı}} \\[2pt]
+Veritabanı & PostgreSQL 16 + pgvector & İlişkisel + vektör depolama \\
+Önbellek & Redis 7 & Oturum, durum, oran sınırlama \\
+Nesne Depolama & MinIO (S3-uyumlu) & Sözleşme ve rapor dosyaları \\
+Konteyner & Docker + Compose & Taşınabilir, ölçeklenebilir dağıtım \\
+CI/CD & GitHub Actions & Otomatik test ve dağıtım \\
+\bottomrule
+\end{longtable}
+
+\subsection{Neden Bu Mimari?}
+
+\begin{itemize}[itemsep=4pt]
+  \item \textbf{RAG + LLM kombinasyonu}: Salt LLM'den farklı olarak kullanıcı politikaları anlam
+  aramasıyla maddelere özel bağlam oluşturur; halüsinasyon riski minimize edilir.
+  \item \textbf{Deterministik kural motoru}: LLM çıktısı kural motoruyla çapraz doğrulanır;
+  yüksek güvenlik gerektiren hukuki bağlamda kritik güvenilirlik sağlar.
+  \item \textbf{pgvector}: Ayrı bir vektör veritabanı servisine gerek kalmadan PostgreSQL içinde
+  anlam araması; operasyonel karmaşıklık azaltılır.
+  \item \textbf{Stateless API}: Yatay ölçekleme kolaylığı; mikro-servis mimarisine hazır altyapı.
+\end{itemize}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section{Pazar Fırsatı}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\subsection{Hedef Pazar}
+
+\subsubsection{Birincil: Türkiye Pazarı}
+
+\begin{statbox}
+\begin{tabular}{p{5cm} p{3.5cm} p{5cm}}
+\textbf{Segment} & \textbf{Büyüklük} & \textbf{Lagent Değeri} \\
+\midrule
+KOBİ (Türkiye) & $\sim$8 milyon işletme & Hukuki maliyet \%60–80 azalma \\
+Bireyler & $\sim$85 milyon nüfus & Kira/iş akdi analizi \\
+Hukuk Büroları & $\sim$80.000 avukat & Verimlilik artışı $\times$3 \\
+İK / Tedarik Ekipleri & 500.000+ yönetici & Standart sözleşme inceleme \\
+\end{tabular}
+\end{statbox}
+
+\subsubsection{Pazar Boyutu Analizi (TAM / SAM / SOM)}
+
+\begin{itemize}[itemsep=5pt]
+  \item \textbf{TAM (Toplam Adreslenebilir Pazar):} Türkiye'de yıllık hukuki danışmanlık pazarı
+  $\sim$\textbf{45 milyar TL} (2025). Küresel LegalTech pazarı 2030'a kadar \textbf{37 milyar \$}
+  büyüklüğe ulaşacak (CAGR \%9.1).
+
+  \item \textbf{SAM (Hizmet Verilebilir Pazar):} Sözleşme analizi ve yönetimi alt segmenti
+  $\sim$\textbf{8 milyar TL} (Türkiye KOBİ + birey pazarı).
+
+  \item \textbf{SOM (Elde Edilebilir Pazar):} 3 yıl içinde \textbf{50.000 abonelik} hedefiyle
+  $\sim$\textbf{150 milyon TL} yıllık tekrar eden gelir (ARR).
+\end{itemize}
+
+\subsection{Pazar Büyümesi}
+
+\begin{itemize}[itemsep=4pt]
+  \item LegalTech benimsenmesi hızlanıyor: COVID-19 sonrası dijital iş süreçleri kalıcılaştı;
+  sözleşme yönetimi dijitalleşmesi \%35 CAGR büyüyor (Gartner, 2024).
+  \item Türkiye'de e-imza yaygınlaşması ve dijital sözleşme hacmi yıldan yıla \%40 artış gösteriyor.
+  \item Yapay zeka ve doğal dil işleme teknolojilerinin maliyeti düşerken kalitesi hızla artıyor;
+  Türkçe NLP yetenekleri 2023–2026 arasında dramatik iyileşme gösterdi.
+  \item KVKK ve yeni ticaret mevzuatı uyum gereklilikleri sözleşme denetim talebini artırıyor.
+\end{itemize}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section{İş Modeli}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\subsection{Gelir Akışları}
+
+\begin{longtable}{>{\bfseries\color{primary}}p{3cm} p{4cm} p{3cm} p{3.5cm}}
+\toprule
+\textbf{\color{dark}Plan} & \textbf{\color{dark}Hedef Kitle} & \textbf{\color{dark}Fiyat} & \textbf{\color{dark}Özellikler} \\
+\midrule
+\endhead
+Freemium & Bireyler & Ücretsiz & 3 sözleşme/ay, temel analiz \\[4pt]
+Starter & Serbest çalışanlar & 299 TL/ay & 20 sözleşme/ay, raporlama \\[4pt]
+Pro & KOBİ'ler & 999 TL/ay & Sınırsız sözleşme, playbook, API \\[4pt]
+Enterprise & Kurumsal / Hukuk bürosu & Özel fiyat & On-prem seçeneği, white-label, öncelikli destek \\[4pt]
+Pay-per-Use & Yüksek hacim & 25 TL/sözleşme & API entegrasyonu, toplu analiz \\
+\bottomrule
+\end{longtable}
+
+\subsection{Birim Ekonomisi (Pro Plan, 3. Yıl Tahmini)}
+
+\begin{statbox}
+\begin{tabular}{lrl}
+\textbf{Müşteri Başına Aylık Gelir (ARPU)} & 999 TL & \\
+\textbf{Müşteri Edinme Maliyeti (CAC)} & 1.200 TL & (dijital pazarlama + satış) \\
+\textbf{Yaşam Boyu Değer (LTV)} & 18.000 TL & (24 ay ortalama abonelik) \\
+\textbf{LTV / CAC Oranı} & 15x & \color{success}\textbf{(Hedef: $>$3x)} \\
+\textbf{Brüt Marj} & \%72 & (LLM API + altyapı maliyeti çıkarıldıktan sonra) \\
+\textbf{Geri Ödeme Süresi} & $\sim$1.5 ay & \\
+\end{tabular}
+\end{statbox}
+
+\subsection{Büyüme Stratejisi}
+
+\begin{enumerate}[leftmargin=*, itemsep=5pt]
+  \item \textbf{Ürün Odaklı Büyüme (PLG):} Freemium katmanı ile organik kullanıcı edinimi; viral
+  döngüler (sözleşme paylaşımı, şablon kütüphanesi).
+
+  \item \textbf{B2B Satış:} Hukuk büroları, muhasebe firmaları ve KOBİ dernekleriyle ortaklık;
+  çalışan sayısına göre kurumsal plan.
+
+  \item \textbf{API Ekosistemi:} E-imza platformları, ERP/CRM sistemleri ve muhasebe yazılımlarıyla
+  entegrasyon; iş ortağı kanalı geliri.
+
+  \item \textbf{Dikey Genişleme:} Faz 2'de gayrimenkul, İK ve finans sektörlerine özel
+  playbook şablonları ve dikey SaaS.
+\end{enumerate}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section{Rekabet Analizi}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\subsection{Rekabet Haritası}
+
+\begin{longtable}{p{3.5cm} >{\centering}p{2cm} >{\centering}p{2cm} >{\centering}p{2.5cm} >{\centering\arraybackslash}p{2.5cm}}
+\toprule
+\textbf{} & \textbf{Türkçe\newline Destek} & \textbf{Playbook} & \textbf{Çok-Ajanlı\newline AI} & \textbf{KOBİ\newline Odaklı} \\
+\midrule
+\textbf{\color{primary}Lagent} & \color{success}\textbf{Tam} & \color{success}\textbf{Evet} & \color{success}\textbf{Evet} & \color{success}\textbf{Evet} \\[4pt]
+Kira Bul / Hukuk SaaS & \color{success}Evet & \color{danger}Hayır & \color{danger}Hayır & \color{warning}Kısmi \\[4pt]
+Harvey AI & \color{danger}İngilizce & \color{success}Evet & \color{success}Evet & \color{danger}Hayır \\[4pt]
+ContractPodAi & \color{warning}Kısmi & \color{success}Evet & \color{warning}Kısmi & \color{danger}Hayır \\[4pt]
+Spellbook & \color{danger}İngilizce & \color{warning}Kısmi & \color{warning}Kısmi & \color{danger}Hayır \\[4pt]
+Genel LLM (ChatGPT) & \color{success}Evet & \color{danger}Hayır & \color{danger}Hayır & \color{danger}Hayır \\
+\bottomrule
+\end{longtable}
+
+\subsection{Sürdürülebilir Rekabet Avantajı}
+
+\begin{itemize}[itemsep=5pt]
+  \item \textbf{Türkçe Yerel Uzmanlık:} Hukuki Türkçe için fine-tune edilmiş prompt mühendisliği
+  ve sınıflandırma sistemi. Uluslararası rakipler için dil bariyeri ciddi giriş engeli.
+
+  \item \textbf{Playbook Veri Uçurumu:} Kullanıcılar Playbook kuralları ekledikçe sistem daha
+  akıllı hale gelir. Kurumsal müşterilerin geçiş maliyeti (switching cost) artar; ağ etkisi
+  çok-kiracılı şablon kütüphanesiyle güçlenir.
+
+  \item \textbf{Çok-Ajanlı Orkestrasyon:} Madde ayrıştırma + risk değerlendirmesi + müzakere
+  üretimi zincirlenmesi ve deterministik kural motoru entegrasyonu basit LLM wrapper'larından
+  çok daha güvenilir ve özelleştirilebilir çıktı üretir.
+
+  \item \textbf{Denetim İzi + Uyum:} KVKK ve kurumsal uyum gerekliliklerini karşılayan tam
+  denetim kaydı; büyük işletmelerde satın alma engelini ortadan kaldırır.
+
+  \item \textbf{Hız:} MVP'den gerçek ürüne kadar 3 aylık geliştirme; teknik borç minimize
+  edilmiş modern teknoloji yığını.
+\end{itemize}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section{Yol Haritası}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\begin{longtable}{>{\bfseries}p{2.5cm} >{\color{primary}\bfseries}p{3cm} p{8cm}}
+\toprule
+\textbf{Dönem} & \textbf{Aşama} & \textbf{Hedefler} \\
+\midrule
+\endhead
+Q2 2026 & \color{success}MVP (Tamamlandı) &
+Madde ayrıştırma, risk değerlendirmesi, müzakere ajanı, onay akışı, raporlama.
+Kullanıcı kaydı ve kimlik doğrulama sistemi. \\[6pt]
+
+Q3 2026 & Kapalı Beta &
+500 beta kullanıcısı; hukuk bürosu ve KOBİ ortaklıkları.
+Kullanıcı geri bildirimine göre UX iyileştirmesi.
+OCR kalitesi ve sınıflandırma doğruluğu artırımı.
+Kira, tedarik ve istihdam için sektör playbook şablonları. \\[6pt]
+
+Q4 2026 & Genel Çıkış &
+Ücretli abonelik lansmanı (Starter + Pro).
+API açılımı ve ilk entegrasyon ortakları.
+Hedef: 2.000 ücretli kullanıcı, 2M TL ARR. \\[6pt]
+
+Q1–Q2 2027 & Büyüme &
+Enterprise satış ekibi.
+E-imza platformları entegrasyonu (e-imza.com.tr, DocuSign).
+Çok-dilli destek (İngilizce, Almanca).
+Hedef: 15.000 ücretli kullanıcı, 15M TL ARR. \\[6pt]
+
+2027–2028 & Ölçekleme &
+Orta Doğu ve DACH pazarlarına açılım.
+Dikey SaaS (gayrimenkul, İK, finans).
+White-label kurumsal çözümler.
+Hedef: 100.000 kullanıcı, 100M TL ARR. \\
+\bottomrule
+\end{longtable}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section{Ekip}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\begin{highlightbox}
+Kurucu ekip teknik yetkinlik ve ürün vizyonunu birleştiriyor. Üç kurucu da projeyi sıfırdan
+inşa etmiş; çok-ajanlı AI mimarisi, hukuki iş akışları ve modern web geliştirme konusunda
+derinlemesine deneyim kazanmıştır.
+\end{highlightbox}
+
+\vspace{0.5em}
+
+\begin{longtable}{>{\bfseries}p{4.5cm} p{3.5cm} p{6cm}}
+\toprule
+\textbf{Ad} & \textbf{Rol} & \textbf{Uzmanlık} \\
+\midrule
+Mustafa Emir Ceran & Kurucu CEO / Teknik Lider &
+Çok-ajanlı AI orkestrasyon, LLM entegrasyonu, LangGraph, ürün vizyonu ve proje yönetimi \\[6pt]
+Mert Ayrancı & Kurucu CTO / Backend &
+FastAPI, PostgreSQL, RAG mimarisi, risk ajanı geliştirme, API tasarımı \\[6pt]
+Osman Gazi Atalay & Kurucu CPO / Frontend &
+Next.js, React, kullanıcı deneyimi, redline görüntüleyici, QA ve test otomasyonu \\
+\bottomrule
+\end{longtable}
+
+\vspace{0.5em}
+\textbf{Danışman İhtiyaçları:} Hukuk sektörü domain uzmanı (avukat / hukuk teknolojileri), B2B
+satış deneyimli büyüme danışmanı ve fintech/legaltech yatırım geçmişi olan stratejik yatırımcı.
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section{Finansal Projeksiyonlar}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\subsection{Gelir Projeksiyonu (3 Yıl)}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  ybar,
+  bar width=1.5cm,
+  width=12cm, height=6cm,
+  symbolic x coords={2026 (Q4), 2027, 2028},
+  xtick=data,
+  ylabel={TL (Milyon)},
+  ymin=0, ymax=120,
+  ymajorgrids=true,
+  grid style={dashed, gray!30},
+  every axis plot/.append style={fill=accent, fill opacity=0.85, draw=primary},
+  legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1},
+  tick label style={color=dark},
+  label style={color=dark},
+  axis line style={color=muted},
+]
+\addplot coordinates {(2026 (Q4), 2) (2027, 15) (2028, 80)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{longtable}{p{4cm} r r r}
+\toprule
+\textbf{Metrik} & \textbf{2026 (Q4)} & \textbf{2027} & \textbf{2028} \\
+\midrule
+Ücretli Kullanıcı & 2.000 & 15.000 & 75.000 \\
+ARR (TL Milyon) & 2 & 15 & 80 \\
+Brüt Marj & \%65 & \%70 & \%75 \\
+Müşteri Edinme Maliyeti & 1.500 TL & 1.200 TL & 900 TL \\
+Aylık Büyüme Oranı & \%25 & \%18 & \%12 \\
+\bottomrule
+\end{longtable}
+
+\subsection{Maliyet Yapısı}
+
+\begin{itemize}[itemsep=3pt]
+  \item \textbf{LLM API Maliyeti:} Sözleşme başına $\sim$0.8–1.5 TL (GPT-4o-mini kullanımında);
+  hacim artışıyla azalır; önbellekleme ile \%30–40 tasarruf sağlanabilir.
+  \item \textbf{Altyapı:} Cloud hosting + veritabanı $\sim$15.000 TL/ay (MVP); ölçeklendikçe
+  aylık 80.000–150.000 TL.
+  \item \textbf{İnsan Kaynağı:} 3 kurucu + 2 mühendis (Faz 2); büyüme turunda satış + müşteri
+  başarısı kadrosu.
+\end{itemize}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section{Yatırım Talebi}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\begin{statbox}
+\begin{center}
+{\color{primary}\Large\textbf{Hedef Yatırım Tutarı: 5.000.000 TL}}\\[0.5em]
+{\color{muted}Seri A Öncesi Tur — Mayıs 2026}\\[1em]
+\begin{tabular}{lrl}
+\textbf{Ürün Geliştirme} & \%35 & 1.750.000 TL \\
+\textbf{Pazarlama ve Büyüme} & \%30 & 1.500.000 TL \\
+\textbf{İnsan Kaynağı} & \%25 & 1.250.000 TL \\
+\textbf{Altyapı ve Operasyon} & \%10 & 500.000 TL \\
+\end{tabular}
+\end{center}
+\end{statbox}
+
+\subsection{Kullanım Detayı}
+
+\subsubsection{Ürün Geliştirme (1.750.000 TL)}
+\begin{itemize}[itemsep=3pt]
+  \item Sınıflandırma doğruluğunu \%70 → \%90'a çıkaracak model fine-tuning ve prompt
+  optimizasyonu
+  \item Mobil uygulama (iOS / Android) geliştirmesi
+  \item API ürünü ve geliştirici ekosistemi altyapısı
+  \item E-imza ve ERP/CRM entegrasyonları
+\end{itemize}
+
+\subsubsection{Pazarlama ve Büyüme (1.500.000 TL)}
+\begin{itemize}[itemsep=3pt]
+  \item Dijital pazarlama (SEO, içerik, sosyal medya)
+  \item Hukuk bürosu ve KOBİ birlikleriyle ortaklık programı
+  \item Beta kullanıcı kampanyası ve referans programı
+  \item Etkinlik katılımı ve marka bilinirliği
+\end{itemize}
+
+\subsubsection{İnsan Kaynağı (1.250.000 TL)}
+\begin{itemize}[itemsep=3pt]
+  \item 2 senior backend/AI mühendisi
+  \item 1 ürün tasarımcısı (UX/UI)
+  \item 1 B2B satış yöneticisi
+\end{itemize}
+
+\subsection{Beklenen Çıktılar (18 Ay)}
+
+\begin{itemize}[itemsep=5pt]
+  \item \textbf{15.000 ücretli kullanıcıya} ulaşmak
+  \item \textbf{15M TL ARR} gerçekleştirmek
+  \item \textbf{Seri A hazırlığı:} 30–50M TL değerleme hedefli Seri A turu için metriklere ulaşmak
+  \item \textbf{3 kurumsal müşteri} (hukuk bürosu veya büyük KOBİ) sözleşmesi imzalamak
+\end{itemize}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\section*{Kapanış: Neden Lagent, Neden Şimdi?}
+% ═════════════════════════════════════════════════════════════════════════════
+
+\begin{highlightbox}
+\begin{enumerate}[leftmargin=*, itemsep=6pt]
+  \item \textbf{Zamanlama:} GPT-4 kalitesindeki LLM'lerin maliyeti 2023–2026 arasında \%90
+  düştü. Türkçe NLP olgunlaştı. Pazar hazır.
+
+  \item \textbf{Problem-Çözüm Uyumu:} Sözleşme analizi sınırlı, tekrarlanabilir ve ölçülebilir
+  bir görevdir. AI bu görev için ideal; halüsinasyon riski Playbook + kural motoru ile kontrol
+  altına alınmıştır.
+
+  \item \textbf{Savunulabilir Avantaj:} Türkçe hukuki domain uzmanlığı + Playbook veri uçurumu +
+  çok-ajanlı mimari rakiplerin kısa vadede eşleşemeyeceği bir kombinasyon oluşturuyor.
+
+  \item \textbf{Devasa Pazar:} 8M+ KOBİ ve 85M nüfus; dijital sözleşme hacmi yılda \%40 büyüyor.
+
+  \item \textbf{Çalışan Ürün:} Sıfırdan inşa edilmiş, gerçek kullanıcılarla test edilmiş MVP.
+  Sadece fikir değil — teslim etme kapasitesi kanıtlanmış bir ekip.
+\end{enumerate}
+\end{highlightbox}
+
+\vspace{1.5em}
+
+\begin{center}
+{\color{primary}\Large\textbf{Birlikte Türkiye'nin Hukuki Altyapısını Dönüştürelim.}}\\[1em]
+{\color{muted}\normalsize persevia.ai@gmail.com}
+\end{center}
+
+\vspace{2em}
+\begin{center}
+\rule{8cm}{0.4pt}\\[0.5em]
+{\small\color{muted}Bu belge yatırımcı bilgilendirme amaçlıdır. Finansal projeksiyon ve piyasa
+tahminleri mevcut verilere dayalı öngörüler içermekte olup garanti niteliği taşımamaktadır.}
+\end{center}
+
+\end{document}

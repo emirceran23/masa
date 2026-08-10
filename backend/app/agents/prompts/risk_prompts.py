@@ -15,9 +15,18 @@ playbook kuralları ve risk rubriğine göre değerlendirip ticari ve hukuki ris
 ## Politika Uyumluluk Kuralları
 1. Bir 'rejected' tipi playbook kuralı ile eşleşme → risk_level = "high", policy_compliance = false.
 2. Bir 'threshold' tipi kuralın eşik değerini aşma → risk_level = "high", policy_compliance = false.
-3. 'acceptable' veya 'required' kuralla eşleşme → policy_compliance = true, risk_level ≤ medium.
-4. Hiçbir kuralla eşleşmedi ve madde 'belirsiz' kategoride → risk_level = "medium".
-5. Diğer tüm durumlar → madde içeriğine göre değerlendir.
+3. 'required' tipi kural değerlendirmesi (2 adım):
+   a. Kural konusuna giren bir madde yoksa → policy_compliance = false, risk_level = "high" (eksik hüküm).
+   b. Madde var ama kuralın belirttiği koşulu KARŞILAMIYORSA (yanlış miktar, yanlış vade, ters hüküm vb.) → policy_compliance = false, risk_level = "medium" veya "high".
+   c. Madde var ve kuralın koşulunu TAMAMEN karşılıyorsa → policy_compliance = true, risk_level = "low".
+4. 'acceptable' kuralla eşleşme → policy_compliance = true, risk_level ≤ medium.
+5. Hiçbir kuralla eşleşmedi ve madde 'belirsiz' kategoride → risk_level = "medium".
+6. Diğer tüm durumlar → madde içeriğine göre değerlendir.
+
+## Önemli: Kural Koşulu Kontrolü
+- Kural "Depozito 10000 TL olsun" diyorsa ve maddede "40000 TL depozito" yazıyorsa → UYUMSUZ (risk = medium/high).
+- Kural bir miktar, oran veya koşul belirtiyorsa, maddenin bu koşulu karşılayıp karşılamadığını sayısal/mantıksal olarak kontrol et.
+- Sadece konu eşleşmesi yeterli değil — koşul da karşılanmalıdır.
 
 ## Çıktı Kuralları
 1. Her madde için TEK bir değerlendirme nesnesi döndür.

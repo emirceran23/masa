@@ -26,7 +26,7 @@ async def index_clause(db: AsyncSession, clause_id: uuid.UUID, clause_text: str)
             VALUES (:clause_id, :embedding)
             ON CONFLICT (clause_id) DO UPDATE SET embedding = EXCLUDED.embedding
         """),
-        {"clause_id": str(clause_id), "embedding": vector_str},
+        {"clause_id": clause_id, "embedding": vector_str},
     )
     logger.debug("Indexed embedding for clause %s", clause_id)
 
@@ -42,7 +42,7 @@ async def index_rule(db: AsyncSession, rule_id: uuid.UUID, rule_text: str) -> No
             VALUES (:rule_id, :embedding)
             ON CONFLICT (rule_id) DO UPDATE SET embedding = EXCLUDED.embedding
         """),
-        {"rule_id": str(rule_id), "embedding": vector_str},
+        {"rule_id": rule_id, "embedding": vector_str},
     )
     logger.debug("Indexed embedding for rule %s", rule_id)
 
@@ -80,7 +80,7 @@ async def search_similar_rules(
         """)
         params = {
             "embedding": vector_str,
-            "playbook_id": str(playbook_id),
+            "playbook_id": playbook_id,
             "limit": limit,
         }
     else:
